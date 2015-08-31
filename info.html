@@ -1,156 +1,297 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" media="screen"/>
-  <title>simonsmh - Web server site</title>
-  <!-- CSS  -->
-  <link href="css/googleapi.css" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
-<body>
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="info.html" class="brand-logo">代理相关</a>
-      <ul class="right hide-on-med-and-down">
-       <li><a class="dropdown-button waves-effect waves-light" href="#" data-activates="dropdown1">菜单<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-      </ul>
-      <ul id="dropdown1" class="dropdown-content">
-        <li><a href="index.html" class="waves-effect black-text">主页</a></li>
-        <li><a href="/files/" class="waves-effect black-text">文件盘</a></li>
-        <li><a href="http://192.168.1.1/" class="waves-effect black-text">主路由</a></li>
-        <li><a href="http://192.168.199.1" class="waves-effect black-text">极路由</a></li>
-        <li><a href="info.html" class="waves-effect black-text">代理相关</a></li>
-      </ul>
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="index.html" class="waves-effect">主页</a></li>
-        <li><a href="/files/" class="waves-effect">文件盘</a></li>
-        <li><a href="http://192.168.1.1/" class="waves-effect">主路由</a></li>
-        <li><a href="http://192.168.199.1" class="waves-effect">极路由</a></li>
-        <li><a href="info.html" class="waves-effect">代理相关</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-    </div>
-  </nav>
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-       <h2 class="header center orange-text">simonsmh</br>个人代理</h2>
-        <div class="row center">
-         <h5 class="header col s12 light">合理使用</br>遵循可持续发展原则</h5>
-        </div>
-      <br><br>
-    </div>
-  </div>
   
-  <div class="container">
-    <div class="section">
-      
-      <!--   Icon Section   -->
-      <div class="row">
-        
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h4 class="center light-blue-text">SHADOWSOCKS</br>& R support</h4>
-              <p class="light">
-               服务器地址 simonsmh.tk<br>
-               服务器端口 443/444<br>
-               加密方式 aes-256-cfb<br>
-               密码 simonsmh
-              </p>
-          </div>
-        </div>
-        
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h4 class="center light-blue-text">L2TP VPN</br>over IPSec</h4>
-            <p class="light">
-               服务器地址 simonsmh.tk<br>
-               用户名 test[1-9]<br>
-               密码 123456<br>
-               预共享密钥 simonsmh<br>
-               请调整为强制最大程度加密
-            </p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h4 class="center light-blue-text">Pure IPSec</br>RSA & CA</h4>
-            <p class="light">
-               服务器地址 simonsmh.tk<br>
-               用户名 simonsmh<br>
-               密码 123456<br>
-               p12证书密码 simonsmh<br>
-              <a class="light" href="/CAKEY">也许用得上的证书</a>
-            </p>
-          </div>
-        </div>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" media="screen"
+    />
+    <title>
+      simonsmh - Web server site
+    </title>
+    <!-- CSS -->
+    <link href="css/googleapi.css" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"
+    />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"
+    />
+  </head>
+  
+  <body>
+    <nav class="light-blue lighten-1" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="info.html" class="brand-logo">
+          代理相关
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a class="dropdown-button waves-effect waves-light" href="#" data-activates="dropdown1">
+              菜单
+              <i class="mdi-navigation-arrow-drop-down right">
+              </i>
+            </a>
+          </li>
+        </ul>
+        <ul id="dropdown1" class="dropdown-content">
+          <li>
+            <a href="index.html" class="waves-effect black-text">
+              主页
+            </a>
+          </li>
+          <li>
+            <a href="/files/" class="waves-effect black-text">
+              文件盘
+            </a>
+          </li>
+          <li>
+            <a href="http://192.168.1.1/" class="waves-effect black-text">
+              主路由
+            </a>
+          </li>
+          <li>
+            <a href="http://192.168.199.1" class="waves-effect black-text">
+              极路由
+            </a>
+          </li>
+          <li>
+            <a href="info.html" class="waves-effect black-text">
+              代理相关
+            </a>
+          </li>
+        </ul>
+        <ul id="nav-mobile" class="side-nav">
+          <li>
+            <a href="index.html" class="waves-effect">
+              主页
+            </a>
+          </li>
+          <li>
+            <a href="/files/" class="waves-effect">
+              文件盘
+            </a>
+          </li>
+          <li>
+            <a href="http://192.168.1.1/" class="waves-effect">
+              主路由
+            </a>
+          </li>
+          <li>
+            <a href="http://192.168.199.1" class="waves-effect">
+              极路由
+            </a>
+          </li>
+          <li>
+            <a href="info.html" class="waves-effect">
+              代理相关
+            </a>
+          </li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse">
+          <i class="mdi-navigation-menu">
+          </i>
+        </a>
       </div>
-
-    </div>
-    <br><br>
-
-    <div class="section">
-
-    </div>
-  </div>
-
-  <footer class="page-footer orange">
-    <div class="container">
-      <div class="row">
-        
-        <div class="col l6 s12">
-          <h5 class="white-text">关于</h5>
-          <p class="white-text">扯淡的地方<br>
-            <u>
-              <a class="white-text" href="https://github.com/simonsmh/www">本网站的GitHub源码地址</a>
-            </u>
-            <form class="waves-effect waves-light orange hoverable" accept-charset="GBK" action="https://shenghuo.alipay.com/send/payment/fill.htm" method="post" target="_blank">
-              <input type="hidden" name="optEmail" value="15618959859" /> 
-              <input type="hidden" name="memo" value="如果你觉得我的代理对你有帮助，请我喝杯饮料吧，谢谢！" />
-              <input id="payAmount" type="hidden" name="payAmount" value="5" /> 
-              <input id="title" type="hidden" name="title" value="支持simonsmh服务器发展" />
-             <input type="image" name="pay" src="https://img.alipay.com/sys/personalprod/style/mc/btn-index.png" value="转账" />
-            </form>
-          </p>
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">联系我</h5>
-          <u>
-          <ul>
-            <li><a class="white-text" href="https://plus.google.com/u/0/114021435604193997174/posts">Google+</a></li>
-            <li><a class="white-text" href="https://twitter.com/MinhaoShi">Twitter</a></li>
-            <li><a class="white-text" href="https://www.facebook.com/simonsmh">Facebook</a></li>
-            <li><a class="white-text" href="http://weibo.com/u/2322746402">新浪微博</a></li>
-            <li><a class="white-text" href="https://github.com/simonsmh">GitHub</a></li>
-            <li><a class="white-text" href="http://steamcommunity.com/id/simonsmhsmh">Steam</a></li>
-            <li><a class="white-text" href="http://space.bilibili.com/1353201#!/index">哔哩哔哩</a></li>
-          </ul>
-          </u>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">友情链接</h5>
-          <u>
-          <ul>
-            <li><a class="white-text" href="http://sciwalk.ml/">Sciwalk志愿者服务队</a></li>
-            <li><a class="white-text" href="http://stwc.tk/">上海追风团队</a></li>
-          </ul>
-          </u>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
+    </nav>
+    <div class="section no-pad-bot" id="index-banner">
       <div class="container">
-      Powered by simonsmh. Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        <br>
+        <br>
+        <h2 class="header center orange-text">
+          simonsmh
+          </br>
+          个人代理
+        </h2>
+        <div class="row center">
+          <h5 class="header col s12 light">
+            合理使用
+            </br>
+            遵循可持续发展原则
+          </h5>
+        </div>
+        <br>
+        <br>
       </div>
     </div>
-  </footer>
-  <!--  Scripts-->
-  <script src="js/jquery-2.1.4.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-</body>
+    <div class="container">
+      <div class="section">
+        <!-- Icon Section -->
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h4 class="center light-blue-text">
+                SHADOWSOCKS
+                </br>
+                & R support
+              </h4>
+              <p class="light">
+                服务器地址 simonsmh.tk
+                <br>
+                服务器端口 443/444
+                <br>
+                加密方式 aes-256-cfb
+                <br>
+                密码 simonsmh
+              </p>
+            </div>
+          </div>
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h4 class="center light-blue-text">
+                L2TP VPN
+                </br>
+                over IPSec
+              </h4>
+              <p class="light">
+                服务器地址 simonsmh.tk
+                <br>
+                用户名 test[1-9]
+                <br>
+                密码 123456
+                <br>
+                预共享密钥 simonsmh
+                <br>
+                请调整为强制最大程度加密
+              </p>
+            </div>
+          </div>
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h4 class="center light-blue-text">
+                Pure IPSec
+                </br>
+                RSA & CA
+              </h4>
+              <p class="light">
+                服务器地址 simonsmh.tk
+                <br>
+                用户名 simonsmh
+                <br>
+                密码 123456
+                <br>
+                p12证书密码 simonsmh
+                <br>
+                <a class="light" href="/CAKEY">
+                  也许用得上的证书
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="section">
+      </div>
+    </div>
+    <footer class="page-footer orange">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">
+              关于
+            </h5>
+            <p class="white-text">
+              扯淡的地方
+              <br>
+              <u>
+                <a class="white-text" href="https://github.com/simonsmh/www">
+                  本网站的GitHub源码地址
+                </a>
+              </u>
+              <form class="waves-effect waves-light orange hoverable" accept-charset="GBK"
+              action="https://shenghuo.alipay.com/send/payment/fill.htm" method="post"
+              target="_blank">
+                <input type="hidden" name="optEmail" value="15618959859" />
+                <input type="hidden" name="memo" value="如果你觉得我的代理对你有帮助，请我喝杯饮料吧，谢谢！" />
+                <input id="payAmount" type="hidden" name="payAmount" value="5" />
+                <input id="title" type="hidden" name="title" value="支持simonsmh服务器发展" />
+                <input type="image" name="pay" src="https://img.alipay.com/sys/personalprod/style/mc/btn-index.png"
+                value="转账" />
+              </form>
+            </p>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">
+              联系我
+            </h5>
+            <u>
+              <ul>
+                <li>
+                  <a class="white-text" href="https://plus.google.com/u/0/114021435604193997174/posts">
+                    Google+
+                  </a>
+                </li>
+                <li>
+                  <a class="white-text" href="https://twitter.com/MinhaoShi">
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  <a class="white-text" href="https://www.facebook.com/simonsmh">
+                    Facebook
+                  </a>
+                </li>
+                <li>
+                  <a class="white-text" href="http://weibo.com/u/2322746402">
+                    新浪微博
+                  </a>
+                </li>
+                <li>
+                  <a class="white-text" href="https://github.com/simonsmh">
+                    GitHub
+                  </a>
+                </li>
+                <li>
+                  <a class="white-text" href="http://steamcommunity.com/id/simonsmhsmh">
+                    Steam
+                  </a>
+                </li>
+                <li>
+                  <a class="white-text" href="http://space.bilibili.com/1353201#!/index">
+                    哔哩哔哩
+                  </a>
+                </li>
+              </ul>
+            </u>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">
+              友情链接
+            </h5>
+            <u>
+              <ul>
+                <li>
+                  <a class="white-text" href="http://sciwalk.ml/">
+                    Sciwalk志愿者服务队
+                  </a>
+                </li>
+                <li>
+                  <a class="white-text" href="http://stwc.tk/">
+                    上海追风团队
+                  </a>
+                </li>
+              </ul>
+            </u>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          Powered by simonsmh. Made by
+          <a class="orange-text text-lighten-3" href="http://materializecss.com">
+            Materialize
+          </a>
+        </div>
+      </div>
+    </footer>
+    <!-- Scripts-->
+    <script src="js/jquery-2.1.4.min.js">
+    </script>
+    <script src="js/materialize.js">
+    </script>
+    <script src="js/init.js">
+    </script>
+  </body>
+  
 </html>
