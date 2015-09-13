@@ -11,7 +11,7 @@ echo 选项1
 cd /var/www
 rm -rf /var/www/simonsmh.tk
 git clone https://github.com/simonsmh/simonsmh.tk.git
-cp -Rf /var/wwwfiles/links/. /www/simonsmh.tk
+cp -Rf /var/wwwfiles/links/. /var/www/simonsmh.tk
 elif [ "$M" = "2" ]
 then
 echo 选项2
