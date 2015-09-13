@@ -26,6 +26,7 @@ cd /var/www/simonsmh.tk
 rm -rf /var/www/simonsmh.tk/CAKEY
 rm -rf /var/www/simonsmh.tk/files
 rm -rf /var/www/simonsmh.tk/sfiles
+git config credential.helper store
 git add .
 git commit -m 'update'
 git push
