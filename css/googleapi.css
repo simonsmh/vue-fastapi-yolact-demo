@@ -17,6 +17,7 @@
   line-height: 1;
   text-transform: none;
   direction: ltr;
+  text-align:center;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
