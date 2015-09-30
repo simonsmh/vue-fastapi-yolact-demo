@@ -11,11 +11,9 @@
   font-style: normal;
   font-size: 24px;
   display: inline-block;
-  width: 1em;
-  height: 1em;
+  letter-spacing: normal;
   line-height: 1;
   text-transform: none;
-  letter-spacing: normal;
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
