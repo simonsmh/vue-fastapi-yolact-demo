@@ -16,8 +16,8 @@
   letter-spacing: normal;
   line-height: 1;
   text-transform: none;
-  word-wrap: normal;
-  white-space: nowrap;
+  word-wrap: break-word;
+  white-space: normal;
   direction: ltr;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
