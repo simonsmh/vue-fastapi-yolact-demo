@@ -19,7 +19,7 @@
 <body>
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="index.html" class="brand-logo">
+      <a id="logo-container" href="index.php" class="brand-logo">
         主页
       </a>
       <ul class="right hide-on-med-and-down">
