@@ -26,5 +26,7 @@ else
 echo 不选
 fi
 service nginx restart
+cd /var/www
+chmod -R 777 *.*
 echo 正在退出
 exit 0

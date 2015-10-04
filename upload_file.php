@@ -5,10 +5,10 @@
     }
   else
     {
-    echo "Upload: " . $_FILES["file"]["name"]["type"]["size"] . "<br />";
-    /*echo "Type: " . $_FILES["file"]["type"] . "<br />";
+    echo "Upload: " . $_FILES["file"]["name"] . "<br />";
+    echo "Type: " . $_FILES["file"]["type"] . "<br />";
     echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
-    echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";*/
+    echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
 
     if (file_exists("files/" . $_FILES["file"]["name"]))
       {
