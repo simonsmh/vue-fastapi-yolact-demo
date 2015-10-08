@@ -40,12 +40,12 @@
               <h5 class="center light-blue-text">
                 Shadowsocks
                 <br>
-                & SSR support
+                Support
               </h5>
               <p class="light">
                 服务器地址 simonsmh.tk
                 <br>
-                日本服务器端口 444
+                日本服务器端口 443
                 <br>
                 美国服务器端口 543
                 <br>
@@ -53,7 +53,7 @@
                 <br>
                 密码 simonsmh
                 <br>
-                可选择开启SSR专有加密
+                
               </p>
             </div>
           </div>
@@ -88,7 +88,7 @@
               <h5 class="center light-blue-text">
                 ShadowVPN
                 </br>
-                Beta
+                Beta (Close)
               </h5>
               <p class="light">
                 服务器地址 simonsmh.tk
