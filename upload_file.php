@@ -1,3 +1,10 @@
+<html class="js" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv=refresh content="5;url=files.php">
+<meta name="viewport" content="width=device-width">
+</head>
+<body><a href="files.php">../</a></br>
 <?php
   if ($_FILES["file"]["error"] > 0)
     {
@@ -22,3 +29,4 @@
       }
     }
 ?>
+</body>
