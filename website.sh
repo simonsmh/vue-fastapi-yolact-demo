@@ -4,6 +4,9 @@ echo 2.上传网页
 echo Please choose:
 read  M
 
+cd /var/www
+chmod -R 777 *.*
+
 if [ "$M" = "1" ]
 then
 echo 选项1
