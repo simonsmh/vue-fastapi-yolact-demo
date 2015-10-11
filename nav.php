@@ -38,11 +38,11 @@
       Openwrt
     </a>
   </li>
-  <li>
+  <!-- <li>
     <a href="info.php" class="waves-effect black-text">
       代理相关
     </a>
-  </li>
+  </li> -->
 </ul>
 <ul id="nav-mobile" class="side-nav">
   <li>
@@ -75,11 +75,11 @@
       Openwrt
     </a>
   </li>
-  <li>
+  <!-- <li>
     <a href="info.php" class="waves-effect">
       代理相关
     </a>
-  </li>
+  </li> -->
 </ul>
 <a href="#" data-activates="nav-mobile" class="button-collapse">
   <i class="mdi-navigation-menu">

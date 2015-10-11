@@ -104,7 +104,10 @@
   </div>
   <div class="footer-copyright">
     <div class="container">
-      Powered by
+     <a class="orange-text text-lighten-3" href="info.php">
+        Powered
+      </a>
+       by
       <a class="orange-text text-lighten-3" href="sfiles/">
         simonsmh
       </a>
@@ -112,6 +115,7 @@
       <a class="orange-text text-lighten-3" href="http://materializecss.com">
         Materialize
       </a>
+      . 
     </div>
   </div>
 </footer>
