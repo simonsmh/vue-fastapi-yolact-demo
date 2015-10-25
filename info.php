@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <?php include( "header.php"); ?>
 <body>
-  <nav class="light-blue lighten-1" role="navigation">
+  <nav class="light-blue darken-1" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="info.php" class="brand-logo">
         代理相关
