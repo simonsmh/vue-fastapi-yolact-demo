@@ -41,7 +41,7 @@
                 <div class="row">
                   <div class="col s12 m4">
                     <div class="icon-block">
-                      <h2 class="center light-blue-text">
+                      <h2 class="center blue-text">
                         <i class="material-icons">
                           &#xE3E7;
                         </i>
@@ -56,7 +56,7 @@
                   </div>
                   <div class="col s12 m4">
                     <div class="icon-block">
-                      <h2 class="center light-blue-text">
+                      <h2 class="center blue-text">
                         <i class="material-icons">
                           &#xE7EF;
                         </i>
@@ -71,7 +71,7 @@
                   </div>
                   <div class="col s12 m4">
                     <div class="icon-block">
-                      <h2 class="center light-blue-text">
+                      <h2 class="center blue-text">
                         <i class="material-icons">
                           &#xE8B8;
                         </i>
