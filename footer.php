@@ -111,11 +111,15 @@
       <a class="orange-text text-lighten-3" href="sfiles/">
         simonsmh
       </a>
-      . Made by
+      . CSS from
       <a class="orange-text text-lighten-3" href="http://materializecss.com">
         Materialize
       </a>
-      . 
+      . Icons from
+      <a class="orange-text text-lighten-3" href="https://www.google.com/design/icons/">
+        Google
+      </a>
+      .
     </div>
   </div>
 </footer>
