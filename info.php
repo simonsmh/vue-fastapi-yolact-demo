@@ -53,7 +53,6 @@
                 <br>
                 密码 simonsmh
                 <br>
-                
               </p>
             </div>
           </div>
@@ -62,24 +61,17 @@
               <h5 class="center light-blue-text">
                 Pure IPsec
                 </br>
-                L2TP/IPSec
+                By Racoon
               </h5>
               <p class="light">
                 服务器地址 simonsmh.tk
                 <br>
                 用户名 simonsmh
                 <br>
-                密码 123456
+                密码 simonsmh
                 <br>
                 预共享密钥 simonsmh
                 <br>
-                L2TP用户名 test[1-9]
-                <br>
-                p12证书密码 simonsmh
-                <br>
-                <a class="light" href="/CAKEY">
-                  也许用得上的证书
-                </a>
               </p>
             </div>
           </div>
@@ -97,7 +89,7 @@
                 <br>
                 密码 simonsmh
                 <br>
-                本地IP 10.7.0.2-254
+                本地IP 10.1.2.200-254
                 <br>
                 MTU 1440
               </p>
