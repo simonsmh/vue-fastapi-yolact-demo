@@ -5,7 +5,7 @@
     <body>
       <nav class="light-blue darken-1" role="navigation">
         <div class="nav-wrapper container">
-          <a id="logo-container" href="files.php" class="brand-logo">
+          <a id="logo-container" href="sfiles.php" class="brand-logo">
             私密文件
           </a>
           <?php include( "nav.php"); ?>
