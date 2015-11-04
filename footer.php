@@ -108,7 +108,7 @@
         Powered
       </a>
        by
-      <a class="orange-text text-lighten-3" href="sfiles/">
+      <a class="orange-text text-lighten-3" href="sfiles.php">
         simonsmh
       </a>
       . CSS from
