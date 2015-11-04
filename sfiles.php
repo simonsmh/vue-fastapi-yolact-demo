@@ -32,7 +32,7 @@
             </div>
             <div class="container">
               <div class="section">
-                <form id="file" name="file" action="upload_file.php" method="post" enctype="multipart/form-data">
+                <form id="file" name="file" action="upload_sfile.php" method="post" enctype="multipart/form-data">
                   <div class="file-field input-field">
                     <div class="btn orange">
                       <span>
@@ -50,9 +50,9 @@
                   </div>
                 </form>
                 <br>
-                <iframe src="files/" width="100%" height="500" frameborder="0">
+                <iframe src="sfiles/" width="100%" height="500" frameborder="0">
                   <p>
-                    visit http://simonsmh.tk/files/
+                    visit http://simonsmh.tk/sfiles/
                   </p>
                 </iframe>
               </div>
