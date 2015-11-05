@@ -50,9 +50,11 @@ EOT;
 }}
 ?>
 <br>
-<h5 class="header col s12 light">
- 评论撰写处
+<div class="row">
+<h5 class="col s12 light">
+ 留言撰写处
 </h5>
+</div>
 <br>
 <div class="row">
   <form class="col s12" action="add_review.php" method="post">
@@ -71,7 +73,7 @@ EOT;
       </div>
     </div>
     <input onclick="submit()" type="checkbox" class="filled-in" id="filled-in-box">
-    <label for="filled-in-box">&nbsp;&nbsp;&nbsp;确认并上传</label>
+    <label for="filled-in-box">&nbsp;&nbsp;确认并上传</label>
   </form>
 </div>
 </div>
