@@ -14,6 +14,11 @@
     </a>
   </li>
   <li>
+    <a href="review.php" class="waves-effect black-text">
+      留言板
+    </a>
+  </li>
+  <li>
     <a href="files.php" class="waves-effect black-text">
       文件储存
     </a>
@@ -34,7 +39,7 @@
     </a>
   </li>
   <li>
-    <a href="http://192.168.199.1" class="waves-effect black-text">
+    <a href="http://192.168.199.1/" class="waves-effect black-text">
       Openwrt
     </a>
   </li>
@@ -51,17 +56,22 @@
     </a>
   </li>
   <li>
+    <a href="review.php" class="waves-effect">
+      留言板
+    </a>
+  </li>
+  <li>
     <a href="files.php" class="waves-effect">
       文件储存
     </a>
   </li>
   <li>
-    <a href="phpMyAdmin/" class="waves-effect black-text">
+    <a href="phpMyAdmin/" class="waves-effect">
       phpMyAdmin
     </a>
   </li>
   <li>
-    <a href="http://tieba.simonsmh.tk/" class="waves-effect black-text">
+    <a href="http://tieba.simonsmh.tk/" class="waves-effect">
       贴吧云签到
     </a>
   </li>
@@ -71,7 +81,7 @@
     </a>
   </li>
   <li>
-    <a href="http://192.168.199.1" class="waves-effect">
+    <a href="http://192.168.199.1/" class="waves-effect">
       Openwrt
     </a>
   </li>
