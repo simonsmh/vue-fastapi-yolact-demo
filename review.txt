@@ -1,2 +1,2 @@
-用户: test 时间： 2015-11-05 15:27 <br> 留言： 哈哈 <br> 
+用户: Warning 时间： 2015-11-06 12:08 <br> 留言： &lt;script language="JavaScript"&gt;alert("helloword!");&lt;/script&gt;<br/>&lt;?php ?&gt;<br/>NOT WORKING! HAHA! <br> 
  
