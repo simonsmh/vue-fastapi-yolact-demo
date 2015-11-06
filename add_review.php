@@ -22,7 +22,7 @@ $content = preg_replace("/\r/","<br/>",$content);
 $content = preg_replace("/\n/","<br/>",$content);
 $txt = fopen('review.txt','a+');
 $hh = "\r\n";
-$zc = "用户: $user 时间: $time <br> 留言: <br> $content <br> $hh ";
+$zc = "用户: $user <br> 时间: $time <br> 留言: <br> $content <br> $hh ";
 $write = fwrite($txt,$zc);
 fclose($txt);
 }
