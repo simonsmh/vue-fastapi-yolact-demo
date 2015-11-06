@@ -24,6 +24,11 @@
     </a>
   </li>
   <li>
+    <a href="source.php" class="waves-effect black-text">
+      源码浏览
+    </a>
+  </li>
+  <li>
     <a href="phpMyAdmin/" class="waves-effect black-text">
       phpMA
     </a>
@@ -63,6 +68,11 @@
   <li>
     <a href="files.php" class="waves-effect">
       文件储存
+    </a>
+  </li>
+  <li>
+    <a href="source.php" class="waves-effect">
+      源码浏览器
     </a>
   </li>
   <li>
