@@ -52,7 +52,20 @@
     </form>
 </div>
 
-
+<div class="row">
+  <span class="col s12 light">
+    INFO:
+    <br>
+    <a href="http://openwrt.simonsmh.tk/">
+      http://openwrt.simonsmh.tk/
+        </a>
+        现在成为了
+    <a href="http://downloads.openwrt.org/">
+      http://downloads.openwrt.org/
+        </a>
+       的镜像站
+  </span>
+</div>
 
 </div>
 </div>
