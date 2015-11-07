@@ -16,17 +16,12 @@
                 <h2 class="header center orange-text">
                   &nbsp;simonsmh
                   </br>
-                  个人页面
+                  主页
                 </h2>
                 <div class="row center">
                   <h5 class="header col s12 light">
                     快来与我一起发现更加广阔的互联网世界吧
                   </h5>
-                </div>
-                <div class="row center">
-                  <a href="http://blog.simonsmh.tk/" id="download-button" class="btn-large waves-effect waves-light orange">
-                    START:DASH!!
-                  </a>
                 </div>
                 <div class="progress">
                   <div class="indeterminate blue">
@@ -36,56 +31,50 @@
               </div>
             </div>
             <div class="container">
-              <div class="section">
-                <!-- Icon Section -->
-                <div class="row">
-                  <div class="col s12 m4">
-                    <div class="icon-block">
-                      <h2 class="center blue-text">
-                        <i class="material-icons">
-                          &#xE3E7;
-                        </i>
-                      </h2>
-                      <h5 class="center">
-                        速度提升
-                      </h5>
+              <div class="row center">
+                <h5 class="header col s12 light">
+                 下面是simonsmh.tk运行的服务
+                </h5>
+               </div>
+              <div class="row">
+                <div class="col s12 m6 center">
+                  <div class="card hoverable waves-effect waves-light orange center">
+                    <div class="card-content white-text">
+                      <span class="card-title white-text">
+                        <i class="material-icons white-text">
+                         &#xE0BF;
+                        </i>Simon的博客
+                      </span>
                       <p class="light">
-                        simonsmh.tk运用世界先进的代理程序，更加快速（都不能满速真是low），稳定（3天一小炸，5天一大炸），安全，可靠。
+                        基于WordPress和MaterialWP主题的个人博客。
                       </p>
                     </div>
-                  </div>
-                  <div class="col s12 m4">
-                    <div class="icon-block">
-                      <h2 class="center blue-text">
-                        <i class="material-icons">
-                          &#xE7EF;
-                        </i>
-                      </h2>
-                      <h5 class="center">
-                        开源支持
-                      </h5>
-                      <p class="light">
-                        感谢@clowwindy为首的团队在开源开发平台GitHub无私贡献shadowsocks代码。纪念@clowwindy（被抓去喝茶真是惨兮兮）。
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col s12 m4">
-                    <div class="icon-block">
-                      <h2 class="center blue-text">
-                        <i class="material-icons">
-                          &#xE8B8;
-                        </i>
-                      </h2>
-                      <h5 class="center">
-                        设置快捷
-                      </h5>
-                      <p class="light">
-                        simonsmh.tk支持多种代理模式，支持所有平台（包括1%），优秀的兼容性让你随时随地接入国际互联网。
-                      </p>
+                    <div class="card-action white-text">
+                      <u><a class="white-text" href="http://blog.simonsmh.tk/">点这里去我的博客</a></uu>
                     </div>
                   </div>
                 </div>
+                <div class="col s12 m6 center">
+                  <div class="card hoverable waves-effect waves-light orange center">
+                    <div class="card-content white-text">
+                      <span class="card-title white-text">
+                        <i class="material-icons white-text">
+                         &#xE7EF;
+                        </i>贴吧云签到
+                      </span>
+                      <p class="light">
+                        由StusGame团队制作的贴吧云签到服务器软件。
+                      </p>
+                    </div>
+                    <div class="card-action">
+                      <u><a class="white-text" href="http://tieba.simonsmh.tk/">点这里去贴吧云签到</a></u>
+                    </div>
+                  </div>
+                </div>
+
               </div>
+            </div>
+          </div>
               <br>
               <br>
               <div class="section">

@@ -1,7 +1,7 @@
 <footer class="page-footer orange">
   <div class="container">
     <div class="row">
-      <div class="col l3 s12">
+      <div class="col l3 s12 center">
         <h5 class="white-text">
           关于
         </h5>
@@ -26,7 +26,7 @@
           </form>
         </p>
       </div>
-      <div class="col l3 s12">
+      <div class="col l3 s12 center">
         <h5 class="white-text">
           二维码
         </h5>
@@ -37,7 +37,7 @@
         </p>
         <img src="qrcode.png">
       </div>
-      <div class="col l3 s12">
+      <div class="col l3 s12 center">
         <h5 class="white-text">
           联系我
         </h5>
@@ -81,7 +81,7 @@
           </ul>
         </u>
       </div>
-      <div class="col l3 s12">
+      <div class="col l3 s12 center">
         <h5 class="white-text">
           友情链接
         </h5>
