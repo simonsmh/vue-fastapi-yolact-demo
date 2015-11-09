@@ -1,0 +1,29 @@
+#wiki-chinese and wikim-chinese
+server {
+listen 80;
+listen [::]:80;
+server_name wiki.simonsmh.tk;
+location /{
+proxy_redirect https://zh.wikipedia.org/ /;
+proxy_pass https://zh.wikipedia.org;
+proxy_set_header Accept-Encoding "";
+subs_filter zh.wikipedia.org wiki.simonsmh.tk r;
+subs_filter zh.m.wikipedia.org wikim.simonsmh.tk r;
+subs_filter https:// http:// r;
+sub_filter_once off;
+}
+}
+server {
+listen 80;
+listen [::]:80;
+server_name wikim.simonsmh.tk;
+location /{
+proxy_redirect https://zh.m.wikipedia.org/ /;
+proxy_pass https://zh.m.wikipedia.org;
+proxy_set_header Accept-Encoding "";
+subs_filter zh.wikipedia.org wiki.simonsmh.tk r;
+subs_filter zh.m.wikipedia.org wikim.simonsmh.tk r;
+subs_filter https:// http:// r;
+sub_filter_once off;
+}
+}

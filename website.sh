@@ -4,6 +4,7 @@ echo 2.上传网页
 echo Please choose:
 read  M
 
+yes|cp -fr /etc/nginx/nginx.conf /var/www/simonsmh.tk/nginx.conf
 cd /var/www
 chmod -R 777 *.*
 
