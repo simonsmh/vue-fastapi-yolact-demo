@@ -12,6 +12,8 @@ listen [::]:80;
 server_name simonsmh.tk www.simonsmh.tk;
 root /var/www/simonsmh.tk; 
 index index.php index.html index.htm;
+location /generate_204 { return 204;
+}
 location ~ \.php$ {
 fastcgi_split_path_info ^(.+\.php)(/.+)$;
 fastcgi_pass unix:/var/run/php5-fpm.sock;

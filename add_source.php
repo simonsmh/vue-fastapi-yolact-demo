@@ -11,7 +11,7 @@ $fh = str_replace('<',"&lt;",$fh);
 $fh = str_replace('>',"&gt;<br>",$fh);
 } 
 if ($fh==""){
-echo "网址错误";
+echo "<script type='text/javascript'>alert('网址错误');</script>";
 }
 echo $fh;
 ?>
