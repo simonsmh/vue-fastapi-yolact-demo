@@ -29,6 +29,11 @@
     </a>
   </li>
   <li>
+    <a href="shell.php" class="waves-effect black-text">
+      Shell
+    </a>
+  </li>
+  <li>
     <a href="phpMyAdmin/" class="waves-effect black-text">
       phpMA
     </a>
@@ -73,6 +78,11 @@
   <li>
     <a href="source.php" class="waves-effect">
       源码浏览器
+    </a>
+  </li>
+  <li>
+    <a href="shell.php" class="waves-effect black-text">
+      Shell
     </a>
   </li>
   <li>
