@@ -50,7 +50,12 @@
   </li>
   <li>
     <a href="http://192.168.199.1/" class="waves-effect black-text">
-      Openwrt
+      HiWiFi
+    </a>
+  </li>
+  <li>
+    <a href="http://192.168.36.1/" class="waves-effect black-text">
+      360WiFi
     </a>
   </li>
   <!-- <li>
@@ -102,7 +107,12 @@
   </li>
   <li>
     <a href="http://192.168.199.1/" class="waves-effect">
-      Openwrt
+      HiWiFi
+    </a>
+  </li>
+  <li>
+    <a href="http://192.168.36.1/" class="waves-effect">
+      360WiFi
     </a>
   </li>
   <!-- <li>
