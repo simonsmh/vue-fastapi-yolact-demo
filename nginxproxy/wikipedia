@@ -47,11 +47,11 @@ listen 80;
 listen [::]:80;
 server_name wikijp.simonsmh.tk;
 location /{
-proxy_redirect https://jp.wikipedia.org/ /;
-proxy_pass https://jp.wikipedia.org;
+proxy_redirect https://ja.wikipedia.org/ /;
+proxy_pass https://ja.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter jp.wikipedia.org wikijp.simonsmh.tk r;
-#subs_filter jp.m.wikipedia.org wikijpm.simonsmh.tk r;
+subs_filter ja.wikipedia.org wikijp.simonsmh.tk r;
+#subs_filter ja.m.wikipedia.org wikijpm.simonsmh.tk r;
 subs_filter https:// http:// r;
 sub_filter_once off;
 }
