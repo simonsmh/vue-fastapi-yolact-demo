@@ -12,14 +12,21 @@ listen [::]:80;
 server_name simonsmh.tk www.simonsmh.tk;
 root /var/www/simonsmh.tk; 
 index index.php index.html index.htm;
-location /generate_204 { return 204;
+#To remove Android network [!]
+location /generate_204 {
+return 204;
+}
+#Disable upload&run .php files
+location ~ ^/(files|sfiles)/.*\.php$
+{
+deny all; 
 }
 location ~ \.php$ {
 fastcgi_split_path_info ^(.+\.php)(/.+)$;
 fastcgi_pass unix:/var/run/php5-fpm.sock;
 fastcgi_index index.php;
 include fastcgi_params;
-fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;	
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 }
 }
 
