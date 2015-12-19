@@ -118,10 +118,10 @@
                       <span class="card-title white-text">
                         <i class="material-icons white-text">
                          &#xE86F;
-                        </i>源码浏览器
+                        </i>镜像源&源代码浏览器
                       </span>
                       <p class="light">
-                        基于PHP的源码浏览器。
+                        基于PHP的镜像源以及功能有限的源代码浏览器。
                       </p>
                     </div>
                     <div class="card-action">

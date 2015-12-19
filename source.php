@@ -5,7 +5,7 @@
   <nav class="light-blue darken-1" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="source.php" class="brand-logo">
-        源码浏览
+        镜像源
       </a>
       <?php include( "nav.php"); ?>
     <div class="section no-pad-bot" id="index-banner">
@@ -15,11 +15,11 @@
         <h2 class="header center orange-text">
           &nbsp;simonsmh
           </br>
-          源码浏览
+          镜像源
         </h2>
         <div class="row center">
           <h5 class="header col s12 light">
-            仅可浏览，不可使用！
+            附送在线源码浏览器一枚！
           </h5>
         </div>
         <div class="progress">
@@ -64,6 +64,17 @@
       http://downloads.openwrt.org/
         </a>
        的镜像站
+  </span>
+  <span class="col s12 light">
+    <br>
+    <a href="http://wiki.simonsmh.tk/">
+      http://wiki.simonsmh.tk/
+        </a>
+        现在成为了
+    <a href="http://www.wikipedia.org/">
+      http://www.wikipedia.org/
+        </a>
+       的镜像站(仅提供中日英三国语言)
   </span>
 </div>
 
