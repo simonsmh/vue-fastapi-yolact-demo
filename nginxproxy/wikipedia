@@ -1,58 +1,119 @@
+#wikipedia welcome page
+server {
+listen 80;
+listen [::]:80;
+server_name wiki.simonsmh.tk www.wiki.simonsmh.tk;
+location /{
+proxy_redirect https://www.wikipedia.org/ /;
+proxy_redirect http://www.wikipedia.org/ /;
+proxy_pass https://www.wikipedia.org;
+proxy_set_header Accept-Encoding "";
+subs_filter https:// http:// r;
+subs_filter www.wikipedia.org wiki.simonsmh.tk r;
+#fit below supported languages
+subs_filter zh.wikipedia.org zh.wiki.simonsmh.tk r;
+subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
+subs_filter en.wikipedia.org en.wiki.simonsmh.tk r;
+subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
+subs_filter ja.wikipedia.org ja.wiki.simonsmh.tk r;
+subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
+sub_filter_once off;
+}
+}
+
 #wiki-chinese and wikim-chinese
 server {
 listen 80;
 listen [::]:80;
-server_name wiki.simonsmh.tk wikicn.simonsmh.tk;
+server_name zh.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://zh.wikipedia.org/ /;
+proxy_redirect http://zh.wikipedia.org/ /;
 proxy_pass https://zh.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter zh.wikipedia.org wiki.simonsmh.tk r;
-subs_filter zh.m.wikipedia.org wikim.simonsmh.tk r;
 subs_filter https:// http:// r;
+subs_filter zh.wikipedia.org zh.wiki.simonsmh.tk r;
+subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
 sub_filter_once off;
 }
 }
 server {
 listen 80;
 listen [::]:80;
-server_name wikim.simonsmh.tk;
+server_name zh.m.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://zh.m.wikipedia.org/ /;
+proxy_redirect http://zh.m.wikipedia.org/ /;
 proxy_pass https://zh.m.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter zh.wikipedia.org wiki.simonsmh.tk r;
-subs_filter zh.m.wikipedia.org wikim.simonsmh.tk r;
 subs_filter https:// http:// r;
+subs_filter zh.wikipedia.org zh.wiki.simonsmh.tk r;
+subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
 sub_filter_once off;
 }
 }
-#wiki-english
+
+#wiki-other language
+#wiki-english and wikim-english
 server {
 listen 80;
 listen [::]:80;
-server_name wikien.simonsmh.tk;
+server_name en.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://en.wikipedia.org/ /;
+proxy_redirect http://en.wikipedia.org/ /;
 proxy_pass https://en.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter en.wikipedia.org wikien.simonsmh.tk r;
-#subs_filter en.m.wikipedia.org wikienm.simonsmh.tk r;
 subs_filter https:// http:// r;
+subs_filter en.wikipedia.org en.wiki.simonsmh.tk r;
+subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
 sub_filter_once off;
 }
 }
 server {
 listen 80;
 listen [::]:80;
-server_name wikijp.simonsmh.tk;
+server_name en.m.wiki.simonsmh.tk;
+location /{
+proxy_redirect https://en.m.wikipedia.org/ /;
+proxy_redirect http://en.m.wikipedia.org/ /;
+proxy_pass https://en.m.wikipedia.org;
+proxy_set_header Accept-Encoding "";
+subs_filter https:// http:// r;
+subs_filter en.wikipedia.org en.wiki.simonsmh.tk r;
+subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
+sub_filter_once off;
+}
+}
+
+#wiki-japan and wikim-japan
+server {
+listen 80;
+listen [::]:80;
+server_name ja.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://ja.wikipedia.org/ /;
+proxy_redirect http://ja.wikipedia.org/ /;
 proxy_pass https://ja.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter ja.wikipedia.org wikijp.simonsmh.tk r;
-#subs_filter ja.m.wikipedia.org wikijpm.simonsmh.tk r;
 subs_filter https:// http:// r;
+subs_filter ja.wikipedia.org ja.wiki.simonsmh.tk r;
+subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
+sub_filter_once off;
+}
+}
+server {
+listen 80;
+listen [::]:80;
+server_name ja.m.wiki.simonsmh.tk;
+location /{
+proxy_redirect https://ja.m.wikipedia.org/ /;
+proxy_redirect http://ja.m.wikipedia.org/ /;
+proxy_pass https://ja.m.wikipedia.org;
+proxy_set_header Accept-Encoding "";
+subs_filter https:// http:// r;
+subs_filter ja.wikipedia.org ja.wiki.simonsmh.tk r;
+subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
 sub_filter_once off;
 }
 }

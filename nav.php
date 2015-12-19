@@ -44,6 +44,11 @@
     </a>
   </li>
   <li>
+    <a href="http://px.simonsmh.tk/" class="waves-effect black-text">
+      Glype
+    </a>
+  </li>
+  <li>
     <a href="http://192.168.1.1/" class="waves-effect black-text">
       Modem
     </a>
@@ -98,6 +103,11 @@
   <li>
     <a href="http://tieba.simonsmh.tk/" class="waves-effect">
       贴吧云签到
+    </a>
+  </li>
+  <li>
+    <a href="http://px.simonsmh.tk/" class="waves-effect">
+      Glype
     </a>
   </li>
   <li>

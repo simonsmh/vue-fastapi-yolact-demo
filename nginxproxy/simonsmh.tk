@@ -36,7 +36,7 @@ listen 80;
 listen [::]:80;
 root /var/www/blog.simonsmh.tk;
 index index.php index.html index.htm;
-server_name blog.simonsmh.tk www.blog.simonsmh.tk;
+server_name blog.simonsmh.tk;
 location / {
 include wordpress.conf;
 }
@@ -55,7 +55,26 @@ listen 80;
 listen [::]:80;
 root /var/www/tieba.simonsmh.tk;
 index index.php index.html index.htm;
-server_name tieba.simonsmh.tk www.tieba.simonsmh.tk;
+server_name tieba.simonsmh.tk;
+location / {
+include wordpress.conf;
+}
+location ~ \.php$ {
+fastcgi_split_path_info ^(.+\.php)(/.+)$;
+fastcgi_pass unix:/var/run/php5-fpm.sock;
+fastcgi_index index.php;
+include fastcgi_params;
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+}
+}
+
+#glype proxy
+server {
+listen 80;
+listen [::]:80;
+root /var/www/px.simonsmh.tk;
+index index.php;
+server_name px.simonsmh.tk;
 location / {
 include wordpress.conf;
 }
