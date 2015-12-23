@@ -1,4 +1,4 @@
-#ban ip
+#guide domain which is no used
 server {
 listen 80 default_server;
 listen [::]:80 default_server;
@@ -75,9 +75,6 @@ listen [::]:80;
 root /var/www/px.simonsmh.tk;
 index index.php;
 server_name px.simonsmh.tk;
-location / {
-include wordpress.conf;
-}
 location ~ \.php$ {
 fastcgi_split_path_info ^(.+\.php)(/.+)$;
 fastcgi_pass unix:/var/run/php5-fpm.sock;
