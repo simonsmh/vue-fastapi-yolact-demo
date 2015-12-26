@@ -26,7 +26,7 @@
  <body> 
   <nav class="light-blue darken-1" role="navigation"> 
    <div class="nav-wrapper container"> 
-    <a id="logo-container" href="index.php" class="brand-logo"> Glupy </a> 
+    <a id="logo-container" href="index.php" class="brand-logo"> glype </a> 
      <a href="http://simonsmh.tk" onclick="location='http://simonsmh.tk'" class="button-collapse top-nav hide-on-large-only"><i class="large material-icons">&#xE5C4;</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="http://simonsmh.tk">返回主站</a></li>
@@ -37,7 +37,7 @@
    <div class="container"> 
     <br /> 
     <br /> 
-    <h2 class="header center orange-text"> &nbsp;simonsmh <br /> Glupy </h2> 
+    <h2 class="header center orange-text"> &nbsp;simonsmh <br /> glype </h2> 
     <div class="row center"> 
      <h5 class="header col s12 light"> 科学上网 </h5> 
     </div> 
