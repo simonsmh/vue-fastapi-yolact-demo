@@ -4,19 +4,19 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
   <meta name="theme-color" content="#039be5">
-  <link rel="shortcut icon" type="image/x-icon" href="themes/materialCSS/favicon.ico" media="screen" />
+  <link rel="shortcut icon" type="image/x-icon" href="http://simonsmh.tk/favicon.ico" media="screen" />
   <title>
     simonsmh - server Website
   </title>
   <!-- CSS -->
-  <link href="themes/materialCSS/css/googleapi.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="themes/materialCSS/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="themes/materialCSS/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <script src="themes/materialCSS/js/jquery-2.1.4.min.js">
+  <link href="http://simonsmh.tk/css/googleapi.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="http://simonsmh.tk/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="http://simonsmh.tk/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <script src="http://simonsmh.tk/js/jquery-2.1.4.min.js">
   </script>
-  <script src="themes/materialCSS/js/materialize.js">
+  <script src="http://simonsmh.tk/js/materialize.js">
   </script>
-  <script src="themes/materialCSS/js/init.js">
+  <script src="http://simonsmh.tk/js/init.js">
   </script>
   <script>
   $('#proxyoptions label').tooltip();
