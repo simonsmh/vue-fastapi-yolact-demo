@@ -104,10 +104,7 @@
   </div>
   <div class="footer-copyright">
     <div class="container">
-     <a class="orange-text text-lighten-3" href="info.php">
-        Powered
-      </a>
-       by
+      Powered by
       <a class="orange-text text-lighten-3" href="sfiles.php">
         simonsmh
       </a>
