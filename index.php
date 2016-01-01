@@ -22,7 +22,7 @@
    <div class="container"> 
     <br /> 
     <br /> 
-    <h2 class="header center orange-text"> &nbsp;simonsmh <br /> 主页 </h2> 
+    <h2 class="header center orange-text"> &nbsp;simonsmh <br /> 快生 </h2> 
     <div class="row center"> 
      <h5 class="header col s12 light"> 快来与我一起发现更加广阔的互联网世界吧 </h5> 
     </div> 
