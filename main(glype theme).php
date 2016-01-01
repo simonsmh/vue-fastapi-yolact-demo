@@ -58,7 +58,7 @@
 <label class="active" for="website">输入网址</label> 
 </div>
 <div class="row center">
-<button class="btn-large waves-effect orange" onclick="submit()" type="submit" name="action">开始浏览<i class="material-icons right">send</i> </button> 
+<button class="btn-large waves-effect waves-light orange" onclick="submit()" type="submit" name="action">开始浏览<i class="material-icons right">send</i> </button> 
 </div>
 <h4 class="center">选项</h4>
 <div class="row">
