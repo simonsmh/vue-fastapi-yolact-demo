@@ -49,7 +49,7 @@
      </form> 
     </div> 
     <div class="row"> 
-     <span class="col s12 light"> INFO: <br /> <a href="http://openwrt.simonsmh.tk/"> http://openwrt.simonsmh.tk/ </a> 现在成为了 <a href="http://downloads.openwrt.org/"> http://downloads.openwrt.org/ </a> 的镜像站 </span> 
+     <span class="col s12 light"> INFO: <br /> <a href="http://openwrt.simonsmh.tk/"> http://openwrt.simonsmh.tk/ </a> 现在成为了 <a href="http://downloads.openwrt.org/"> http://downloads.openwrt.org/ </a> 的镜像站 </br> 快速执行替换代码： </br> sed -i 's/downloads.openwrt.org/openwrt.simonsmh.tk/g' /etc/opkg.conf </span> 
      <span class="col s12 light"> <br /> <a href="http://wiki.simonsmh.tk/"> http://wiki.simonsmh.tk/ </a> 现在成为了 <a href="http://www.wikipedia.org/"> http://www.wikipedia.org/ </a> 的镜像站(仅提供中日英三国语言) </span> 
     </div> 
    </div> 
