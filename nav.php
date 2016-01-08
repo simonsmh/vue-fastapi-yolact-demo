@@ -49,12 +49,7 @@
     </a>
   </li>
   <li>
-    <a href="http://192.168.36.1/" class="waves-effect black-text">
+    <a href="http://192.168.199.2/" class="waves-effect black-text">
       360WiFi
     </a>
   </li>
-  <!-- <li>
-    <a href="info.php" class="waves-effect black-text">
-      代理相关
-    </a>
-  </li> -->
