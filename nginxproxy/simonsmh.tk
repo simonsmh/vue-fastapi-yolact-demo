@@ -3,14 +3,12 @@
 #guide domain which is no used
 server {
 listen 80 default_server;
-listen [::]:80 default_server;
 rewrite ^ http://simonsmh.tk$request_uri?;
 }
 
 #defalt
 server {
 listen 80;
-listen [::]:80;
 server_name simonsmh.tk www.simonsmh.tk;
 root /var/www/simonsmh.tk; 
 index index.php index.html index.htm;
@@ -39,7 +37,6 @@ fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 #blog.simonsmh.tk
 server {
 listen 80;
-listen [::]:80;
 root /var/www/blog.simonsmh.tk;
 index index.php index.html index.htm;
 server_name blog.simonsmh.tk;
@@ -58,7 +55,6 @@ fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 #tieba
 server {
 listen 80;
-listen [::]:80;
 root /var/www/tieba.simonsmh.tk;
 index index.php index.html index.htm;
 server_name tieba.simonsmh.tk;
@@ -77,7 +73,6 @@ fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 #glype proxy
 server {
 listen 80;
-listen [::]:80;
 root /var/www/px.simonsmh.tk;
 index index.php;
 server_name px.simonsmh.tk;
