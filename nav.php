@@ -38,18 +38,3 @@
       Glype
     </a>
   </li>
-  <li>
-    <a href="http://192.168.1.1/" class="waves-effect black-text">
-      Modem
-    </a>
-  </li>
-  <li>
-    <a href="http://192.168.199.1/" class="waves-effect black-text">
-      HiWiFi
-    </a>
-  </li>
-  <li>
-    <a href="http://192.168.199.2/" class="waves-effect black-text">
-      360WiFi
-    </a>
-  </li>
