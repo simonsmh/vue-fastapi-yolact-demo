@@ -29,10 +29,10 @@ git commit -m 'update'
 git push
 
 else
-echo 不�?
+echo 不选
 fi
 service nginx restart
 cd /var/www
 chmod -R 777 *.*
-echo 正在退�?
+echo 正在退出
 exit 0
