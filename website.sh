@@ -5,8 +5,10 @@ echo Please choose:
 read  M
 
 yes|cp -fr /etc/nginx/nginx.conf /var/www/simonsmh.tk/nginx.conf
+cd /var/wwwfiles
+chmod -R 777 *
 cd /var/www
-chmod -R 777 *.*
+chmod -R 777 *
 
 if [ "$M" = "1" ]
 then
@@ -27,10 +29,10 @@ git commit -m 'update'
 git push
 
 else
-echo 不选
+echo 不�?
 fi
 service nginx restart
 cd /var/www
 chmod -R 777 *.*
-echo 正在退出
+echo 正在退�?
 exit 0
