@@ -103,3 +103,15 @@ subs_filter ja.wikipedia.org ja.wiki.simonsmh.tk r;
 subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
 }
 }
+
+#openwrt
+server {
+listen 80;
+server_name openwrt.simonsmh.tk;
+location /{
+proxy_redirect http://downloads.openwrt.org/ /;
+proxy_pass http://downloads.openwrt.org;
+proxy_set_header Accept-Encoding "";
+subs_filter downloads.openwrt.org openwrt.simonsmh.tk;
+}
+}

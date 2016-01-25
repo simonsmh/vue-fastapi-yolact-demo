@@ -15,7 +15,7 @@
   </li>
   <li>
     <a href="source.php" class="waves-effect black-text">
-      源码浏览
+      杂货铺
     </a>
   </li>
   <li>
@@ -34,7 +34,7 @@
     </a>
   </li>
   <li>
-    <a href="http://px.simonsmh.tk/" class="waves-effect black-text">
+    <a href="http://proxy.simonsmh.tk/" class="waves-effect black-text">
       Glype
     </a>
   </li>
