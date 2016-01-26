@@ -6,7 +6,8 @@ listen 80 default_server;
 rewrite ^ $scheme://simonsmh.tk$request_uri?;
 }
 #enable ssl in 4 main server
-#./letsencrypt-auto certonly --standalone --email simonsmh@gmail.com -d *.simonsmh.tk --webroot-path=/var/www/*.simonsmh.tk
+#./letsencrypt-auto certonly --standalone --email simonsmh@gmail.com -d simonsmh.tk -d blog.simonsmh.tk -d tieba.simonsmh.tk --webroot-path=/var/www/simonsmh.tk
+#add "--server https://acme-staging.api.letsencrypt.org/directory" to avoid rate limit problem.
 server {
 listen 80;
 server_name simonsmh.tk blog.simonsmh.tk tieba.simonsmh.tk;
@@ -61,8 +62,8 @@ include fastcgi_params;
 fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 }
 ssl on;
-ssl_certificate /etc/letsencrypt/live/blog.simonsmh.tk/fullchain.pem;
-ssl_certificate_key /etc/letsencrypt/live/blog.simonsmh.tk/privkey.pem;
+ssl_certificate /etc/letsencrypt/live/simonsmh.tk/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/simonsmh.tk/privkey.pem;
 ssl_session_timeout 10m;
 ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 ssl_prefer_server_ciphers on;
@@ -87,8 +88,8 @@ include fastcgi_params;
 fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 }
 ssl on;
-ssl_certificate /etc/letsencrypt/live/tieba.simonsmh.tk/fullchain.pem;
-ssl_certificate_key /etc/letsencrypt/live/tieba.simonsmh.tk/privkey.pem;
+ssl_certificate /etc/letsencrypt/live/simonsmh.tk/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/simonsmh.tk/privkey.pem;
 ssl_session_timeout 10m;
 ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 ssl_prefer_server_ciphers on;
