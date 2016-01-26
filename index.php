@@ -41,11 +41,11 @@
     <div class="col s12 m6 center"> 
      <div class="card hoverable waves-effect waves-light orange center"> 
       <div class="card-content white-text"> 
-       <span class="card-title white-text"> <i class="material-icons white-text">  </i>Simon的博客 </span> 
+       <span class="card-title white-text"> <i class="material-icons white-text">  </i>simon的博客 </span> 
        <p class="light"> 基于WordPress和MaterialWP主题的个人博客。 </p> 
       </div> 
       <div class="card-action white-text"> 
-       <u><a class="white-text" href="http://blog.simonsmh.tk/">点这里去我的博客</a></u> 
+       <u><a class="white-text" href="https://blog.simonsmh.tk/">点这里去我的博客</a></u> 
       </div> 
      </div> 
     </div> 
@@ -56,7 +56,7 @@
        <p class="light"> 由StusGame团队制作的贴吧云签到服务器软件。 </p> 
       </div> 
       <div class="card-action"> 
-       <u><a class="white-text" href="http://tieba.simonsmh.tk/">点这里去贴吧云签到</a></u> 
+       <u><a class="white-text" href="https://tieba.simonsmh.tk/">点这里去贴吧云签到</a></u> 
       </div> 
      </div> 
     </div> 
@@ -90,11 +90,11 @@
     <div class="col s12 m4 center"> 
      <div class="card hoverable waves-effect waves-light orange center"> 
       <div class="card-content white-text"> 
-       <span class="card-title white-text"> <i class="material-icons white-text">  </i>镜像源&amp;源代码浏览器 </span> 
-       <p class="light"> 基于PHP的镜像源以及功能有限的源代码浏览器。 </p> 
+       <span class="card-title white-text"> <i class="material-icons white-text">  </i>杂货铺 </span> 
+       <p class="light"> 基于PHP的杂货铺，开发有趣的新功能。 </p> 
       </div> 
       <div class="card-action"> 
-       <u><a class="white-text" href="source.php">点这里去镜像源&amp;源代码浏览器</a></u> 
+       <u><a class="white-text" href="source.php">点这里去杂货铺</a></u> 
       </div> 
      </div> 
     </div> 

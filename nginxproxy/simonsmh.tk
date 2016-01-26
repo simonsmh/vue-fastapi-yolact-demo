@@ -1,41 +1,26 @@
 #One line add to nginx.conf
 #include /var/www/simonsmh.tk/nginxproxy/*;
 #guide domain which is on 80 port
+server { 
+listen 80 default_server;
+rewrite ^ $scheme://simonsmh.tk$request_uri?;
+}
 #enable ssl in 4 main server
 #./letsencrypt-auto certonly --standalone --email simonsmh@gmail.com -d *.simonsmh.tk --webroot-path=/var/www/*.simonsmh.tk
 server {
 listen 80;
-server_name simonsmh.tk;
-rewrite ^(.*) https://$server_name$1 permanent;
-}
-server {
-listen 80;
-server_name proxy.simonsmh.tk;
-rewrite ^(.*) https://$server_name$1 permanent;
-}
-server {
-listen 80;
-server_name tieba.simonsmh.tk;
-rewrite ^(.*) https://$server_name$1 permanent;
-}
-server {
-listen 80;
-server_name blog.simonsmh.tk;
-rewrite ^(.*) https://$server_name$1 permanent;
+server_name simonsmh.tk blog.simonsmh.tk tieba.simonsmh.tk;
+rewrite ^(.*) https://$server_name$uri permanent;
 }
 #defalt
 server {
-listen 443 ssl;
+listen 443;
 server_name simonsmh.tk www.simonsmh.tk;
 root /var/www/simonsmh.tk; 
 index index.php index.html index.htm;
 #Fix Access-Control-Allow-Origin
 location / {
 add_header Access-Control-Allow-Origin *;
-}
-#To remove Android network [!]
-location /generate_204 {
-return 204;
 }
 #Disable upload&run .php files
 location ~ ^/(files|sfiles)/.*\.php$
@@ -61,7 +46,7 @@ ssl_session_cache builtin:1000 shared:SSL:10m;
 
 #blog.simonsmh.tk
 server {
-listen 443 ssl;
+listen 443;
 root /var/www/blog.simonsmh.tk;
 index index.php index.html index.htm;
 server_name blog.simonsmh.tk;
@@ -87,7 +72,7 @@ ssl_session_cache builtin:1000 shared:SSL:10m;
 
 #tieba
 server {
-listen 443 ssl;
+listen 443;
 root /var/www/tieba.simonsmh.tk;
 index index.php index.html index.htm;
 server_name tieba.simonsmh.tk;
@@ -111,25 +96,124 @@ ssl_ciphers ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM;
 ssl_session_cache builtin:1000 shared:SSL:10m;
 }
 
-#glype proxy
+#openwrt
 server {
-listen 443 ssl;
-root /var/www/proxy.simonsmh.tk;
-index index.php;
-server_name proxy.simonsmh.tk;
-location ~ \.php$ {
-fastcgi_split_path_info ^(.+\.php)(/.+)$;
-fastcgi_pass unix:/var/run/php5-fpm.sock;
-fastcgi_index index.php;
-include fastcgi_params;
-fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+listen 80;
+server_name openwrt.simonsmh.tk;
+location /{
+proxy_redirect http://downloads.openwrt.org/ /;
+proxy_pass http://downloads.openwrt.org;
+proxy_set_header Accept-Encoding "";
+subs_filter downloads.openwrt.org openwrt.simonsmh.tk;
 }
-ssl on;
-ssl_certificate /etc/letsencrypt/live/proxy.simonsmh.tk/fullchain.pem;
-ssl_certificate_key /etc/letsencrypt/live/proxy.simonsmh.tk/privkey.pem;
-ssl_session_timeout 10m;
-ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-ssl_prefer_server_ciphers on;
-ssl_ciphers ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM;
-ssl_session_cache builtin:1000 shared:SSL:10m;
+#Fix Android Network [!]
+location /generate_204 {
+return 204;
+}
+}
+
+#wikipedia welcome page
+server {
+listen 80;
+server_name wiki.simonsmh.tk www.wiki.simonsmh.tk;
+location /{
+proxy_redirect https://www.wikipedia.org/ /;
+proxy_redirect http://www.wikipedia.org/ /;
+proxy_pass https://www.wikipedia.org;
+proxy_set_header Accept-Encoding "";
+subs_filter https:// http:// r;
+subs_filter www.wikipedia.org wiki.simonsmh.tk r;
+#fit below supported languages
+subs_filter zh.wikipedia.org zh.wiki.simonsmh.tk r;
+subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
+subs_filter en.wikipedia.org en.wiki.simonsmh.tk r;
+subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
+subs_filter ja.wikipedia.org ja.wiki.simonsmh.tk r;
+subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
+}
+}
+
+#wiki-chinese and wikim-chinese
+server {
+listen 80;
+server_name zh.wiki.simonsmh.tk;
+location /{
+proxy_redirect https://zh.wikipedia.org/ /;
+proxy_redirect http://zh.wikipedia.org/ /;
+proxy_pass https://zh.wikipedia.org;
+proxy_set_header Accept-Encoding "";
+subs_filter https:// http:// r;
+subs_filter zh.wikipedia.org zh.wiki.simonsmh.tk r;
+subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
+}
+}
+server {
+listen 80;
+server_name zh.m.wiki.simonsmh.tk;
+location /{
+proxy_redirect https://zh.m.wikipedia.org/ /;
+proxy_redirect http://zh.m.wikipedia.org/ /;
+proxy_pass https://zh.m.wikipedia.org;
+proxy_set_header Accept-Encoding "";
+subs_filter https:// http:// r;
+subs_filter zh.wikipedia.org zh.wiki.simonsmh.tk r;
+subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
+}
+}
+
+#wiki-other language
+#wiki-english and wikim-english
+server {
+listen 80;
+server_name en.wiki.simonsmh.tk;
+location /{
+proxy_redirect https://en.wikipedia.org/ /;
+proxy_redirect http://en.wikipedia.org/ /;
+proxy_pass https://en.wikipedia.org;
+proxy_set_header Accept-Encoding "";
+subs_filter https:// http:// r;
+subs_filter en.wikipedia.org en.wiki.simonsmh.tk r;
+subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
+}
+}
+server {
+listen 80;
+server_name en.m.wiki.simonsmh.tk;
+location /{
+proxy_redirect https://en.m.wikipedia.org/ /;
+proxy_redirect http://en.m.wikipedia.org/ /;
+proxy_pass https://en.m.wikipedia.org;
+proxy_set_header Accept-Encoding "";
+subs_filter https:// http:// r;
+subs_filter en.wikipedia.org en.wiki.simonsmh.tk r;
+subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
+}
+}
+
+#wiki-japan and wikim-japan
+server {
+listen 80;
+server_name ja.wiki.simonsmh.tk;
+location /{
+proxy_redirect https://ja.wikipedia.org/ /;
+proxy_redirect http://ja.wikipedia.org/ /;
+proxy_pass https://ja.wikipedia.org;
+proxy_set_header Accept-Encoding "";
+subs_filter https:// http:// r;
+subs_filter ja.wikipedia.org ja.wiki.simonsmh.tk r;
+subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
+}
+}
+server {
+listen 80;
+server_name ja.m.wiki.simonsmh.tk;
+location /{
+proxy_redirect https://ja.m.wikipedia.org/ /;
+proxy_redirect http://ja.m.wikipedia.org/ /;
+proxy_pass https://ja.m.wikipedia.org;
+proxy_set_header Accept-Encoding "";
+subs_filter https:// http:// r;
+subs_filter ja.wikipedia.org ja.wiki.simonsmh.tk r;
+subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
+}
 }

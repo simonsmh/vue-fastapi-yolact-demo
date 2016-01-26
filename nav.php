@@ -29,12 +29,17 @@
     </a>
   </li>
   <li>
-    <a href="http://tieba.simonsmh.tk/" class="waves-effect black-text">
+    <a href="https://tieba.simonsmh.tk/" class="waves-effect black-text">
       贴吧云签
     </a>
   </li>
   <li>
-    <a href="http://proxy.simonsmh.tk/" class="waves-effect black-text">
+    <a href="https://blog.simonsmh.tk/" class="waves-effect black-text">
+      后花园
+    </a>
+  </li>
+  <li>
+    <a href="glype/" class="waves-effect black-text">
       Glype
     </a>
   </li>
