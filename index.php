@@ -41,7 +41,7 @@
     <div class="col s12 m6 center"> 
      <div class="card hoverable waves-effect waves-light orange center"> 
       <div class="card-content white-text"> 
-       <span class="card-title white-text"> <i class="material-icons white-text">  </i>simon的博客 </span> 
+       <span class="card-title white-text"> <i class="material-icons white-text">&#xE0BF;</i>simon的博客 </span> 
        <p class="light"> 基于WordPress和MaterialWP主题的个人博客。 </p> 
       </div> 
       <div class="card-action white-text"> 
@@ -52,11 +52,33 @@
     <div class="col s12 m6 center"> 
      <div class="card hoverable waves-effect waves-light orange center"> 
       <div class="card-content white-text"> 
-       <span class="card-title white-text"> <i class="material-icons white-text">  </i>贴吧云签到 </span> 
+       <span class="card-title white-text"> <i class="material-icons white-text">&#xE862;</i>贴吧云签到 </span> 
        <p class="light"> 由StusGame团队制作的贴吧云签到服务器软件。 </p> 
       </div> 
       <div class="card-action"> 
        <u><a class="white-text" href="https://tieba.simonsmh.tk/">点这里去贴吧云签到</a></u> 
+      </div> 
+     </div> 
+    </div>
+    <div class="col s12 m6 center"> 
+     <div class="card hoverable waves-effect waves-light orange center"> 
+      <div class="card-content white-text"> 
+       <span class="card-title white-text"> <i class="material-icons white-text">&#xE87A;</i>Glype </span> 
+       <p class="light"> 基于PHP的在线网页浏览器，轻松实现自由浏览。 </p> 
+      </div> 
+      <div class="card-action white-text"> 
+       <u><a class="white-text" href="glype/">点这里去Glype</a></u> 
+      </div> 
+     </div> 
+    </div>
+    <div class="col s12 m6 center"> 
+     <div class="card hoverable waves-effect waves-light orange center"> 
+      <div class="card-content white-text"> 
+       <span class="card-title white-text"> <i class="material-icons white-text">&#xE884;</i>Aria2 </span> 
+       <p class="light"> 基于Aria2和webui-aria2的服务器的开源多协议下载程序。 </p> 
+      </div> 
+      <div class="card-action white-text"> 
+       <u><a class="white-text" href="http://aria2c.com/">点这里去aria2c.com[外部url]</a></u> 
       </div> 
      </div> 
     </div> 
@@ -68,7 +90,7 @@
     <div class="col s12 m4 center"> 
      <div class="card hoverable waves-effect waves-light orange center"> 
       <div class="card-content white-text"> 
-       <span class="card-title white-text"> <i class="material-icons white-text">  </i>留言板 </span> 
+       <span class="card-title white-text"> <i class="material-icons white-text">&#xE0B7;</i>留言板 </span> 
        <p class="light"> 基于HTML和PHP的留言板。 </p> 
       </div> 
       <div class="card-action white-text"> 
@@ -79,7 +101,7 @@
     <div class="col s12 m4 center"> 
      <div class="card hoverable waves-effect waves-light orange center"> 
       <div class="card-content white-text"> 
-       <span class="card-title white-text"> <i class="material-icons white-text">  </i>文件储存 </span> 
+       <span class="card-title white-text"> <i class="material-icons white-text">&#xE610;</i>文件储存 </span> 
        <p class="light"> 基于HTML和PHP的文件储存。 </p> 
       </div> 
       <div class="card-action"> 
@@ -90,7 +112,7 @@
     <div class="col s12 m4 center"> 
      <div class="card hoverable waves-effect waves-light orange center"> 
       <div class="card-content white-text"> 
-       <span class="card-title white-text"> <i class="material-icons white-text">  </i>杂货铺 </span> 
+       <span class="card-title white-text"> <i class="material-icons white-text">&#xE86F;</i>杂货铺 </span> 
        <p class="light"> 基于PHP的杂货铺，开发有趣的新功能。 </p> 
       </div> 
       <div class="card-action"> 
