@@ -9,7 +9,7 @@
   <!-- CSS -->
   <link href="css/googleapi.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <script src="js/jquery-2.1.4.min.js">
+  <script src="js/jquery-2.2.0.min.js">
   </script>
   <script src="js/materialize.js">
   </script>
