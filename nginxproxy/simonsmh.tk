@@ -137,10 +137,6 @@ proxy_pass http://downloads.openwrt.org;
 proxy_set_header Accept-Encoding "";
 subs_filter downloads.openwrt.org openwrt.simonsmh.tk;
 }
-#Fix Android Network [!]
-location /generate_204 {
-return 204;
-}
 }
 
 #wikipedia welcome page
