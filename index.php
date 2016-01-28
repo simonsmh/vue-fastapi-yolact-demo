@@ -74,11 +74,11 @@
     <div class="col s12 m6 center"> 
      <div class="card hoverable waves-effect waves-light orange center"> 
       <div class="card-content white-text"> 
-       <span class="card-title white-text"> <i class="material-icons white-text">&#xE884;</i>Aria2 </span> 
-       <p class="light"> 基于Aria2和webui-aria2的服务器的开源多协议下载程序。 </p> 
+       <span class="card-title white-text"> <i class="material-icons white-text">&#xE884;</i>离线下载 </span> 
+       <p class="light"> 基于Aria2或Transmission的开源多协议下载程序。 </p> 
       </div> 
       <div class="card-action white-text"> 
-       <u><a class="white-text" href="http://aria2c.com/">点这里去aria2c.com[外部url]</a></u> 
+       点这里去<u><a class="white-text" href="http://aria2c.com/">aria2c.com</a><a class="white-text" href="http://bt.simonsmh.tk/">Transmission</u> 
       </div> 
      </div> 
     </div> 
