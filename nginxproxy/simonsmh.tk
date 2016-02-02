@@ -11,13 +11,12 @@ rewrite ^ $scheme://simonsmh.tk$request_uri?;
 #add "--server https://acme-staging.api.letsencrypt.org/directory" to avoid rate limit problem.
 server {
 listen 80;
-server_name blog.simonsmh.tk tieba.simonsmh.tk;
+server_name simonsmh.tk blog.simonsmh.tk tieba.simonsmh.tk;
 rewrite ^(.*) https://$server_name$request_uri permanent;
 }
 #defalt
 server {
-listen 80;
-listen 443 ssl;
+listen 443;
 server_name simonsmh.tk www.simonsmh.tk;
 root /var/www/simonsmh.tk; 
 index index.php index.html index.htm;
@@ -34,17 +33,6 @@ deny all;
 location / {
 add_header Access-Control-Allow-Origin *;
 }
-#Fix glype to use ssl (no "and"? fuck you nginx)
-if ($scheme = http){
-set $a 1;
-}
-if ($request_uri ~ ^/glype(/)?.*){
-set $a 1$a;
-}
-if ($a = 11){
-rewrite ^(.*) https://$server_name$1 permanent;
-set $a 0;
-}
 location ~ \.php$ {
 fastcgi_split_path_info ^(.+\.php)(/.+)$;
 fastcgi_pass unix:/var/run/php5-fpm.sock;
@@ -52,7 +40,7 @@ fastcgi_index index.php;
 include fastcgi_params;
 fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 }
-#ssl on;
+ssl on;
 ssl_certificate /etc/letsencrypt/live/simonsmh.tk/fullchain.pem;
 ssl_certificate_key /etc/letsencrypt/live/simonsmh.tk/privkey.pem;
 ssl_session_timeout 10m;
