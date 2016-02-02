@@ -78,7 +78,7 @@
        <p class="light"> 基于Aria2或Transmission的开源多协议下载程序。 </p> 
       </div> 
       <div class="card-action white-text"> 
-       点这里去<u><a class="white-text" href="http://aria2c.com/">aria2c.com</a><a class="white-text" href="http://bt.simonsmh.tk/">Transmission</u> 
+       <u><a class="white-text" href="http://aria2c.com/">aria2c.com</a><a class="white-text" href="http://bt.simonsmh.tk/">Transmission</u></a>
       </div> 
      </div> 
     </div> 

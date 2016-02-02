@@ -7,6 +7,7 @@ rewrite ^ $scheme://simonsmh.tk$request_uri?;
 }
 #enable ssl in 2 main server
 #./letsencrypt-auto certonly --standalone --email simonsmh@gmail.com -d simonsmh.tk -d blog.simonsmh.tk -d tieba.simonsmh.tk
+#expire on 2016-05-02
 #add "--server https://acme-staging.api.letsencrypt.org/directory" to avoid rate limit problem.
 server {
 listen 80;
