@@ -2,8 +2,8 @@
 <html lang="zh-cn">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-  <meta name="theme-color" content="#039be5">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#3f51b5">
   <link rel="shortcut icon" type="image/x-icon" href="<!--[home]-->/favicon.ico" media="screen" />
   <title>
   <!--[title]-->
@@ -11,7 +11,7 @@
   <!-- CSS -->
   <link href="<!--[home]-->/css/googleapi.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="<!--[home]-->/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <script src="<!--[home]-->/js/jquery-2.1.4.min.js">
+  <script src="<!--[home]-->/js/jquery-2.2.0.min.js">
   </script>
   <script src="<!--[home]-->/js/materialize.js">
   </script>
@@ -23,7 +23,7 @@
   <?=injectionJS();?>
 </head>
  <body> 
-  <nav class="light-blue darken-1" role="navigation"> 
+  <nav class="indigo" role="navigation"> 
    <div class="nav-wrapper container"> 
     <a id="logo-container" href="index.php" class="brand-logo"> Glype </a> 
      <a href="<!--[home]-->" onclick="location='<!--[home]-->'" class="button-collapse top-nav hide-on-large-only"><i class="large material-icons">&#xE5C4;</i></a>
@@ -100,7 +100,7 @@
 <!-- CSS use by my self
   <link href="<!--[home]-->/css/googleapi.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="<!--[home]-->/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <script src="<!--[home]-->/js/jquery-2.1.4.min.js">
+  <script src="<!--[home]-->/js/jquery-2.2.0.min.js">
   </script>
   <script src="<!--[home]-->/js/materialize.js">
   </script>

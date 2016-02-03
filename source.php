@@ -3,7 +3,8 @@
  <?php include( "header.php"); ?>
  <head></head>
  <body> 
-  <nav class="light-blue darken-1" role="navigation"> 
+<div class="navbar-fixed">
+  <nav class="indigo" role="navigation"> 
    <div class="nav-wrapper container"> 
     <a id="logo-container" href="source.php" class="brand-logo"> 杂货铺 </a> 
     <ul class="right hide-on-med-and-down"> 
@@ -18,6 +19,7 @@
     <a href="#" data-activates="nav-mobile" class="button-collapse"> <i class="mdi-navigation-menu"> </i> </a> 
    </div> 
   </nav> 
+</div>
   <div class="section no-pad-bot" id="index-banner"> 
    <div class="container"> 
     <br /> 
@@ -27,7 +29,7 @@
      <h5 class="header col s12 light"> 瞧一瞧，看一看，GayHub源码随便用！ </h5> 
     </div> 
     <div class="progress"> 
-     <div class="indeterminate blue"> 
+     <div class="indeterminate indigo"> 
      </div> 
     </div> 
     <br /> 
