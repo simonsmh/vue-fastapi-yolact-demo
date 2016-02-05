@@ -57,7 +57,18 @@ root /var/www/blog.simonsmh.tk;
 index index.php index.html index.htm;
 server_name blog.simonsmh.tk;
 location / {
-include wordpress.conf;
+if (-d $request_filename){
+rewrite ^/(.*)([^/])$ /$1$2/ permanent;
+}
+if (-f $request_filename/index.html){
+rewrite (.*) $1/index.html break;
+}
+if (-f $request_filename/index.php){
+rewrite (.*) $1/index.php;
+}
+if (!-f $request_filename){
+rewrite (.*) /index.php;
+}
 }
 location ~ \.php$ {
 fastcgi_split_path_info ^(.+\.php)(/.+)$;
@@ -83,7 +94,18 @@ root /var/www/tieba.simonsmh.tk;
 index index.php index.html index.htm;
 server_name tieba.simonsmh.tk;
 location / {
-include wordpress.conf;
+if (-d $request_filename){
+rewrite ^/(.*)([^/])$ /$1$2/ permanent;
+}
+if (-f $request_filename/index.html){
+rewrite (.*) $1/index.html break;
+}
+if (-f $request_filename/index.php){
+rewrite (.*) $1/index.php;
+}
+if (!-f $request_filename){
+rewrite (.*) /index.php;
+}
 }
 location ~ \.php$ {
 fastcgi_split_path_info ^(.+\.php)(/.+)$;
