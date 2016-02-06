@@ -3,7 +3,7 @@
 #guide domain which is on 80 port
 server { 
 listen 80 default_server;
-rewrite ^ $scheme://simonsmh.tk$request_uri?;
+rewrite ^ $scheme://simonsmh.tk/;
 }
 #enable ssl in 2 main server
 #./letsencrypt-auto certonly --standalone --email simonsmh@gmail.com -d simonsmh.tk -d blog.simonsmh.tk -d tieba.simonsmh.tk
@@ -11,7 +11,17 @@ rewrite ^ $scheme://simonsmh.tk$request_uri?;
 #add "--server https://acme-staging.api.letsencrypt.org/directory" to avoid rate limit problem.
 server {
 listen 80;
-server_name simonsmh.tk blog.simonsmh.tk tieba.simonsmh.tk;
+server_name simonsmh.tk;
+rewrite ^(.*) https://$server_name$request_uri permanent;
+}
+server {
+listen 80;
+server_name blog.simonsmh.tk;
+rewrite ^(.*) https://$server_name$request_uri permanent;
+}
+server {
+listen 80;
+server_name tieba.simonsmh.tk;
 rewrite ^(.*) https://$server_name$request_uri permanent;
 }
 #defalt
