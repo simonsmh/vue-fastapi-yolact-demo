@@ -104,7 +104,9 @@
   </div>
   <div class="footer-copyright">
     <div class="container">
+      <a class="orange-text text-lighten-3" href="tz.php">
       Powered by
+      </a>
       <a class="orange-text text-lighten-3" href="sfiles.php">
         simonsmh
       </a>
