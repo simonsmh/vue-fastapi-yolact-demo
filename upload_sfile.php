@@ -6,7 +6,7 @@
 </head>
 <body><a href="files.php">../</a></br>
 <?php
-$dir = "sfiles/";
+$dir = "/var/wwwfiles/sfiles/";
 if ($_FILES["file"]["error"] > 0)
   {
     echo "发生错误:".$_FILES["file"]["error"]."<br>";
