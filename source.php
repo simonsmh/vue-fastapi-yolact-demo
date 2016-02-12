@@ -53,10 +53,15 @@
     </div> 
     <h5 class="center">镜像源（如有其他需求请联系我）</h5>
     <div class="row"> 
-     <span class="col s12 light"> INFO: <br /> <a href="http://openwrt.simonsmh.tk/"> http://openwrt.simonsmh.tk/ </a> 现在成为了 <a href="http://downloads.openwrt.org/"> http://downloads.openwrt.org/ </a> 的镜像站 </br> 快速执行替换代码： </br> sed -i 's/downloads.openwrt.org/openwrt.simonsmh.tk/g' /etc/opkg.conf </span> 
+     <span class="col s12 light"> INFO： <br /> <a href="http://openwrt.simonsmh.tk/"> http://openwrt.simonsmh.tk/ </a> 现在成为了 <a href="http://downloads.openwrt.org/"> http://downloads.openwrt.org/ </a> 的镜像站 </br> 快速执行替换代码： </br> sed -i 's/downloads.openwrt.org/openwrt.simonsmh.tk/g' /etc/opkg.conf </span> 
      <span class="col s12 light"> <br /> <a href="http://wiki.simonsmh.tk/"> http://wiki.simonsmh.tk/ </a> 现在成为了 <a href="http://www.wikipedia.org/"> http://www.wikipedia.org/ </a> 的镜像站(仅提供中日英三国语言) </span> 
     </div> 
-    <h5 class="center">PHP试验场</h5>
+    <h5 class="center">PHP INFO</h5>
+    <div class="row"> 
+     <span class="col s12 light"><a href="ip.php">直接获取IP</a></span> 
+     <span class="col s12 light"><a href="ua.php">直接获取UserAgent</a></span> 
+    </div>
+    </br>
 <?php 
 echo<<<END
 <div class="row"> 
@@ -78,7 +83,7 @@ echo<<<END
 <span class="col s12 light">你的IP（PHP）</span> 
 <span class="col s12 light">
 END;
-echo $_SERVER["REMOTE_ADDR"];
+include( "ip.php");
 echo "</span></div>";
 
 echo<<<END
@@ -86,7 +91,7 @@ echo<<<END
 <span class="col s12 light">你的USERAGENT（PHP）</span> 
 <span class="col s12 light">
 END;
-echo $_SERVER['HTTP_USER_AGENT'];
+include( "ua.php");
 echo<<<END
 </span> 
 <span class="col s12 light">
