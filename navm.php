@@ -19,7 +19,7 @@
     </a>
   </li>
   <li>
-    <a href="shell.php" class="waves-effect black-text">
+    <a href="shell.php" class="waves-effect">
       Shell
     </a>
   </li>

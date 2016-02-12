@@ -43,11 +43,11 @@
     <div class="col s12 m6 center"> 
      <div class="card hoverable waves-effect waves-light orange center"> 
       <div class="card-content white-text"> 
-       <span class="card-title white-text"> <i class="material-icons white-text">&#xE0BF;</i>simon的博客 </span> 
-       <p class="light"> 基于WordPress和MaterialWP主题的个人博客。 </p> 
+       <span class="card-title white-text"> <i class="material-icons white-text">&#xE0BF;</i>simon的后花园 </span> 
+       <p class="light"> 基于Typecho和Material主题的轻量级个人博客。 </p> 
       </div> 
       <div class="card-action white-text"> 
-       <u><a class="white-text" href="https://blog.simonsmh.tk/">点这里去我的博客</a></u> 
+       <u><a class="white-text" href="https://blog.simonsmh.tk/">点这里去我的后花园</a></u> 
       </div> 
      </div> 
     </div> 
