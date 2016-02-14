@@ -36,10 +36,8 @@
    </div> 
   </div> 
   <div class="container"> 
-   <div class="row center"> 
-    <h5 class="header col s12 light"> 下面是simonsmh.tk运行的服务 </h5> 
-   </div> 
    <div class="row"> 
+    <h5 class="header col s12 light center"> 下面是simonsmh.tk运行的服务 </h5>  
     <div class="col s12 m6 center"> 
      <div class="card hoverable waves-effect waves-light orange center"> 
       <div class="card-content white-text"> 
@@ -84,11 +82,7 @@
       </div> 
      </div> 
     </div> 
-   </div> 
-   <div class="row center"> 
-    <h5 class="header col s12 light"> 下面是simonsmh.tk运行的程序 </h5> 
-   </div> 
-   <div class="row"> 
+    <h5 class="header col s12 light center"> 下面是simonsmh.tk运行的程序 </h5> 
     <div class="col s12 m4 center"> 
      <div class="card hoverable waves-effect waves-light orange center"> 
       <div class="card-content white-text"> 
@@ -122,8 +116,7 @@
       </div> 
      </div> 
     </div> 
-    <div class="row center"> 
-     <h5 class="header col s12 light"> 还有更多在开发中 </h5> 
+     <h5 class="header col s12 light center"> 还有更多在开发中 </h5> 
     </div> 
    </div> 
   </div>  

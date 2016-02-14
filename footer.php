@@ -103,22 +103,19 @@
     </div>
   </div>
   <div class="footer-copyright">
-    <div class="container">
+    <div class="container" style="word-break:break-all">
       <a class="orange-text text-lighten-3" href="tz.php">
-      Powered by
+        Powered by
       </a>
       <a class="orange-text text-lighten-3" href="sfiles.php">
-        simonsmh
+        simonsmh.
       </a>
-      . CSS from
       <a class="orange-text text-lighten-3" href="http://materializecss.com">
-        Materialize
+       CSS from Materialize.
       </a>
-      . Icons from
       <a class="orange-text text-lighten-3" href="https://www.google.com/design/icons/">
-        Google
+       Icons from Google.
       </a>
-      .
     </div>
   </div>
 </footer>

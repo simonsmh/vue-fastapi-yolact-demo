@@ -33,7 +33,7 @@ $CONFIG['enable_blockscript'] = false;
 
 # Theme/skin to use. This should be the name of the appropriate
 # folder inside the /themes/ folder.
-$CONFIG['theme'] = 'glype-materializeCSS';
+$CONFIG['theme'] = 'glype_materializeCSS';
 
 # Run plugins on these websites
 $CONFIG['plugins'] = 'live.com,twitter.com,yahoo.com,youtube.com,myspace.com,msn.com,hotmail.com,facebook.com,ytimg.com,google.com';
