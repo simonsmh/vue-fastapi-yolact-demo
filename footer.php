@@ -15,15 +15,6 @@
               本网站的GitHub源码
             </a>
           </u>
-          <form class="waves-effect waves-light orange hoverable" accept-charset="GBK"
-          action="https://shenghuo.alipay.com/send/payment/fill.htm" method="post"
-          target="_blank">
-            <input type="hidden" name="optEmail" value="15618959859" />
-            <input type="hidden" name="memo" value="如果你觉得我的代理对你有帮助，请我喝杯饮料吧，谢谢！" />
-            <input id="payAmount" type="hidden" name="payAmount" value="5" />
-            <input id="title" type="hidden" name="title" value="支持simonsmh服务器发展" />
-            <input type="image" name="pay" src="alipay.png" value="转账" />
-          </form>
         </p>
       </div>
       <div class="col l3 s12 center">
