@@ -33,15 +33,15 @@ $CONFIG['enable_blockscript'] = false;
 
 # Theme/skin to use. This should be the name of the appropriate
 # folder inside the /themes/ folder.
-$CONFIG['theme'] = 'materialCSS';
+$CONFIG['theme'] = 'glype-materializeCSS';
 
 # Run plugins on these websites
-$CONFIG['plugins'] = 'youtube.com,yahoo.com,twitter.com,live.com,msn.com,facebook.com,myspace.com,google.com,hotmail.com,ytimg.com';
+$CONFIG['plugins'] = 'live.com,twitter.com,yahoo.com,youtube.com,myspace.com,msn.com,hotmail.com,facebook.com,ytimg.com,google.com';
 
 # Temporary directory used by the script. Many features require
 # write permission to the temporary directory. Ensure this
 # directory exists and is writable for best performance.
-$CONFIG['tmp_dir'] = GLYPE_ROOT . '/tmp/';
+$CONFIG['tmp_dir'] = '/tmp/';
 
 # Use GZIP compression when sending pages back to the user. This
 # reduces bandwidth usage but at the cost of increased CPU load.
