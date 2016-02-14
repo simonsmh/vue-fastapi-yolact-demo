@@ -51,20 +51,24 @@
       <button class="btn-large orange waves-effect waves-light" onclick="submit()" type="submit" name="action">确认 <i class="material-icons right">send</i> </button> 
      </form> 
     </div> 
+    </div>
+  <div class="divider"></div>
+  <div class="section">
     <h5 class="center">镜像源（如有其他需求请联系我）</h5>
     <div class="row"> 
      <span class="col s12 light"> INFO： <br /> <a href="http://openwrt.simonsmh.tk/"> http://openwrt.simonsmh.tk/ </a> 现在成为了 <a href="http://downloads.openwrt.org/"> http://downloads.openwrt.org/ </a> 的镜像站 </br> 快速执行替换代码： </br> sed -i 's/downloads.openwrt.org/openwrt.simonsmh.tk/g' /etc/opkg.conf </span> 
      <span class="col s12 light"> <br /> <a href="http://wiki.simonsmh.tk/"> http://wiki.simonsmh.tk/ </a> 现在成为了 <a href="http://www.wikipedia.org/"> http://www.wikipedia.org/ </a> 的镜像站(仅提供中日英三国语言) </span> 
     </div> 
+    </div>
+  <div class="divider"></div>
+  <div class="section">
     <h5 class="center">PHP INFO</h5>
     <div class="row"> 
      <span class="col s12 light"><a href="ip.php">直接获取IP</a></span> 
      <span class="col s12 light"><a href="ua.php">直接获取UserAgent</a></span> 
-    </div>
-    </br>
+     <div class="col s12"><br></div> 
 <?php 
 echo<<<END
-<div class="row"> 
 <span class="col s12 light">本机IP（PHP-cURL>members.3322.org/dyndns/getip）</span> 
 <span class="col s12 light">
 END;
@@ -84,10 +88,8 @@ echo<<<END
 <span class="col s12 light">
 END;
 include( "ip.php");
-echo "</span></div>";
-
+echo "</span>";
 echo<<<END
-<div class="row"> 
 <span class="col s12 light">你的USERAGENT（PHP）</span> 
 <span class="col s12 light">
 END;
@@ -103,10 +105,14 @@ elseif(strpos($_SERVER["HTTP_USER_AGENT"],"Chrome")) echo"Chrome";
 elseif(strpos($_SERVER["HTTP_USER_AGENT"],"Safari")) echo"Safari";
 elseif(strpos($_SERVER["HTTP_USER_AGENT"],"Opera")) echo"Opera"; 
 else echo$_SERVER["HTTP_USER_AGENT"]; 
-echo "访问本页面</span></div>" ;
+echo "访问本页面</span>" ;
 ?> 
  </div> 
-   </div> 
+  </div> 
+<div class="divider"></div>
+<div class="section">
+<h5 class="center">PHP试验场</h5>
+</div>
   </div> 
   <?php include( "footer.php"); ?>
  </body>
