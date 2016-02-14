@@ -10,8 +10,9 @@
           <br>
           快眼熟我！
           <br>
+          <br>
           <u>
-            <a class="white-text" href="https://github.com/simonsmh/simonsmh.tk">
+            <a class="btn orange white-text" href="https://github.com/simonsmh/simonsmh.tk">
               本网站的GitHub源码
             </a>
           </u>
