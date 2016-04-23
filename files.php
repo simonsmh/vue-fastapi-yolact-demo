@@ -8,7 +8,7 @@
    <div class="nav-wrapper container"> 
     <a id="logo-container" href="files.php" class="brand-logo"> 文件储存 </a> 
     <ul class="right hide-on-med-and-down"> 
-     <li> <a class="dropdown-button waves-effect waves-light" href="#" data-activates="dropdown1"> 菜单 <i class="mdi-navigation-arrow-drop-down right"> </i> </a> </li> 
+     <li> <a class="dropdown-button waves-effect waves-light" href="#" data-activates="dropdown1"> 菜单 <i class="material-icons right"> &#xE5C5; </i> </a> </li> 
     </ul> 
     <ul id="dropdown1" class="dropdown-content"> 
      <?php include( "nav.php"); ?>
@@ -16,7 +16,7 @@
     <ul id="nav-mobile" class="side-nav"> 
      <?php include( "navm.php"); ?>
     </ul> 
-    <a href="#" data-activates="nav-mobile" class="button-collapse"> <i class="mdi-navigation-menu"> </i> </a> 
+    <a href="#" data-activates="nav-mobile" class="button-collapse"> <i class="material-icons"> &#xE5D2; </i> </a> 
    </div> 
   </nav> 
 </div> 
