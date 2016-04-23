@@ -11,7 +11,7 @@
  */
 require 'libraries/common.inc.php';
 
-$response = PMA_Response::getInstance();
+$response = PMA\libraries\Response::getInstance();
 $response->disable();
 
 $filename = CHANGELOG_FILE;
@@ -20,7 +20,7 @@ $filename = CHANGELOG_FILE;
  * Read changelog.
  */
 // Check if the file is available, some distributions remove these.
-if (is_readable($filename)) {
+if (@is_readable($filename)) {
 
     // Test if the if is in a compressed format
     if (substr($filename, -3) == '.gz') {

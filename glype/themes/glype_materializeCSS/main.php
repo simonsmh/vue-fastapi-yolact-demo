@@ -11,7 +11,7 @@
   <!-- CSS -->
   <link href="<!--[home]-->/css/googleapi.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="<!--[home]-->/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <script src="<!--[home]-->/js/jquery-2.2.0.min.js">
+  <script src="<!--[home]-->/js/jquery.min.js">
   </script>
   <script src="<!--[home]-->/js/materialize.js">
   </script>
@@ -105,7 +105,7 @@
 <!-- CSS use by my self
   <link href="<!--[home]-->/css/googleapi.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="<!--[home]-->/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <script src="<!--[home]-->/js/jquery-2.2.0.min.js">
+  <script src="<!--[home]-->/js/jquery.min.js">
   </script>
   <script src="<!--[home]-->/js/materialize.js">
   </script>

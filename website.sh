@@ -5,10 +5,14 @@ echo Please choose:
 read  M
 
 yes|cp -fr /etc/nginx/nginx.conf /var/www/simonsmh.tk/nginx.conf
+echo 已覆盖备份nginx.conf
 cd /var/wwwfiles
 chmod -R 777 *
+chown -R root:root *
 cd /var/www
 chmod -R 777 *
+chown -R root:root *
+echo 已给予www目录完整最高权限
 
 if [ "$M" = "1" ]
 then
@@ -32,7 +36,10 @@ else
 echo 不选
 fi
 service nginx restart
+echo 已尝试重启nignx
 cd /var/www
-chmod -R 777 *.*
+chmod -R 777 *
+chown -R root:root *
+echo 已给予www目录完整最高权限
 echo 正在退出
 exit 0

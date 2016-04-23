@@ -39,6 +39,7 @@ class DropStatement extends Statement
         'SCHEMA'                        => 1,
         'SERVER'                        => 1,
         'TABLE'                         => 1,
+        'VIEW'                          => 1,
         'TABLESPACE'                    => 1,
         'TRIGGER'                       => 1,
 
@@ -59,6 +60,7 @@ class DropStatement extends Statement
         '_OPTIONS'                      => array('_OPTIONS',    1),
         // Used for select expressions.
         'DROP_'                         => array('DROP',        1),
+        'ON'                            => array('ON',          3),
     );
 
     /**
@@ -67,4 +69,11 @@ class DropStatement extends Statement
      * @var Expression[]
      */
     public $fields;
+
+    /**
+     * Table of the dropped index.
+     *
+     * @var Expression
+     */
+    public $table;
 }

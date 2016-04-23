@@ -19,6 +19,7 @@ use SqlParser\Components\PartitionDefinition;
 use SqlParser\Components\Expression;
 use SqlParser\Components\OptionsArray;
 use SqlParser\Components\ParameterDefinition;
+use SqlParser\Statements\SelectStatement;
 
 /**
  * `CREATE` statement.
@@ -53,6 +54,9 @@ class CreateStatement extends Statement
         'EVENT'                         => 6,
         'FUNCTION'                      => 6,
         'INDEX'                         => 6,
+        'UNIQUE INDEX'                  => 6,
+        'FULLTEXT INDEX'                => 6,
+        'SPATIAL INDEX'                 => 6,
         'PROCEDURE'                     => 6,
         'SERVER'                        => 6,
         'TABLE'                         => 6,
@@ -175,6 +179,15 @@ class CreateStatement extends Statement
     public $fields;
 
     /**
+     * If `CREATE TABLE ... SELECT`
+     *
+     * Used by `CREATE TABLE`
+     *
+     * @var SelectStatement
+     */
+    public $select;
+
+    /**
      * Expression used for partitioning.
      *
      * @var string
@@ -264,6 +277,11 @@ class CreateStatement extends Statement
                 . OptionsArray::build($this->options) . ' '
                 . Expression::build($this->name) . ' '
                 . OptionsArray::build($this->entityOptions);
+        } elseif ($this->options->has('TABLE') && !is_null($this->select)) {
+            return 'CREATE '
+                . OptionsArray::build($this->options) . ' '
+                . Expression::build($this->name) . ' '
+                . $this->select->build();
         } elseif ($this->options->has('TABLE')) {
             $partition = '';
 
@@ -314,13 +332,11 @@ class CreateStatement extends Statement
                 . Expression::build($this->name) . ' '
                 . ParameterDefinition::build($this->parameters) . ' '
                 . $tmp . ' ' . TokensList::build($this->body);
-        } else {
-            return 'CREATE '
-                . OptionsArray::build($this->options) . ' '
-                . Expression::build($this->name) . ' '
-                . TokensList::build($this->body);
         }
-        return '';
+        return 'CREATE '
+            . OptionsArray::build($this->options) . ' '
+            . Expression::build($this->name) . ' '
+            . TokensList::build($this->body);
     }
 
     /**
@@ -342,9 +358,8 @@ class CreateStatement extends Statement
             $parser,
             $list,
             array(
-                'noAlias' => true,
-                'noBrackets' => true,
-                'skipColumn' => true,
+                'parseField' => 'table',
+                'breakOnAlias' => true,
             )
         );
 
@@ -357,12 +372,34 @@ class CreateStatement extends Statement
             ++$list->idx; // Skipping field.
         }
 
+        /**
+         * Token parsed at this moment.
+         *
+         * @var Token $token
+         */
+        $token = $list->tokens[$list->idx];
+        $nextidx = $list->idx + 1;
+        while ($nextidx < $list->count && $list->tokens[$nextidx]->type == Token::TYPE_WHITESPACE) {
+            $nextidx++;
+        }
+
         if ($this->options->has('DATABASE')) {
             $this->entityOptions = OptionsArray::parse(
                 $parser,
                 $list,
                 static::$DB_OPTIONS
             );
+        } elseif ($this->options->has('TABLE') && ($token->type == Token::TYPE_KEYWORD) && ($token->value == 'SELECT')) {
+            /* CREATE TABLE ... SELECT */
+            $this->select = new SelectStatement($parser, $list);
+        } elseif (
+                $this->options->has('TABLE') &&
+                ($token->type == Token::TYPE_KEYWORD) && ($token->value == 'AS') &&
+                ($list->tokens[$nextidx]->type == Token::TYPE_KEYWORD) && ($list->tokens[$nextidx]->value == 'SELECT')
+            ) {
+            /* CREATE TABLE ... AS SELECT */
+            $list->idx = $nextidx;
+            $this->select = new SelectStatement($parser, $list);
         } elseif ($this->options->has('TABLE')) {
             $this->fields = CreateDefinition::parse($parser, $list);
             if (empty($this->fields)) {
@@ -538,9 +575,8 @@ class CreateStatement extends Statement
                 $parser,
                 $list,
                 array(
-                    'noAlias' => true,
-                    'noBrackets' => true,
-                    'skipColumn' => true,
+                    'parseField' => 'table',
+                    'breakOnAlias' => true,
                 )
             );
             ++$list->idx;
