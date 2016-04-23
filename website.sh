@@ -25,6 +25,7 @@ elif [ "$M" = "2" ]
 then
 echo 选项2
 cd /var/www/simonsmh.tk/
+git config --global push.default simple
 git config --global user.name "simonsmh"
 git config --global user.email simonsmh@gmail.com
 git config credential.helper store
