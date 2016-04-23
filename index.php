@@ -78,7 +78,7 @@
        <p class="light"> 基于Transmission的开源BT或PT离线下载程序。 </p> 
       </div> 
       <div class="card-action white-text"> 
-       <a class="orange-text text-lighten-3" href="http://bt.simonsmh.tk/">点这里去Transmission</a>
+       <a class="orange-text text-lighten-3" href="https://bt.simonsmh.tk/">点这里去Transmission</a>
       </div> 
      </div> 
     </div> 
