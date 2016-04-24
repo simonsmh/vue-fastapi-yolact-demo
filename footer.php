@@ -1,4 +1,7 @@
 <footer class="page-footer orange">
+  <div id="gototop" class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="waves-effect waves-light btn-floating btn-large red" href="#"><i class="large material-icons">&#xE255;</i></a>
+  </div>
   <div class="container">
     <div class="row">
       <div class="col l3 s12 center">
@@ -11,8 +14,8 @@
           快眼熟我！
           <br>
           <br>
-          <a class="btn orange lighten-1 orange-text text-lighten-3" href="https://github.com/simonsmh/simonsmh.tk">
-           本网站的GitHub源码
+          <a class="btn orange darken-1 orange-text text-lighten-3" href="https://github.com/simonsmh/simonsmh.tk">
+           本站GitHub源码
           </a>
         </p>
       </div>
@@ -82,6 +85,11 @@
             <li>
               <a class="orange-text text-lighten-3" href="http://shanghai-typhoon.com/">
                 上海追风团队
+              </a>
+            </li>
+            <li>
+              <a class="orange-text text-lighten-3" href="http://fatesakura.tk/">
+                命若樱花
               </a>
             </li>
           </ul>

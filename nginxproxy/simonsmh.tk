@@ -299,3 +299,31 @@ subs_filter ja.wikipedia.org ja.wiki.simonsmh.tk r;
 subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
 }
 }
+
+server {
+listen 80;
+root /var/www/fatesakura.tk;
+index index.php index.html index.htm;
+server_name fatesakura.tk;
+location / {
+if (-d $request_filename){
+rewrite ^/(.*)([^/])$ /$1$2/ permanent;
+}
+if (-f $request_filename/index.html){
+rewrite (.*) $1/index.html break;
+}
+if (-f $request_filename/index.php){
+rewrite (.*) $1/index.php;
+}
+if (!-f $request_filename){
+rewrite (.*) /index.php;
+}
+}
+location ~ \.php$ {
+fastcgi_split_path_info ^(.+\.php)(/.+)$;
+fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+fastcgi_index index.php;
+include fastcgi_params;
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+}
+}

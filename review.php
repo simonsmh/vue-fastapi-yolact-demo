@@ -33,6 +33,9 @@
      </div> 
     </div> 
     <br /> 
+        <div class="fixed-action-btn" style="bottom: 120px; right: 24px;">
+         <a href="#review" class="waves-effect waves-light btn-floating btn-large red"><i class="large material-icons">&#xE3C9;</i></a>
+        </div>
    </div> 
   </div> 
   <div class="container"> 
@@ -56,21 +59,21 @@ EOT;
 ?>
    <br /> 
    <div class="row"> 
-    <h5 class="col s12 light"> 留言撰写处 </h5> 
+    <h5 class="col s12 light"> 留言撰写处 <a name="review" id="review">&nbsp;</a></h5> 
    </div> 
    <br /> 
    <div class="row"> 
     <form class="col s12" action="add_review.php" method="post"> 
      <div class="row"> 
       <div class="input-field col s6"> 
-       <i class="material-icons prefix"></i> 
+       <i class="material-icons prefix">&#xE853;</i> 
        <input id="username" type="text" name="username" class="validate" /> 
        <label for="username">用户</label> 
       </div> 
      </div> 
      <div class="row"> 
       <div class="input-field col s12"> 
-       <i class="material-icons prefix"></i> 
+       <i class="material-icons prefix">&#xE3C9;</i> 
        <textarea id="content" name="content" class="materialize-textarea" length="12450"></textarea> 
        <label for="content">留言</label> 
       </div> 
