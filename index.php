@@ -60,7 +60,7 @@
       </div> 
      </div> 
     </div>
-    <div class="col s12 m6 center"> 
+    <div class="col s12 m4 center"> 
      <div class="card hoverable waves-effect waves-light orange"> 
       <div class="card-content white-text"> 
        <span class="card-title white-text"> <i class="tiny material-icons white-text">&#xE87A;</i>Glype </span> 
@@ -71,7 +71,7 @@
       </div> 
      </div> 
     </div>
-    <div class="col s12 m6 center"> 
+    <div class="col s12 m4 center"> 
      <div class="card hoverable waves-effect waves-light orange"> 
       <div class="card-content white-text"> 
        <span class="card-title white-text"> <i class="tiny material-icons white-text">&#xE884;</i>离线下载 </span> 
@@ -82,6 +82,17 @@
       </div> 
      </div> 
     </div> 
+    <div class="col s12 m4 center"> 
+     <div class="card hoverable waves-effect waves-light orange"> 
+      <div class="card-content white-text"> 
+       <span class="card-title white-text"> <i class="tiny material-icons white-text">&#xE2C3;</i>海文云盘 </span> 
+       <p class="light"> 由seafiles团队制作的安全、可靠、快速的文件同步和共享。 </p> 
+      </div> 
+      <div class="card-action white-text"> 
+       <a class="orange-text text-lighten-3" href="https://pan.simonsmh.tk/">点这里去海文云盘</a> 
+      </div> 
+     </div> 
+    </div>
     <h5 class="header col s12 light center"> 下面是simonsmh.tk运行的程序 </h5> 
     <div class="col s12 m4 center"> 
      <div class="card hoverable waves-effect waves-light orange"> 

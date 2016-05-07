@@ -5,9 +5,9 @@ server {
 listen 80 default_server;
 rewrite ^ $scheme://simonsmh.tk/;
 }
-#enable ssl in 2 main server
-#./letsencrypt-auto certonly --standalone --email simonsmh@gmail.com -d simonsmh.tk -d blog.simonsmh.tk -d tieba.simonsmh.tk -d openwrt.simonsmh.tk
-#expire on 2016-05-02
+#enable ssl in all secon domain server
+#./letsencrypt-auto certonly --standalone --email simonsmh@gmail.com -d simonsmh.tk -d blog.simonsmh.tk -d tieba.simonsmh.tk -d openwrt.simonsmh.tk -d bt.simonsmh.tk -d pan.simonsmh.tk
+#expire on 2016-08-07
 #add "--server https://acme-staging.api.letsencrypt.org/directory" to avoid rate limit problem.
 server {
 listen 80;
@@ -22,6 +22,16 @@ rewrite ^(.*) https://$server_name$request_uri permanent;
 server {
 listen 80;
 server_name tieba.simonsmh.tk;
+rewrite ^(.*) https://$server_name$request_uri permanent;
+}
+server {
+listen 80;
+server_name bt.simonsmh.tk;
+rewrite ^(.*) https://$server_name$request_uri permanent;
+}
+server {
+listen 80;
+server_name pan.simonsmh.tk;
 rewrite ^(.*) https://$server_name$request_uri permanent;
 }
 #defalt
@@ -136,22 +146,28 @@ ssl_session_cache builtin:1000 shared:SSL:10m;
 
 #transmission
 server {
-listen 80;
+listen 443;
 server_name bt.simonsmh.tk;
 location /{
 proxy_pass http://simonsmh.tk:9091;
 proxy_set_header Accept-Encoding "";
 }
-#Fix Android Network [!]
-location /generate_204 {
-return 204;
+ssl on;
+ssl_certificate /etc/letsencrypt/live/simonsmh.tk/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/simonsmh.tk/privkey.pem;
+ssl_session_timeout 10m;
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ssl_prefer_server_ciphers on;
+ssl_ciphers ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM;
+ssl_session_cache builtin:1000 shared:SSL:10m;
 }
-}
+
+#seafiles
 server {
 listen 443;
-server_name bt.simonsmh.tk;
+server_name pan.simonsmh.tk;
 location /{
-proxy_pass http://simonsmh.tk:9091;
+proxy_pass http://simonsmh.tk:8000;
 proxy_set_header Accept-Encoding "";
 }
 ssl on;
