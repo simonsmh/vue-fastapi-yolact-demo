@@ -86,7 +86,7 @@
      <div class="card hoverable waves-effect waves-light orange"> 
       <div class="card-content white-text"> 
        <span class="card-title white-text"> <i class="tiny material-icons white-text">&#xE2C3;</i>海文云盘 </span> 
-       <p class="light"> 由seafiles团队制作的安全、可靠、快速的文件同步和共享。 </p> 
+       <p class="light"> 由Seafile团队制作的安全、可靠、快速的文件同步和共享。 </p> 
       </div> 
       <div class="card-action white-text"> 
        <a class="orange-text text-lighten-3" href="https://pan.simonsmh.tk/">点这里去海文云盘</a> 
