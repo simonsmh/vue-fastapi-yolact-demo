@@ -3,41 +3,54 @@
 #guide domain which is on 80 port
 server { 
 listen 80 default_server;
+listen [::]:80 default_server;
 rewrite ^ $scheme://simonsmh.tk/;
 }
 #enable ssl in all secon domain server
-#./letsencrypt-auto certonly --standalone --email simonsmh@gmail.com -d simonsmh.tk -d blog.simonsmh.tk -d tieba.simonsmh.tk -d openwrt.simonsmh.tk -d bt.simonsmh.tk -d pan.simonsmh.tk
+#./letsencrypt-auto certonly --standalone --email simonsmh@gmail.com -d simonsmh.tk -d blog.simonsmh.tk -d tieba.simonsmh.tk -d openwrt.simonsmh.tk -d bt.simonsmh.tk -d pan.simonsmh.tk -d ipv6.simonsmh.tk
 #expire on 2016-08-07
 #add "--server https://acme-staging.api.letsencrypt.org/directory" to avoid rate limit problem.
 server {
 listen 80;
+listen [::]:80;
 server_name simonsmh.tk;
 rewrite ^(.*) https://$server_name$request_uri permanent;
 }
 server {
 listen 80;
+listen [::]:80;
+server_name ipv6.simonsmh.tk;
+rewrite ^(.*) https://$server_name$request_uri permanent;
+}
+server {
+listen 80;
+listen [::]:80;
 server_name blog.simonsmh.tk;
 rewrite ^(.*) https://$server_name$request_uri permanent;
 }
 server {
 listen 80;
+listen [::]:80;
 server_name tieba.simonsmh.tk;
 rewrite ^(.*) https://$server_name$request_uri permanent;
 }
 server {
 listen 80;
+listen [::]:80;
 server_name bt.simonsmh.tk;
 rewrite ^(.*) https://$server_name$request_uri permanent;
 }
 server {
 listen 80;
+listen [::]:80;
 server_name pan.simonsmh.tk;
 rewrite ^(.*) https://$server_name$request_uri permanent;
 }
 #defalt
 server {
 listen 443;
-server_name simonsmh.tk www.simonsmh.tk;
+listen [::]:443;
+server_name simonsmh.tk ipv6.simonsmh.tk www.simonsmh.tk;
 root /var/www/simonsmh.tk; 
 index index.php index.html index.htm;
 #redir to file dir, not using link
@@ -73,6 +86,7 @@ ssl_session_cache builtin:1000 shared:SSL:10m;
 #blog.simonsmh.tk
 server {
 listen 443;
+listen [::]:443;
 root /var/www/blog.simonsmh.tk;
 index index.php index.html index.htm;
 server_name blog.simonsmh.tk;
@@ -110,6 +124,7 @@ ssl_session_cache builtin:1000 shared:SSL:10m;
 #tieba
 server {
 listen 443;
+listen [::]:443;
 root /var/www/tieba.simonsmh.tk;
 index index.php index.html index.htm;
 server_name tieba.simonsmh.tk;
@@ -147,6 +162,7 @@ ssl_session_cache builtin:1000 shared:SSL:10m;
 #transmission
 server {
 listen 443;
+listen [::]:443;
 server_name bt.simonsmh.tk;
 location /{
 proxy_pass http://simonsmh.tk:9091;
@@ -165,6 +181,7 @@ ssl_session_cache builtin:1000 shared:SSL:10m;
 #seafiles
 server {
 listen 443;
+listen [::]:443;
 server_name pan.simonsmh.tk;
 location /{
 proxy_pass http://simonsmh.tk:8000;
@@ -183,6 +200,7 @@ ssl_session_cache builtin:1000 shared:SSL:10m;
 #openwrt
 server {
 listen 80;
+listen [::]:80;
 server_name openwrt.simonsmh.tk;
 location /{
 proxy_redirect http://downloads.openwrt.org/ /;
@@ -193,6 +211,7 @@ subs_filter downloads.openwrt.org openwrt.simonsmh.tk;
 }
 server {
 listen 443;
+listen [::]:443;
 server_name openwrt.simonsmh.tk;
 location /{
 proxy_redirect https://downloads.openwrt.org/ /;
@@ -213,6 +232,7 @@ ssl_session_cache builtin:1000 shared:SSL:10m;
 #wikipedia welcome page
 server {
 listen 80;
+listen [::]:80;
 server_name wiki.simonsmh.tk www.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://www.wikipedia.org/ /;
@@ -234,6 +254,7 @@ subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
 #wiki-chinese and wikim-chinese
 server {
 listen 80;
+listen [::]:80;
 server_name zh.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://zh.wikipedia.org/ /;
@@ -247,6 +268,7 @@ subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
 }
 server {
 listen 80;
+listen [::]:80;
 server_name zh.m.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://zh.m.wikipedia.org/ /;
@@ -263,6 +285,7 @@ subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
 #wiki-english and wikim-english
 server {
 listen 80;
+listen [::]:80;
 server_name en.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://en.wikipedia.org/ /;
@@ -276,6 +299,7 @@ subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
 }
 server {
 listen 80;
+listen [::]:80;
 server_name en.m.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://en.m.wikipedia.org/ /;
@@ -291,6 +315,7 @@ subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
 #wiki-japan and wikim-japan
 server {
 listen 80;
+listen [::]:80;
 server_name ja.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://ja.wikipedia.org/ /;
@@ -304,6 +329,7 @@ subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
 }
 server {
 listen 80;
+listen [::]:80;
 server_name ja.m.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://ja.m.wikipedia.org/ /;
@@ -318,6 +344,7 @@ subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
 
 server {
 listen 80;
+listen [::]:80;
 root /var/www/fatesakura.tk;
 index index.php index.html index.htm;
 server_name fatesakura.tk;
