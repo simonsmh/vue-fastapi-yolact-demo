@@ -969,10 +969,10 @@ foreach ($able as $key=>$value) {
     <td width="32%">PHP信息（phpinfo）：</td>
     <td width="18%">
 		<?php
-		$phpSelf = $_SERVER[PHP_SELF] ? $_SERVER[PHP_SELF] : $_SERVER[SCRIPT_NAME];
+		$phpSelf = $_SERVER['PHP_SELF'] ? $_SERVER['PHP_SELF'] : $_SERVER['SCRIPT_NAME'];
 		$disFuns=get_cfg_var("disable_functions");
 		?>
-    <?php echo (false!==eregi("phpinfo",$disFuns))? '<font color="red">×</font>' :"<a href='$phpSelf?act=phpinfo' target='_blank'>PHPINFO</a>";?>
+    <?php echo (preg_match("/phpinfo/i",$disFuns))? '<font color="red">×</font>' :"<a href='$phpSelf?act=phpinfo' target='_blank'>PHPINFO</a>";?>
     </td>
     <td width="32%">PHP版本（php_version）：</td>
     <td width="18%"><?php echo PHP_VERSION;?></td>
@@ -1219,16 +1219,7 @@ else
   <tr><th colspan="4">数据库支持</th></tr>
   <tr>
     <td width="32%">MySQL 数据库：</td>
-    <td width="18%"><?php echo isfun("mysql_close");?>
-    <?php
-    if(function_exists("mysql_get_server_info")) {
-        $s = @mysql_get_server_info();
-        $s = $s ? '&nbsp; mysql_server 版本：'.$s : '';
-	    $c = '&nbsp; mysql_client 版本：'.@mysql_get_client_info();
-        echo $s;
-    }
-    ?>
-	</td>
+    <td width="18%"><?php echo isfun("mysqli_close");?></td>
     <td width="32%">ODBC 数据库：</td>
     <td width="18%"><?php echo isfun("odbc_close");?></td>
   </tr>
@@ -1271,7 +1262,7 @@ else
 </table>
 
 <a name="w_performance"></a><a name="bottom"></a>
-<form action="<?php echo $_SERVER[PHP_SELF]."#bottom";?>" method="post">
+<form action="<?php echo $_SERVER['PHP_SELF']."#bottom";?>" method="post">
 <!--服务器性能检测-->
 <table>
   <tr><th colspan="5">服务器性能检测</th></tr>
@@ -1413,8 +1404,9 @@ else
 </table>
   <?php
   if ($_POST['act'] == 'MySQL检测') {
-  	if(function_exists("mysql_close")==1) {
-  		$link = @mysql_connect($host.":".$port,$login,$password);
+  	if(function_exists("mysqli_close")==1) {
+		$port = intval($port) ? ':'.$port : '';
+  		$link = @mysqli_connect($host.$port,$login,$password);
   		if ($link){
   			echo "<script>alert('连接到MySql数据库正常')</script>";
   		} else {
