@@ -165,7 +165,7 @@ listen 443;
 listen [::]:443;
 server_name bt.simonsmh.tk;
 location /{
-proxy_pass http://simonsmh.tk:9091;
+proxy_pass http://127.0.0.1:9091;
 proxy_set_header Accept-Encoding "";
 }
 ssl on;
