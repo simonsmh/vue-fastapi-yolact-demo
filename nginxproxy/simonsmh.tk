@@ -5,6 +5,11 @@ server {
 listen 80 default_server;
 listen [::]:80 default_server;
 rewrite ^ $scheme://simonsmh.tk/;
+#Fonts cache
+location ~* ^.+\.(eot|ttf|otf|woff|svg|woff2)$ {
+access_log off;
+expires max;
+}
 }
 #enable ssl in all secon domain server
 #./letsencrypt-auto certonly --standalone --email simonsmh@gmail.com -d simonsmh.tk -d blog.simonsmh.tk -d tieba.simonsmh.tk -d openwrt.simonsmh.tk -d bt.simonsmh.tk -d pan.simonsmh.tk -d ipv6.simonsmh.tk
@@ -48,8 +53,8 @@ rewrite ^(.*) https://$server_name$request_uri permanent;
 }
 #defalt
 server {
-listen 443;
-listen [::]:443;
+listen 443 http2;
+listen [::]:443 http2;
 server_name simonsmh.tk ipv6.simonsmh.tk www.simonsmh.tk;
 root /var/www/simonsmh.tk; 
 index index.php index.html index.htm;
@@ -85,8 +90,8 @@ ssl_session_cache builtin:1000 shared:SSL:10m;
 
 #blog.simonsmh.tk
 server {
-listen 443;
-listen [::]:443;
+listen 443 http2;
+listen [::]:443 http2;
 root /var/www/blog.simonsmh.tk;
 index index.php index.html index.htm;
 server_name blog.simonsmh.tk;
@@ -123,8 +128,8 @@ ssl_session_cache builtin:1000 shared:SSL:10m;
 
 #tieba
 server {
-listen 443;
-listen [::]:443;
+listen 443 http2;
+listen [::]:443 http2;
 root /var/www/tieba.simonsmh.tk;
 index index.php index.html index.htm;
 server_name tieba.simonsmh.tk;
@@ -161,8 +166,8 @@ ssl_session_cache builtin:1000 shared:SSL:10m;
 
 #transmission
 server {
-listen 443;
-listen [::]:443;
+listen 443 http2;
+listen [::]:443 http2;
 server_name bt.simonsmh.tk;
 location /{
 proxy_pass http://127.0.0.1:9091;
@@ -180,11 +185,11 @@ ssl_session_cache builtin:1000 shared:SSL:10m;
 
 #seafiles
 server {
-listen 443;
-listen [::]:443;
+listen 443 http2;
+listen [::]:443 http2;
 server_name pan.simonsmh.tk;
 location /{
-proxy_pass http://simonsmh.tk:8000;
+proxy_pass http://127.0.0.1:8000;
 proxy_set_header Accept-Encoding "";
 }
 ssl on;
@@ -210,8 +215,8 @@ subs_filter downloads.openwrt.org openwrt.simonsmh.tk;
 }
 }
 server {
-listen 443;
-listen [::]:443;
+listen 443 http2;
+listen [::]:443 http2;
 server_name openwrt.simonsmh.tk;
 location /{
 proxy_redirect https://downloads.openwrt.org/ /;
