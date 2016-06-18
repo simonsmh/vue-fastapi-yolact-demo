@@ -29,6 +29,7 @@
           来获取更多信息
         </p>
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGwAAABsAQMAAAC1qMWOAAAABlBMVEX///8AAABVwtN+AAAAxUlEQVQ4jaWU0Q0AIQhDuwH7b8kGXAvR+Gk9Yu54fphSUOBHRFVFZKUSF7kYyJjcwuiTJnlBcOMVs1jCA2qxhqOie2zrFIeTl9h9yj5mt+0aVQE1qPwysbvFDaxeGwgZLgP4LxdHf+msNJEKKF0Dih4YB5lJgDRkmBiSUBRC/8pEjBTanpkmBmZG+GkzHFz3vxB7zG6xRzR7YmCjVtc/l9rC2C/Q8YzcI/oFCjXQRjmuzoWL6NHWjE/LHJTjuo/I5eQ1/ogPdAQWf0FteAEAAAAASUVORK5CYII=" />
+        <p class="white-text">© 2015-<?php echo date("Y")."<br >今天是". date("m月d日");?></p>
       </div>
       <div class="col l3 s12 center">
         <h5 class="white-text">

@@ -78,6 +78,11 @@ fastcgi_index index.php;
 include fastcgi_params;
 fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 }
+error_page  310 310.php;
+error_page  401 401.php;
+error_page  403 403.php;
+error_page  404 404.php;
+error_page  502 502.php;
 }
 
 #blog.simonsmh.tk
@@ -149,6 +154,11 @@ location /{
 proxy_pass http://127.0.0.1:9091;
 proxy_set_header Accept-Encoding "";
 }
+error_page  310 https://simonsmh.tk/310.php;
+error_page  401 https://simonsmh.tk/401.php;
+error_page  403 https://simonsmh.tk/403.php;
+error_page  404 https://simonsmh.tk/404.php;
+error_page  502 https://simonsmh.tk/502.php;
 }
 
 #seafiles
@@ -160,6 +170,11 @@ location /{
 proxy_pass http://127.0.0.1:8000;
 proxy_set_header Accept-Encoding "";
 }
+error_page  310 https://simonsmh.tk/310.php;
+error_page  401 https://simonsmh.tk/401.php;
+error_page  403 https://simonsmh.tk/403.php;
+error_page  404 https://simonsmh.tk/404.php;
+error_page  502 https://simonsmh.tk/502.php;
 }
 
 #openwrt
@@ -299,6 +314,7 @@ subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
 }
 }
 
+#fatesakura
 server {
 listen 80;
 listen [::]:80;
