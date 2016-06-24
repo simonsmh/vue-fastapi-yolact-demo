@@ -41,21 +41,44 @@
   <div class="container"> 
    <div class="section"> 
 <?php
+if ($_GET["post"] == 1){
+echo "<html lang='zh-cn'><meta http-equiv='refresh' content='0;url=review.php'>";
+$user = $_POST['username'];
+$content = $_POST['content'];
+$time = date('Y-m-d H:i',time());
+if (($user=="") and ($content=="")){
+echo "<script type='text/javascript'>alert('请填写内容');</script>";
+}else{
+$user = str_replace('<',"&lt;",$user);
+$user = str_replace('>',"&gt;",$user);
+$user = trim($user);
+$user = preg_replace("/\t/","",$user);
+$user = preg_replace("/\r\n/","<br/>",$user);
+$user = preg_replace("/\r/","<br/>",$user);
+$user = preg_replace("/\n/","<br/>",$user);
+$content = str_replace('<',"&lt;",$content);
+$content = str_replace('>',"&gt;",$content);
+$content = trim($content);
+$content = preg_replace("/\t/","",$content);
+$content = preg_replace("/\r\n/","<br/>",$content);
+$content = preg_replace("/\r/","<br/>",$content);
+$content = preg_replace("/\n/","<br/>",$content);
+$txt = fopen('review.txt','a+');
+$hh = "\r\n";
+$zc = "用户: $user <br> 时间: $time <br> 留言: <br> $content <br> $hh ";
+$write = fwrite($txt,$zc);
+fclose($txt);
+}
+echo "</html>";
+}else{
 $file = file("review.txt");
 $arr=array_reverse($file);
 foreach($arr as $key=>$value){
 for($i=1;$i<count($arr);$i++)
 $s[$i] = $value;
 {
-echo <<<EOT
-<div class="section"><p style="word-break:break-all">
-EOT;
-echo $value;
-echo <<<EOT
-</p></div>
-<div class="divider"></div>
-EOT;
-}}
+echo "<div class='section'><p style='word-break:break-all'>".$value."</p></div><div class='divider'></div>";
+}}}
 ?>
    <br /> 
    <div class="row"> 
@@ -63,7 +86,7 @@ EOT;
    </div> 
    <br /> 
    <div class="row"> 
-    <form class="col s12" action="add_review.php" method="post"> 
+    <form class="col s12" action="review.php?post=1" method="post"> 
      <div class="row"> 
       <div class="input-field col s6"> 
        <i class="material-icons prefix">&#xE853;</i> 

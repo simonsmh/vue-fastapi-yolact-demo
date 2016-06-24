@@ -33,4 +33,6 @@
  用户: backup <br> 时间: 2016-04-17 10:36 <br> 留言: <br> 时间过的真快，转眼我就上高二了。在10月份我们举行了隆重的80周年校庆，同学和老师们都为了这次活动准备了很多，差不多一个月前就开始陆续准备节目，并在全校面前征集点子和创意。我们也在这次活动中压轴出场，表演合唱校歌。校庆举行的晚会如此声势浩大还是第一次，所有人都非常开心的参与其中，一起跟着台上的同学唱唱跳跳，对着上场的老师努力鼓掌。美好的时间过的飞快，转眼间我们又得回到教室里的课桌前，不过，我收获了这份难忘的记忆和同学间深厚的友谊，我会努力学习，取得良好的成绩，不辜负老师和同学的期望。<br/>244个字 <br> 
  用户: owm api <br> 时间: 2016-06-07 14:55 <br> 留言: <br> 194763ea9a7dad0aeba73fb0a62e8abc <br> 
  用户:  <br> 时间: 2016-06-18 11:11 <br> 留言: <br> DATEINFO=$(date "+%Y%m%d") && wget https://github.com/opengapps/arm64/releases/download/$DATEINFO/open_gapps-arm64-6.0-nano-$DATEINFO.zipDATEINFO=$(date "+%Y%m%d") && wget https://github.com/opengapps/arm64/releases/download/$DATEINFO/open_gapps-arm64-6.0-nano-$DATEINFO.zip <br> 
+ 用户: or 1=1 <br> 时间: 2016-06-23 00:35 <br> 留言: <br> or 1=1 <br> 
+ 用户: test <br> 时间: 2016-06-24 14:39 <br> 留言: <br> test <br> 
  
