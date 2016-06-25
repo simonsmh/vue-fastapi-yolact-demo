@@ -16,7 +16,12 @@ if ($fh==""){
 echo "<script type='text/javascript'>alert('网址错误');</script>";
 }
 echo $fh;
-}else{
+}elseif($_GET["ip"] == 1){
+echo $_SERVER["REMOTE_ADDR"];
+}elseif($_GET["ua"] == 1){
+echo $_SERVER["HTTP_USER_AGENT"]; 
+}
+else{
 include( "header.php");
 echo <<<END
 <html lang="zh-cn">
@@ -30,10 +35,14 @@ echo <<<END
      <li> <a class='dropdown-button waves-effect waves-light' href='#' data-activates='dropdown1'> 菜单 <i class='material-icons right'> &#xE5C5; </i> </a> </li> 
     </ul> 
     <ul id='dropdown1' class='dropdown-content'> 
-     <?php include( 'nav.php'); ?>
+END;
+include( 'nav.php');
+echo <<<END
     </ul> 
     <ul id='nav-mobile' class='side-nav'> 
-     <?php include( 'navm.php'); ?>
+END;
+include( 'nav.php');
+echo <<<END
     </ul> 
     <a href='#' data-activates='nav-mobile' class='button-collapse'> <i class='material-icons'> &#xE5D2; </i> </a> 
    </div> 
@@ -83,8 +92,8 @@ echo <<<END
   <div class='section'>
     <h5 class='center'>PHP INFO</h5>
     <div class='row'> 
-     <span class='col s12 light'><a href='ip.php'>直接获取IP</a></span> 
-     <span class='col s12 light'><a href='ua.php'>直接获取UserAgent</a></span> 
+     <span class='col s12 light'><a href='source.php?ip=1'>直接获取IP</a></span> 
+     <span class='col s12 light'><a href='source.php?ua=1'>直接获取UserAgent</a></span> 
      <div class='col s12'><br></div> 
 
 <span class="col s12 light">本机IP（PHP-cURL>members.3322.org/dyndns/getip）</span> 
@@ -105,13 +114,13 @@ echo <<<END
 <span class="col s12 light">你的IP（PHP）</span> 
 <span class="col s12 light">
 END;
-include( "ip.php");
+echo $_SERVER["REMOTE_ADDR"];
 echo "</span>";
 echo <<<END
 <span class="col s12 light">你的USERAGENT（PHP）</span> 
 <span class="col s12 light">
 END;
-include( "ua.php");
+echo $_SERVER["HTTP_USER_AGENT"]; 
 echo <<<END
 </span> 
 <span class="col s12 light">

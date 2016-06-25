@@ -14,7 +14,7 @@
      <?php include( "nav.php"); ?>
     </ul> 
     <ul id="nav-mobile" class="side-nav"> 
-     <?php include( "navm.php"); ?>
+     <?php include( "nav.php"); ?>
     </ul> 
     <a href="#" data-activates="nav-mobile" class="button-collapse"> <i class="material-icons"> &#xE5D2; </i> </a> 
    </div> 

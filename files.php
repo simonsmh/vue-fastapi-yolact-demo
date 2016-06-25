@@ -1,7 +1,26 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
- <?php include( "header.php"); ?>
- <head></head>
+<?php 
+if($_GET["up"] == 1){
+echo "<script type='text/javascript'>alert('";
+$dir = "/var/wwwfiles/files/";
+if ($_FILES["file"]["error"] > 0){
+echo "发生错误:".$_FILES["file"]["error"];
+}else{
+echo "上传文件:".$_FILES["file"]["name"]." \/n ";
+echo "文件类型:".$_FILES["file"]["type"]." \/n ";
+echo "文件大小:".($_FILES["file"]["size"]/1000000)."MiB \/n ";
+echo "临时文件:".$_FILES["file"]["tmp_name"]." \/n ";
+if (file_exists($dir.$_FILES["file"]["name"])){
+echo "警告:文件已经存在并被删除.";
+unlink ($dir.$_FILES["file"]["name"]); 
+}
+move_uploaded_file($_FILES["file"]["tmp_name"],
+$dir.$_FILES["file"]["name"]);
+echo "存放位置:".$dir.$_FILES["file"]["name"];}
+echo "');location.replace(document.referrer);document.frames('ifrmname').location.reload();</script>";
+}else{include( "header.php");
+echo <<<EOF
  <body> 
 <div class="navbar-fixed"> 
   <nav class="indigo" role="navigation"> 
@@ -11,10 +30,14 @@
      <li> <a class="dropdown-button waves-effect waves-light" href="#" data-activates="dropdown1"> 菜单 <i class="material-icons right"> &#xE5C5; </i> </a> </li> 
     </ul> 
     <ul id="dropdown1" class="dropdown-content"> 
-     <?php include( "nav.php"); ?>
+EOF;
+include( "nav.php"); 
+echo <<<EOF
     </ul> 
     <ul id="nav-mobile" class="side-nav"> 
-     <?php include( "navm.php"); ?>
+EOF;
+include( "nav.php"); 
+echo <<<EOF
     </ul> 
     <a href="#" data-activates="nav-mobile" class="button-collapse"> <i class="material-icons"> &#xE5D2; </i> </a> 
    </div> 
@@ -37,7 +60,7 @@
   </div> 
   <div class="container"> 
    <div class="section"> 
-    <form id="file" name="file" action="upload_file.php" method="post" enctype="multipart/form-data"> 
+    <form id="file" name="file" action="files.php?up=1" method="post" enctype="multipart/form-data"> 
      <div class="file-field input-field"> 
       <div class="btn orange"> 
        <span> 选择文件 </span> 
@@ -50,9 +73,10 @@
      </div> 
     </form> 
     <br /> 
-    <iframe src="files/" width="100%" height="500" frameborder="0"> &lt;p&gt; visit http://simonsmh.tk/files/ &lt;/p&gt; </iframe> 
+    <iframe name="showfiles" src="files/" width="100%" height="500" frameborder="0"> &lt;p&gt; visit http://simonsmh.tk/files/ &lt;/p&gt; </iframe> 
    </div> 
   </div> 
-  <?php include( "footer.php"); ?>
- </body>
-</html>
+EOF;
+include( "footer.php"); 
+echo "</body></html>";}
+?>

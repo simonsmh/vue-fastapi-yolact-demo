@@ -35,4 +35,5 @@
  用户:  <br> 时间: 2016-06-18 11:11 <br> 留言: <br> DATEINFO=$(date "+%Y%m%d") && wget https://github.com/opengapps/arm64/releases/download/$DATEINFO/open_gapps-arm64-6.0-nano-$DATEINFO.zipDATEINFO=$(date "+%Y%m%d") && wget https://github.com/opengapps/arm64/releases/download/$DATEINFO/open_gapps-arm64-6.0-nano-$DATEINFO.zip <br> 
  用户: or 1=1 <br> 时间: 2016-06-23 00:35 <br> 留言: <br> or 1=1 <br> 
  用户: test <br> 时间: 2016-06-24 14:39 <br> 留言: <br> test <br> 
+ 用户: Test <br> 时间: 2016-06-25 15:05 <br> 留言: <br> GG <br> 
  
