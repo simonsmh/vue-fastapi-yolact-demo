@@ -63,7 +63,7 @@ location ~ /(files|sfiles)/ {
 root /var/wwwfiles/; 
 }
 #Disable upload&run .php files
-location ~ ^/(files|sfiles)/.*\.php$
+location ~ ^/(files|sfiles)/.*\.php(\/.*)*$
 {
 deny all; 
 }
@@ -71,18 +71,21 @@ deny all;
 location / {
 add_header Access-Control-Allow-Origin *;
 }
-location ~ \.php$ {
+location ~ .*\.php(\/.*)*$ {
+set $path_info "";
 fastcgi_split_path_info ^(.+\.php)(/.+)$;
 fastcgi_pass unix:/run/php/php7.0-fpm.sock;
 fastcgi_index index.php;
 include fastcgi_params;
 fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+fastcgi_param SCRIPT_NAME $fastcgi_script_name;
+fastcgi_param PATH_INFO $path_info;
 }
-error_page  310 310.php;
-error_page  401 401.php;
-error_page  403 403.php;
-error_page  404 404.php;
-error_page  502 502.php;
+error_page  310 /310.php;
+error_page  401 /401.php;
+error_page  403 /403.php;
+error_page  404 /404.php;
+error_page  502 /502.php;
 }
 
 #blog.simonsmh.tk
@@ -92,26 +95,18 @@ listen [::]:443 http2 ssl;
 root /var/www/blog.simonsmh.tk;
 index index.php index.html index.htm;
 server_name blog.simonsmh.tk;
-location / {
-if (-d $request_filename){
-rewrite ^/(.*)([^/])$ /$1$2/ permanent;
+if (!-e $request_filename) {
+rewrite ^(.*)$ /index.php$1 last;
 }
-if (-f $request_filename/index.html){
-rewrite (.*) $1/index.html break;
-}
-if (-f $request_filename/index.php){
-rewrite (.*) $1/index.php;
-}
-if (!-f $request_filename){
-rewrite (.*) /index.php;
-}
-}
-location ~ \.php$ {
+location ~ .*\.php(\/.*)*$ {
+set $path_info "";
 fastcgi_split_path_info ^(.+\.php)(/.+)$;
 fastcgi_pass unix:/run/php/php7.0-fpm.sock;
 fastcgi_index index.php;
 include fastcgi_params;
 fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+fastcgi_param SCRIPT_NAME $fastcgi_script_name;
+fastcgi_param PATH_INFO $path_info;
 }
 }
 
@@ -122,26 +117,15 @@ listen [::]:443 http2 ssl;
 root /var/www/tieba.simonsmh.tk;
 index index.php index.html index.htm;
 server_name tieba.simonsmh.tk;
-location / {
-if (-d $request_filename){
-rewrite ^/(.*)([^/])$ /$1$2/ permanent;
-}
-if (-f $request_filename/index.html){
-rewrite (.*) $1/index.html break;
-}
-if (-f $request_filename/index.php){
-rewrite (.*) $1/index.php;
-}
-if (!-f $request_filename){
-rewrite (.*) /index.php;
-}
-}
-location ~ \.php$ {
+location ~ .*\.php(\/.*)*$ {
+set $path_info "";
 fastcgi_split_path_info ^(.+\.php)(/.+)$;
 fastcgi_pass unix:/run/php/php7.0-fpm.sock;
 fastcgi_index index.php;
 include fastcgi_params;
 fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+fastcgi_param SCRIPT_NAME $fastcgi_script_name;
+fastcgi_param PATH_INFO $path_info;
 }
 }
 
