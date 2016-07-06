@@ -12,7 +12,7 @@ expires max;
 }
 }
 #enable ssl in all secon domain server
-#./letsencrypt-auto certonly --standalone --email simonsmh@gmail.com -d simonsmh.tk -d blog.simonsmh.tk -d tieba.simonsmh.tk -d openwrt.simonsmh.tk -d bt.simonsmh.tk -d pan.simonsmh.tk -d ipv6.simonsmh.tk
+#./letsencrypt-auto certonly --standalone --email simonsmh@gmail.com -d simonsmh.tk -d blog.simonsmh.tk -d tieba.simonsmh.tk -d openwrt.simonsmh.tk -d bt.simonsmh.tk -d pan.simonsmh.tk -d ipv6.simonsmh.tk -d ports.simonsmh.tk -d home.simonsmh.tk
 #expire on 2016-08-07
 #add "--server https://acme-staging.api.letsencrypt.org/directory" to avoid rate limit problem.
 server {
@@ -184,7 +184,30 @@ proxy_set_header Accept-Encoding "";
 subs_filter downloads.openwrt.org openwrt.simonsmh.tk;
 }
 }
+server {
+listen 80;
+listen [::]:80;
+server_name ports.simonsmh.tk;
+location /{
+proxy_redirect http://ports.ubuntu.com/ /;
+proxy_pass http://ports.ubuntu.com;
+proxy_set_header Accept-Encoding "";
+subs_filter ports.ubuntu.com ports.simonsmh.tk;
+}
+}
 
+#ubuntu
+server {
+listen 443 http2 ssl;
+listen [::]:443 http2 ssl;
+server_name ports.simonsmh.tk;
+location /{
+proxy_redirect https://ports.ubuntu.com/ /;
+proxy_pass https://ports.ubuntu.com;
+proxy_set_header Accept-Encoding "";
+subs_filter ports.ubuntu.com ports.simonsmh.tk;
+}
+}
 #wikipedia welcome page
 server {
 listen 80;
