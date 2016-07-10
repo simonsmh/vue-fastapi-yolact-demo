@@ -184,6 +184,7 @@ proxy_set_header Accept-Encoding "";
 subs_filter downloads.openwrt.org openwrt.simonsmh.tk;
 }
 }
+#ubuntu
 server {
 listen 80;
 listen [::]:80;
@@ -195,19 +196,18 @@ proxy_set_header Accept-Encoding "";
 subs_filter ports.ubuntu.com ports.simonsmh.tk;
 }
 }
-
-#ubuntu
 server {
 listen 443 http2 ssl;
 listen [::]:443 http2 ssl;
 server_name ports.simonsmh.tk;
 location /{
-proxy_redirect https://ports.ubuntu.com/ /;
-proxy_pass https://ports.ubuntu.com;
+proxy_redirect http://ports.ubuntu.com/ /;
+proxy_pass http://ports.ubuntu.com;
 proxy_set_header Accept-Encoding "";
 subs_filter ports.ubuntu.com ports.simonsmh.tk;
 }
 }
+
 #wikipedia welcome page
 server {
 listen 80;
