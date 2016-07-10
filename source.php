@@ -68,15 +68,17 @@ echo <<<END
     <h5 class='center'>源码浏览器</h5>
     <div class='row'> 
      <form class='col s12' action='source.php?url=1' method='post'> 
-      <div class='switch'> 
-       <label> &nbsp;&nbsp;&nbsp;&nbsp;显示源码 <input type='checkbox' name='choose' /> <span class='lever'></span> 显示页面 </label> 
+      <div class='switch center'> 
+       <label> 显示源码 <input type='checkbox' name='choose' /> <span class='lever'></span> 显示页面 </label> 
       </div> 
       <br /> 
-      <div class='input-field'> 
+      <div class='row input-field'> 
        <input value='https://twitter.com/MinhaoShi' id='website' name='website' type='text' class='validate' /> 
        <label class='active' for='website'>填写网址</label> 
       </div> 
-      <button class='btn-large orange waves-effect waves-light' onclick='submit()' type='submit' name='action'>确认 <i class='material-icons right'>send</i> </button> 
+      <div class='row center'>
+       <button class='btn-large orange waves-effect waves-light' onclick='submit()' type='submit' name='action'>确认 <i class='material-icons right'>send</i> </button> 
+      </div>
      </form> 
     </div> 
     </div>

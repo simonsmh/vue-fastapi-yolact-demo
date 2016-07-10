@@ -81,7 +81,7 @@ echo "<div class='section'><p style='word-break:break-all'>".$value."</p></div><
 }}}
 ?>
    <br /> 
-   <div class="row"> 
+   <div class="row center"> 
     <h5 class="col s12 light"> 留言撰写处 <a name="review" id="review">&nbsp;</a></h5> 
    </div> 
    <br /> 
@@ -94,15 +94,17 @@ echo "<div class='section'><p style='word-break:break-all'>".$value."</p></div><
        <label for="username">用户</label> 
       </div> 
      </div> 
-     <div class="row"> 
+      <div class="row">
       <div class="input-field col s12"> 
        <i class="material-icons prefix">&#xE3C9;</i> 
        <textarea id="content" name="content" class="materialize-textarea" length="12450"></textarea> 
        <label for="content">留言</label> 
       </div> 
      </div> 
+      <div class="row center">
      <button class="btn-large waves-effect orange" onclick="submit()" type="submit" name="action">确认并上传 <i class="material-icons right">send</i> </button> 
     </form> 
+    </div>
    </div> 
   </div>    
  </div> 
