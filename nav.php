@@ -19,6 +19,11 @@
     </a>
   </li>
   <li>
+    <a href="ty.php" class="waves-effect black-text">
+      台风监测
+    </a>
+  </li>
+  <li>
     <a href="shell.php" class="waves-effect black-text">
       Shell
     </a>

@@ -141,10 +141,10 @@ echo <<<END
   </div> 
 <div class="divider"></div>
 <div class="section">
-<h5 class="center">PHP试验场</h5>
-</div>
-  </div> 
 END;
+echo "<h5 class='center'>PHP试验场</h5>";
+
+echo "</div></div>";
 include( "footer.php"); 
 echo "</body></html>";
 }?>

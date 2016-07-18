@@ -38,4 +38,8 @@
  用户: Test <br> 时间: 2016-06-25 15:05 <br> 留言: <br> GG <br> 
  用户: simonsmh@gmail.com <br> 时间: 2016-06-29 02:06 <br> 留言: <br> I am SB <br> 
  用户:  <br> 时间: 2016-07-04 15:35 <br> 留言: <br> http://otafs.coloros.com/patch/amazone2/GLO/OnePlus3Oxygen/OnePlus3Oxygen_16.A.10_GLO_010_1607012342/OnePlus3Oxygen_16_OTA_010_all_1607012342_741e629725ed457b.zip <br> 
+ 用户: 中央气象台报文路径 <br> 时间: 2016-07-15 04:08 <br> 留言: <br> js dataId tag= html data-id tag<br/>eg：http://www.nmc.cn/f/fetch?dataId=SEVP_NMC_TCMO_SFER_ETCT_ACHN_L88_P9_20160710110700000 <br> 
+ 用户: JTWC <br> 时间: 2016-07-15 04:30 <br> 留言: <br> https://metoc.ndbc.noaa.gov/web/guest/jtwc <br> 
+ 用户: 中央气象台路径· <br> 时间: 2016-07-15 04:47 <br> 留言: <br> http://image.nmc.cn/product/2016/07/10/TCBU/medium/SEVP_NMC_TCMO_SFER_ETCT_ACHN_L88_P9_20160710110700000.jpg<br/>data-id.jpg <br> 
+ 用户: 图片tag <br> 时间: 2016-07-15 05:21 <br> 留言: <br> data-original <br> 
  
