@@ -11,7 +11,7 @@ preg_match_all('|member_illust.php\?mode=medium&amp;illust_id=\d+&amp;ref=rn-b-\
 //拼凑高分辨率图片url
 $url = str_ireplace('240x480','600x600',$image[0][$i]);
 //输出图片
-$f = curl_get($url, array('Referer: http://www.pixiv.net/'));
+$f = curl_get($url, array('Referer: http://www.pixiv.net/login.php'));
 echo $f;
 
 //简易CURL设置header读取数据函数
