@@ -1,5 +1,16 @@
 <!DOCTYPE html>
-<?php  
+<?php
+//简易CURL设置header读取数据函数
+function curl_get($url, array $header = array()){
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+$data = curl_exec($ch);
+curl_close($ch);
+return $data;
+}
 if($_GET["url"] == 1){
 $http = "http://";
 $choose = $_POST['choose'];
@@ -7,7 +18,7 @@ $website = $_POST['website'];
 if (strstr($website,"https://")=="" and strstr($website,"http://")==""){
 $website = $http.$_POST['website'];
 }
-$fh = file_get_contents($website);
+$fh = curl_get($website);
 if ($choose==""){
 $fh = str_replace('<',"&lt;",$fh);
 $fh = str_replace('>',"&gt;<br>",$fh);
@@ -102,15 +113,7 @@ echo <<<END
 <span class="col s12 light">本机IP（PHP-cURL>members.3322.org/dyndns/getip）</span> 
 <span class="col s12 light">
 END;
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "http://members.3322.org/dyndns/getip");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_HEADER, 0);
-$output = curl_exec($ch);
-if ($output === FALSE) {
-echo "cURL错误: " . curl_error($ch);
-}
-curl_close($ch);
+$output = curl_get("http://members.3322.org/dyndns/getip");
 echo $output;
 echo <<<END
 </span>
@@ -145,6 +148,6 @@ END;
 echo "<h5 class='center'>PHP试验场</h5>";
 
 echo "</div></div>";
-include( "footer.php"); 
+include( "footer.php");
 echo "</body></html>";
 }?>

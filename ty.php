@@ -38,6 +38,17 @@
   <div class='container'> 
    <div class='row'> 
 <?php
+//简易CURL设置header读取数据函数
+function curl_get($url, array $header = array()){
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+$data = curl_exec($ch);
+curl_close($ch);
+return $data;
+}
 $t = $_GET["type"];
 if ($t == NULL){
 echo <<< EOF
@@ -80,7 +91,7 @@ echo "'href='ty.php?num=".$ind."&type=".$_GET["type"]."'><i class='material-icon
 //nmc报文解析
 if ($t == "nmc"){
 //获取nmc报文网址
-$nmc = file_get_contents("http://www.nmc.cn/publish/typhoon/message.html");
+$nmc = curl_get("http://www.nmc.cn/publish/typhoon/message.html");
 preg_match_all ("<data-id=\"(.*?)\">",$nmc, $nmcpost);
 $counttag = count($nmcpost[1]);
 if ($counttag > $i){
@@ -94,7 +105,7 @@ $time[2] = substr ($tmp,6,2);
 $time[3] = substr ($tmp,8,2);
 $time[4] = substr ($tmp,10,2);
 //去除报文html标签
-$nmcposts = file_get_contents ("http://www.nmc.cn/f/fetch?dataId=".$nmcpost[1][$i]);
+$nmcposts = curl_get("http://www.nmc.cn/f/fetch?dataId=".$nmcpost[1][$i]);
 $nmcposts = preg_replace ("/<.*?>/"," ",$nmcposts);
 //分离报文元素数组化
 $nmcp = preg_split ("/[\s*]+/",$nmcposts);
@@ -263,7 +274,7 @@ echo "暂无更多信息";
 //nmc路径解析
 }}elseif($t == "nmcpic"){
 //获取nmc路径网址
-$nmcpic = file_get_contents("http://www.nmc.cn/publish/typhoon/probability.html");
+$nmcpic = curl_get("http://www.nmc.cn/publish/typhoon/probability.html");
 preg_match_all ("<data-original=\"(.*?)\">",$nmcpic, $nmcpicpost);
 $counttag = count($nmcpicpost[1]);
 if ($counttag > $i){
