@@ -36,7 +36,7 @@ $CONFIG['enable_blockscript'] = false;
 $CONFIG['theme'] = 'glype_materializeCSS';
 
 # Run plugins on these websites
-$CONFIG['plugins'] = 'live.com,twitter.com,yahoo.com,youtube.com,myspace.com,msn.com,hotmail.com,facebook.com,ytimg.com,google.com';
+$CONFIG['plugins'] = 'yahoo.com,msn.com,youtube.com,hotmail.com,myspace.com,ytimg.com,facebook.com,google.com,live.com,twitter.com';
 
 # Temporary directory used by the script. Many features require
 # write permission to the temporary directory. Ensure this
@@ -85,7 +85,7 @@ $CONFIG['path_info_urls'] = false;
 # page and forces all users to first visit the index page. Note:
 # hotlinking is also prevented when the "Encrypt URL" option is
 # enabled.
-$CONFIG['stop_hotlinking'] = true;
+$CONFIG['stop_hotlinking'] = false;
 
 # If the above option is enabled, you can add individual referrers
 # that are allowed to bypass the hotlinking protection. Note:
