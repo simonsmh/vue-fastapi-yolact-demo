@@ -4,6 +4,17 @@
 #letsencrypt --duplicate certonly --standalone --email simonsmh@gmail.com -d simonsmh.tk -d blog.simonsmh.tk -d tieba.simonsmh.tk -d openwrt.simonsmh.tk -d bt.simonsmh.tk -d pan.simonsmh.tk -d ipv6.simonsmh.tk -d ports.simonsmh.tk 
 #expire on 2016-10-18
 #add "--server https://acme-staging.api.letsencrypt.org/directory" to avoid rate limit problem.
+#SSL Settings
+####
+	ssl_certificate /etc/letsencrypt/live/simonsmh.tk/fullchain.pem;
+	ssl_certificate_key /etc/letsencrypt/live/simonsmh.tk/privkey.pem;
+	ssl_session_timeout 10m;
+	ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+	ssl_prefer_server_ciphers on;
+	ssl_ciphers EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH;
+	ssl_session_cache builtin:1000 shared:SSL:10m;
+####
+####
 server {
 listen 80;
 listen [::]:80;
