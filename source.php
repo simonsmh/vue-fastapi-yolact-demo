@@ -97,9 +97,9 @@ echo <<<END
   <div class='section'>
     <h5 class='center'>镜像源（如有其他需求请联系我）</h5>
     <div class='row'> 
-     <span class='col s12 light'> INFO： <br /> <a href='http://openwrt.simonsmh.tk/'> http://openwrt.simonsmh.tk/ </a> 现在成为了 <a href='http://downloads.openwrt.org/'> http://downloads.openwrt.org/ </a> 的镜像站 </br> 快速执行替换代码： </br> sed -i 's/downloads.openwrt.org/openwrt.simonsmh.tk/g' /etc/opkg.conf </span>
-     <span class='col s12 light'> <br /><br /> <a href='http://ports.simonsmh.tk/'> http://ports.simonsmh.tk/ </a> 现在成为了 <a href='http://ports.ubuntu.com/'> http://ports.ubuntu.com/ </a> 的镜像站 </br> 快速执行替换代码： </br> sed -i 's/ports.ubuntu.com/ports.simonsmh.tk/g' /etc/apt/sources.list </span>
-     <span class='col s12 light'> <br /> <br /> <a href='http://wiki.simonsmh.tk/'> http://wiki.simonsmh.tk/ </a> 现在成为了 <a href='http://www.wikipedia.org/'> http://www.wikipedia.org/ </a> 的镜像站(仅提供中日英三国语言) </span> 
+     <span class='col s12 light'> INFO： <br /> <a href='https://openwrt.simonsmh.tk/'> https://openwrt.simonsmh.tk/ </a> 现在成为了 <a href='http://downloads.openwrt.org/'> http://downloads.openwrt.org/ </a> 的镜像站 </br> SSL证书依赖ca-certificates与openssl-util </br> 快速执行替换代码： </br> sed -i 's/downloads.openwrt.org/openwrt.simonsmh.tk/g' /etc/opkg.conf </span>
+     <span class='col s12 light'> <br /><br /> <a href='https://ports.simonsmh.tk/'> https://ports.simonsmh.tk/ </a> 现在成为了 <a href='http://ports.ubuntu.com/'> http://ports.ubuntu.com/ </a> 的镜像站 </br> 快速执行替换代码： </br> sed -i 's/ports.ubuntu.com/ports.simonsmh.tk/g' /etc/apt/sources.list </span>
+     <span class='col s12 light'> <br /> <br /> <a href='https://wiki.simonsmh.tk/'> https://wiki.simonsmh.tk/ </a> 现在成为了 <a href='http://www.wikipedia.org/'> http://www.wikipedia.org/ </a> 的镜像站(仅提供中日英三国语言) </span> 
     </div> 
     </div>
   <div class='divider'></div>

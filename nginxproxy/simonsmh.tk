@@ -1,60 +1,58 @@
 #One line add to nginx.conf
 #include /var/www/simonsmh.tk/nginxproxy/*;
-#enable ssl in all secon domain server
-#letsencrypt --duplicate certonly --standalone --email simonsmh@gmail.com -d simonsmh.tk -d blog.simonsmh.tk -d tieba.simonsmh.tk -d openwrt.simonsmh.tk -d bt.simonsmh.tk -d pan.simonsmh.tk -d ipv6.simonsmh.tk -d ports.simonsmh.tk 
+#enable ssl in all secon domain server require letsencrypt installed
+#service nginx stop && certbot certonly --standalone --email simonsmh@gmail.com -d simonsmh.tk -d blog.simonsmh.tk -d tieba.simonsmh.tk -d openwrt.simonsmh.tk -d bt.simonsmh.tk -d pan.simonsmh.tk -d ipv6.simonsmh.tk -d ports.simonsmh.tk -d wiki.simonsmh.tk -d zh.wiki.simonsmh.tk -d zh.m.wiki.simonsmh.tk -d en.wiki.simonsmh.tk -d en.m.wiki.simonsmh.tk -d ja.wiki.simonsmh.tk -d ja.m.wiki.simonsmh.tk && service nginx restart
 #expire on 2016-10-18
 #add "--server https://acme-staging.api.letsencrypt.org/directory" to avoid rate limit problem.
 #SSL Settings
-####
-	ssl_certificate /etc/letsencrypt/live/simonsmh.tk/fullchain.pem;
-	ssl_certificate_key /etc/letsencrypt/live/simonsmh.tk/privkey.pem;
-	ssl_session_timeout 10m;
-	ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-	ssl_prefer_server_ciphers on;
-	ssl_ciphers EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH;
-	ssl_session_cache builtin:1000 shared:SSL:10m;
-####
-####
+ssl_certificate /etc/letsencrypt/live/simonsmh.tk/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/simonsmh.tk/privkey.pem;
+ssl_session_timeout 60m;
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ssl_prefer_server_ciphers on;
+ssl_ciphers 'ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:DES-CBC3-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4';
+ssl_session_cache builtin:1000 shared:SSL:20m;
+add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
 server {
 listen 80;
 listen [::]:80;
 server_name simonsmh.tk;
-rewrite ^(.*) https://$server_name$request_uri permanent;
+return 301 https://$server_name$request_uri;
 }
 server {
 listen 80;
 listen [::]:80;
 server_name ipv6.simonsmh.tk;
-rewrite ^(.*) https://$server_name$request_uri permanent;
+return 301 https://$server_name$request_uri;
 }
 server {
 listen 80;
 listen [::]:80;
 server_name blog.simonsmh.tk;
-rewrite ^(.*) https://$server_name$request_uri permanent;
+return 301 https://$server_name$request_uri;
 }
 server {
 listen 80;
 listen [::]:80;
 server_name tieba.simonsmh.tk;
-rewrite ^(.*) https://$server_name$request_uri permanent;
+return 301 https://$server_name$request_uri;
 }
 server {
 listen 80;
 listen [::]:80;
 server_name bt.simonsmh.tk;
-rewrite ^(.*) https://$server_name$request_uri permanent;
+return 301 https://$server_name$request_uri;
 }
 server {
 listen 80;
 listen [::]:80;
 server_name pan.simonsmh.tk;
-rewrite ^(.*) https://$server_name$request_uri permanent;
+return 301 https://$server_name$request_uri;
 }
 #defalt
 server {
-listen 443 http2 ssl;
-listen [::]:443 http2 ssl;
+listen 443 ssl;
+listen [::]:443 ssl;
 server_name simonsmh.tk ipv6.simonsmh.tk www.simonsmh.tk;
 root /var/www/simonsmh.tk; 
 index index.php;
@@ -85,7 +83,7 @@ location ~* ^.+\.(eot|ttf|otf|woff|svg|woff2)$ {
 access_log off;
 expires max;
 }
-add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
+
 error_page  310 /310.php;
 error_page  401 /401.php;
 error_page  403 /403.php;
@@ -95,8 +93,8 @@ error_page  502 /502.php;
 
 #blog.simonsmh.tk
 server {
-listen 443 http2 ssl;
-listen [::]:443 http2 ssl;
+listen 443 ssl;
+listen [::]:443 ssl;
 root /var/www/blog.simonsmh.tk;
 index index.php index.html index.htm;
 server_name blog.simonsmh.tk;
@@ -113,13 +111,13 @@ fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 fastcgi_param SCRIPT_NAME $fastcgi_script_name;
 fastcgi_param PATH_INFO $path_info;
 }
-add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
+
 }
 
 #tieba
 server {
-listen 443 http2 ssl;
-listen [::]:443 http2 ssl;
+listen 443 ssl;
+listen [::]:443 ssl;
 root /var/www/tieba.simonsmh.tk;
 index index.php index.html index.htm;
 server_name tieba.simonsmh.tk;
@@ -133,47 +131,41 @@ fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 fastcgi_param SCRIPT_NAME $fastcgi_script_name;
 fastcgi_param PATH_INFO $path_info;
 }
-add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
+
 }
 
 #transmission
 server {
-listen 443 http2 ssl;
-listen [::]:443 http2 ssl;
+listen 443 ssl;
+listen [::]:443 ssl;
 server_name bt.simonsmh.tk;
 location /{
 proxy_pass http://127.0.0.1:9091;
 proxy_set_header Accept-Encoding "";
 }
-add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
-error_page  310 https://simonsmh.tk/310.php;
-error_page  401 https://simonsmh.tk/401.php;
-error_page  403 https://simonsmh.tk/403.php;
-error_page  404 https://simonsmh.tk/404.php;
-error_page  502 https://simonsmh.tk/502.php;
 }
 
 #seafiles
 server {
-listen 443 http2 ssl;
-listen [::]:443 http2 ssl;
+listen 443 ssl;
+listen [::]:443 ssl;
 server_name pan.simonsmh.tk;
 location /{
 proxy_pass http://127.0.0.1:8000;
 proxy_set_header Accept-Encoding "";
 }
-add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
-error_page  310 https://simonsmh.tk/310.php;
-error_page  401 https://simonsmh.tk/401.php;
-error_page  403 https://simonsmh.tk/403.php;
-error_page  404 https://simonsmh.tk/404.php;
-error_page  502 https://simonsmh.tk/502.php;
 }
 
 #openwrt
 server {
 listen 80;
 listen [::]:80;
+server_name openwrt.simonsmh.tk;
+return 301 https://$server_name$request_uri;
+}
+server {
+listen 443 ssl;
+listen [::]:443 ssl;
 server_name openwrt.simonsmh.tk;
 location /{
 proxy_redirect http://downloads.openwrt.org/ /;
@@ -182,32 +174,17 @@ proxy_set_header Accept-Encoding "";
 subs_filter downloads.openwrt.org openwrt.simonsmh.tk;
 }
 }
-server {
-listen 443 http2 ssl;
-listen [::]:443 http2 ssl;
-server_name openwrt.simonsmh.tk;
-location /{
-proxy_redirect https://downloads.openwrt.org/ /;
-proxy_pass https://downloads.openwrt.org;
-proxy_set_header Accept-Encoding "";
-subs_filter downloads.openwrt.org openwrt.simonsmh.tk;
-}
-}
+
 #ubuntu
 server {
 listen 80;
 listen [::]:80;
 server_name ports.simonsmh.tk;
-location /{
-proxy_redirect http://ports.ubuntu.com/ /;
-proxy_pass http://ports.ubuntu.com;
-proxy_set_header Accept-Encoding "";
-subs_filter ports.ubuntu.com ports.simonsmh.tk;
-}
+return 301 https://$server_name$request_uri;
 }
 server {
-listen 443 http2 ssl;
-listen [::]:443 http2 ssl;
+listen 443 ssl;
+listen [::]:443 ssl;
 server_name ports.simonsmh.tk;
 location /{
 proxy_redirect http://ports.ubuntu.com/ /;
@@ -221,13 +198,54 @@ subs_filter ports.ubuntu.com ports.simonsmh.tk;
 server {
 listen 80;
 listen [::]:80;
-server_name wiki.simonsmh.tk www.wiki.simonsmh.tk;
+server_name wiki.simonsmh.tk;
+return 301 https://$server_name$request_uri;
+}
+server {
+listen 80;
+listen [::]:80;
+server_name zh.wiki.simonsmh.tk;
+return 301 https://$server_name$request_uri;
+}
+server {
+listen 80;
+listen [::]:80;
+server_name zh.m.wiki.simonsmh.tk;
+return 301 https://$server_name$request_uri;
+}
+server {
+listen 80;
+listen [::]:80;
+server_name en.wiki.simonsmh.tk;
+return 301 https://$server_name$request_uri;
+}
+server {
+listen 80;
+listen [::]:80;
+server_name en.m.wiki.simonsmh.tk;
+return 301 https://$server_name$request_uri;
+}
+server {
+listen 80;
+listen [::]:80;
+server_name ja.wiki.simonsmh.tk;
+return 301 https://$server_name$request_uri;
+}
+server {
+listen 80;
+listen [::]:80;
+server_name ja.m.wiki.simonsmh.tk;
+return 301 https://$server_name$request_uri;
+}
+server {
+listen 443 ssl;
+listen [::]:443 ssl;
+server_name wiki.simonsmh.tk;
 location /{
 proxy_redirect https://www.wikipedia.org/ /;
 proxy_redirect http://www.wikipedia.org/ /;
 proxy_pass https://www.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter https:// http:// r;
 subs_filter www.wikipedia.org wiki.simonsmh.tk r;
 #fit below supported languages
 subs_filter zh.wikipedia.org zh.wiki.simonsmh.tk r;
@@ -241,29 +259,27 @@ subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
 
 #wiki-chinese and wikim-chinese
 server {
-listen 80;
-listen [::]:80;
+listen 443 ssl;
+listen [::]:443 ssl;
 server_name zh.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://zh.wikipedia.org/ /;
 proxy_redirect http://zh.wikipedia.org/ /;
 proxy_pass https://zh.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter https:// http:// r;
 subs_filter zh.wikipedia.org zh.wiki.simonsmh.tk r;
 subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
 }
 }
 server {
-listen 80;
-listen [::]:80;
+listen 443 ssl;
+listen [::]:443 ssl;
 server_name zh.m.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://zh.m.wikipedia.org/ /;
 proxy_redirect http://zh.m.wikipedia.org/ /;
 proxy_pass https://zh.m.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter https:// http:// r;
 subs_filter zh.wikipedia.org zh.wiki.simonsmh.tk r;
 subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
 }
@@ -272,29 +288,27 @@ subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
 #wiki-other language
 #wiki-english and wikim-english
 server {
-listen 80;
-listen [::]:80;
+listen 443 ssl;
+listen [::]:443 ssl;
 server_name en.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://en.wikipedia.org/ /;
 proxy_redirect http://en.wikipedia.org/ /;
 proxy_pass https://en.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter https:// http:// r;
 subs_filter en.wikipedia.org en.wiki.simonsmh.tk r;
 subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
 }
 }
 server {
-listen 80;
-listen [::]:80;
+listen 443 ssl;
+listen [::]:443 ssl;
 server_name en.m.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://en.m.wikipedia.org/ /;
 proxy_redirect http://en.m.wikipedia.org/ /;
 proxy_pass https://en.m.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter https:// http:// r;
 subs_filter en.wikipedia.org en.wiki.simonsmh.tk r;
 subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
 }
@@ -302,60 +316,29 @@ subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
 
 #wiki-japan and wikim-japan
 server {
-listen 80;
-listen [::]:80;
+listen 443 ssl;
+listen [::]:443 ssl;
 server_name ja.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://ja.wikipedia.org/ /;
 proxy_redirect http://ja.wikipedia.org/ /;
 proxy_pass https://ja.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter https:// http:// r;
 subs_filter ja.wikipedia.org ja.wiki.simonsmh.tk r;
 subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
 }
 }
 server {
-listen 80;
-listen [::]:80;
+listen 443 ssl;
+listen [::]:443 ssl;
 server_name ja.m.wiki.simonsmh.tk;
 location /{
 proxy_redirect https://ja.m.wikipedia.org/ /;
 proxy_redirect http://ja.m.wikipedia.org/ /;
 proxy_pass https://ja.m.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter https:// http:// r;
 subs_filter ja.wikipedia.org ja.wiki.simonsmh.tk r;
 subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
 }
 }
 
-#fatesakura
-server {
-listen 80;
-listen [::]:80;
-root /var/www/fatesakura.tk;
-index index.php index.html index.htm;
-server_name fatesakura.tk;
-location / {
-if (-d $request_filename){
-rewrite ^/(.*)([^/])$ /$1$2/ permanent;
-}
-if (-f $request_filename/index.html){
-rewrite (.*) $1/index.html break;
-}
-if (-f $request_filename/index.php){
-rewrite (.*) $1/index.php;
-}
-if (!-f $request_filename){
-rewrite (.*) /index.php;
-}
-}
-location ~ \.php$ {
-fastcgi_split_path_info ^(.+\.php)(/.+)$;
-fastcgi_pass unix:/run/php/php7.0-fpm.sock;
-fastcgi_index index.php;
-include fastcgi_params;
-fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-}
-}
