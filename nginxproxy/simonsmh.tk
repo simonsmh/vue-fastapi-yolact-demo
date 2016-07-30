@@ -53,7 +53,7 @@ return 301 https://$server_name$request_uri;
 server {
 listen 443 ssl;
 listen [::]:443 ssl;
-server_name simonsmh.tk ipv6.simonsmh.tk www.simonsmh.tk;
+server_name simonsmh.tk www.simonsmh.tk;
 root /var/www/simonsmh.tk; 
 index index.php;
 #redir to file dir, not using link
@@ -83,12 +83,19 @@ location ~* ^.+\.(eot|ttf|otf|woff|svg|woff2)$ {
 access_log off;
 expires max;
 }
-
 error_page  310 /310.php;
 error_page  401 /401.php;
 error_page  403 /403.php;
 error_page  404 /404.php;
 error_page  502 /502.php;
+}
+
+server{
+listen 443 ssl;
+listen [::]:443 ssl;
+root /root/PokemonGo-Bot/web;
+index index.html index.htm;
+server_name ipv6.simonsmh.tk;
 }
 
 #blog.simonsmh.tk

@@ -11,7 +11,13 @@ $data = curl_exec($ch);
 curl_close($ch);
 return $data;
 }
-if($_GET["url"] == 1){
+if($_GET["githook"] == 1){
+$dir = '/var/www/simonsmh.tk/';
+$handle = popen('cd '.$dir.' && git pull && chmod -R 777 * && chown -R www-data *','r');
+$read = stream_get_contents($handle);
+printf($read);
+pclose($handle);
+}elseif($_GET["url"] == 1){
 $http = "http://";
 $choose = $_POST['choose'];
 $website = $_POST['website'];

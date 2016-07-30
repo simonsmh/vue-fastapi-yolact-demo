@@ -78,6 +78,32 @@ echo <<< EOF
             </div>
           </div>
         </div>
+       <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img src="data:image/gif;base64,R0lGODlhZAAhAHAAACH5BAEAAAAALAAAAABkACEAhwAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwArZgArmQArzAAr/wBVAABVMwBVZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACqMwCqZgCqmQCqzACq/wDVAADVMwDVZgDVmQDVzADV/wD/AAD/MwD/ZgD/mQD/zAD//zMAADMAMzMAZjMAmTMAzDMA/zMrADMrMzMrZjMrmTMrzDMr/zNVADNVMzNVZjNVmTNVzDNV/zOAADOAMzOAZjOAmTOAzDOA/zOqADOqMzOqZjOqmTOqzDOq/zPVADPVMzPVZjPVmTPVzDPV/zP/ADP/MzP/ZjP/mTP/zDP//2YAAGYAM2YAZmYAmWYAzGYA/2YrAGYrM2YrZmYrmWYrzGYr/2ZVAGZVM2ZVZmZVmWZVzGZV/2aAAGaAM2aAZmaAmWaAzGaA/2aqAGaqM2aqZmaqmWaqzGaq/2bVAGbVM2bVZmbVmWbVzGbV/2b/AGb/M2b/Zmb/mWb/zGb//5kAAJkAM5kAZpkAmZkAzJkA/5krAJkrM5krZpkrmZkrzJkr/5lVAJlVM5lVZplVmZlVzJlV/5mAAJmAM5mAZpmAmZmAzJmA/5mqAJmqM5mqZpmqmZmqzJmq/5nVAJnVM5nVZpnVmZnVzJnV/5n/AJn/M5n/Zpn/mZn/zJn//8wAAMwAM8wAZswAmcwAzMwA/8wrAMwrM8wrZswrmcwrzMwr/8xVAMxVM8xVZsxVmcxVzMxV/8yAAMyAM8yAZsyAmcyAzMyA/8yqAMyqM8yqZsyqmcyqzMyq/8zVAMzVM8zVZszVmczVzMzV/8z/AMz/M8z/Zsz/mcz/zMz///8AAP8AM/8AZv8Amf8AzP8A//8rAP8rM/8rZv8rmf8rzP8r//9VAP9VM/9VZv9Vmf9VzP9V//+AAP+AM/+AZv+Amf+AzP+A//+qAP+qM/+qZv+qmf+qzP+q///VAP/VM//VZv/Vmf/VzP/V////AP//M///Zv//mf//zP///wAAAAAAAAAAAAAAAAj/APcJHEiwYEF9yPAhY4cqFappDlNFlChN4iuJwl5BRCWvljB5r9gJa/itlsSHDRu+qiVPHjJ5yfQZnEmzpk2CyfDJyyhxI8WT0169QvVtpyt5wRqmQiaMHVJ2taYFkzfPVapXwrJJTFUxlUd8H5/JvEm2LMF5zlxqTfnT4TSWL229aonMnDC3u1zCFTqP5UV57KZeVMo15Etk88aaXTwzoUigJ7deTIU0lVNXyHixS7uVZcaWlJG9DBbaM8eoSlG9MpfWGT3GsAXqc+rMVmq3XD8qdNX0qrNXmlHVYhjxldZaQrNihYrPNLuFqHie9Kww9mJ9OZGBawgxlU+/c22V/0OWl93VyVu5po+odOVdeXJ3wgeZbWjnls4UW6/psuPJlKjYApItyAzV2yvg2JfSNA11FVFXG3XXUC3ffPTKS8IcdZd6VwGGTD771eSYSRFBZNJcGbbUlEmE4bbeQ1uxBVl7F+mEFUhFDYbRTvnoF+I++Xy0C2QdCjPVTl6RiBJubFV0W0XddcXdg1fZwhJyL+2iUUofvfTjQMnIUxuTK9XCknl+OflijN15N2VkSknpXYypZPPZis/9RJ2PsOUj5jcTqdaSPKl8xOJWDLqoJntwcuhmemzBqBI7R71kn2QuxbQfQo/NWSRLDQWDHmE+KdVdlIim1iaUPdGJKTJmqv+YEkv4aAobdgoligoq5rhii0LolageqY226OCjMkZ6Klu1JLjTaiNZBNgzsc2DDzs6dmiSaRwuOqyLqMopo6dTlvroRh+lEgxLnrIkD4iLBUleT6hkM9yGtWjlalutspconacGKuFEPkWmrV2MeuUMO8mYhat57fWH1L8VdeVggxMd6yKVbb35rZsQdXUjiVtVtJk8fM7kZ4E9rWSRgJO1SCSkbD5Jc8mRHUuYzWy5oq9ELsFrE6fRSjPXkIvCOOzATkIUcno6J8rgvy4u+PHAPa2TEMuqgSU0TWgROmcwlu47EcEqIbezo8dSvbGpBDcaYS3I2JLKOhuq61LKsgn/01xxHfktDDZzNo3bopdkgIm/BruVrK7dnm015A6x6xVD3clTa03WIkMnehCfHahktRDRwASYjHousW2vtzrWTm/13DoSqX05Pikj5J+kU5+daJmpU1SLG0M0kEEDQyyy5c1LqqpspABD7yRywy201UsNGxQkSBYB2riUwgwxxPFtoFfL8Ro0QEEGQyzOcZv7Kk0khC0W3KGYfj1Uy8J8JjQSg49RVWSCcToHNEADi1uQLcY3BCLcIANnINl5XGEmjFHOaqOLk+hgJAxeVGg4WwlaQVamo+dAhU5KQcPxMjCBCbQhVUm6CIJqd4kzEI94DVjcJdwgQ0Ygp1XEChiT/waWDUKR5ioTEtNrwHStnpCtQtfyGCowMT4HZOAGCTQbW4JBhDZIYhGLYMSQsjEEFy6iDRnIQBt8GDPIQW9OGHOIXAwDsbk4ox0EeQ5pVDIZoSjFFRpxyEoWUQvbRAhgiBLKBl+BCeOlLwNWNF75IIUqZNFsGkeRj0kg4rfs7QMh+LhIUODzjUs9hJH2gV8GzSWN27xiF4ScjpWKt8IcOi5+QOQQjRbiR69obiwkFORX4OOgHVJySjCSkhBNVYs2NIAIEkyFCh3QvmgaDkb/olhkXGJCQYpwHzkhlErW4RJRRaQWQzjUxXCZMGTBQnwswmQqdoGGS5jvEspjZ4vgNpcXWPWSMsKYh0B28r9XKAQkk2GQlegVmakJkFTJqlyMbLHG2zTkEsZzwyIiUchsPLRiyNLg7j7ijE8+wz8WqR5x9omz9cjpaRr0lE+mcQkzgawzpqvlBIbghkjEbE3pWUlebAGRb7xEH/oQ02BqUQ5FWiVRTXtSHCV1NnEV51IJ21XthpA+DUByhUOYJFSBQpJBQadD+QkIADs=">
+            </div>
+            <div class="card-content">
+              <p>JTWC路径预报</p>
+            </div>
+            <div class="card-action">
+              <a href='https://simonsmh.tk/ty.php?type=jtwc'>点击前往JTWC报文解析</a>
+            </div>
+          </div>
+        </div>
+       <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img src="data:image/gif;base64,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">
+            </div>
+            <div class="card-content">
+              <p>JTWC路径预报</p>
+            </div>
+            <div class="card-action">
+              <a href='https://simonsmh.tk/ty.php?type=jtwcpic'>点击前往JTWC路径预报</a>
+            </div>
+          </div>
+        </div>
 EOF;
 }else{
 //上一页
@@ -106,7 +132,7 @@ $time[3] = substr ($tmp,8,2);
 $time[4] = substr ($tmp,10,2);
 //去除报文html标签
 $nmcposts = curl_get("http://www.nmc.cn/f/fetch?dataId=".$nmcpost[1][$i]);
-$nmcposts = preg_replace ("/<.*?>/"," ",$nmcposts);
+$nmcposts = preg_replace ("/<.*?>/","",$nmcposts);
 //分离报文元素数组化
 $nmcp = preg_split ("/[\s*]+/",$nmcposts);
 //print_r($nmcp);
@@ -120,7 +146,8 @@ echo $nmcp[3]."<br>";
 //搜索数组
 $wtpqmode = array_search("WTPQ20",$nmcp);
 $tcpqmode = array_search("TCPQ40",$nmcp);
-$tytmp = array_search("TIME",$nmcp);
+$numtmp = array_search("TIME",$nmcp);
+$tytmp = array_search("FORECAST",$nmcp);
 $windtmp = array_search("WINDS",$nmcp);
 $nowtmp = array_search("00HR",$nmcp);
 $movetmp = array_search("MOVE",$nmcp);
@@ -138,12 +165,15 @@ $nmcp[$wtpqmode] = "台风预测报文";
 echo "报文类型".$nmcp[$wtpqmode]."<br>";
 //台风基础信息
 if ($tytmp > 0){
-$tytmp -= 4;
+$tytmp += 2;
 echo "台风".$nmcp[$tytmp]."<br>";
-$tytmp += 1;
-echo "编号".$nmcp[$tytmp]."<br>";
-$tytmp -= 2;
+$tytmp -= 1;
 echo "强度评级".$nmcp[$tytmp]."<br>";
+}
+//台风编号
+if($numtmp > 0){
+$numtmp -= 2;
+echo "编号".$nmcp[$numtmp]."<br>";
 }
 //风圈
 if ($windtmp > 0){
@@ -263,6 +293,7 @@ unset($time);
 unset($nmcp);
 unset($pretmp);
 $tytmp = 0;
+$numtmp = 0;
 $windtmp = 0;
 $nowtmp = 0;
 $movetmp = 0;
@@ -280,6 +311,31 @@ $counttag = count($nmcpicpost[1]);
 if ($counttag > $i){
 $nmcpicpost[1][$i] = str_replace("/small", "", $nmcpicpost[1][$i]);
 echo "<img style='max-width:100%;' src='".$nmcpicpost[1][$i]."'>";
+}else{
+$overtag = 1;
+echo "暂无更多信息";
+}}elseif($t == "jtwc"){
+//获取jtwc网址
+$jtwc = curl_get("https://metoc.ndbc.noaa.gov/RSSFeeds-portlet/img/jtwc/jtwc.rss");
+//获取jtwc报文
+preg_match_all ("/https:\/\/metoc.ndbc.noaa.gov\/ProductFeeds-portlet\/img\/jtwc\/products\/wp\d{4}web.txt/",$jtwc,$jtwcpostweb);
+$counttag = count($jtwcpostweb[0]);
+if ($counttag > $i){
+$jtwcpost = curl_get($jtwcpostweb[0][$i]);
+echo $jtwcpost;
+//分离报文元素数组化
+$jtwcp = preg_split ("/[\s*]+/",$jtwcpost);
+print_r($jtwcp);
+}else{
+$overtag = 1;
+echo "暂无更多信息";
+}}elseif($t == "jtwcpic"){
+//获取jtwc路径网址
+$jtwcpic = curl_get("https://metoc.ndbc.noaa.gov/RSSFeeds-portlet/img/jtwc/jtwc.rss");
+preg_match_all ("/https:\/\/metoc.ndbc.noaa.gov\/ProductFeeds-portlet\/img\/jtwc\/products\/wp\d{4}.gif/",$jtwcpic,$jtwcpicpost);
+$counttag = count($jtwcpicpost[0]);
+if ($counttag > $i){
+echo "<img style='max-width:100%;' src='".$jtwcpicpost[0][$i]."'>";
 }else{
 $overtag = 1;
 echo "暂无更多信息";
