@@ -1,7 +1,7 @@
 #One line add to nginx.conf
 #include /var/www/simonsmh.tk/nginxproxy/*;
 #enable ssl in all secon domain server require letsencrypt installed
-#service nginx stop && certbot certonly --standalone --email simonsmh@gmail.com -d simonsmh.tk -d blog.simonsmh.tk -d tieba.simonsmh.tk -d openwrt.simonsmh.tk -d bt.simonsmh.tk -d pan.simonsmh.tk -d ipv6.simonsmh.tk -d ports.simonsmh.tk -d wiki.simonsmh.tk -d zh.wiki.simonsmh.tk -d zh.m.wiki.simonsmh.tk -d en.wiki.simonsmh.tk -d en.m.wiki.simonsmh.tk -d ja.wiki.simonsmh.tk -d ja.m.wiki.simonsmh.tk && service nginx restart
+#service nginx stop && certbot certonly --standalone --email simonsmh@gmail.com -d simonsmh.tk -d blog.simonsmh.tk -d tieba.simonsmh.tk -d openwrt.simonsmh.tk -d bt.simonsmh.tk -d pan.simonsmh.tk -d url.simonsmh.tk -d ipv6.simonsmh.tk -d ports.simonsmh.tk -d wiki.simonsmh.tk -d zh.wiki.simonsmh.tk -d zh.m.wiki.simonsmh.tk -d en.wiki.simonsmh.tk -d en.m.wiki.simonsmh.tk -d ja.wiki.simonsmh.tk -d ja.m.wiki.simonsmh.tk && service nginx restart
 #expire on 2016-10-18
 #add "--server https://acme-staging.api.letsencrypt.org/directory" to avoid rate limit problem.
 #SSL Settings
@@ -48,6 +48,18 @@ listen 80;
 listen [::]:80;
 server_name pan.simonsmh.tk;
 return 301 https://$server_name$request_uri;
+}
+server {
+listen 80;
+listen [::]:80;
+server_name url.simonsmh.tk;
+return 301 https://$server_name$request_uri;
+}
+server {
+listen 443 ssl;
+listen [::]:443 ssl;
+server_name url.simonsmh.tk;
+return 301 $args;
 }
 #defalt
 server {
