@@ -112,7 +112,7 @@ echo <<<END
   <div class='section'>
     <h5 class='center'>openwrt私有源（ar71xx平台，自动化编译ss）</h5>
     <div class='row'> 
-     <span class='col s12 light'> <a href='https://simonsmh.tk/files/openwrt/OpenWrt-SDK-15.05.1-ar71xx-nand_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64/bin/ar71xx/packages/base/'> https://simonsmh.tk/files/openwrt/OpenWrt-SDK-15.05.1-ar71xx-nand_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64/bin/ar71xx/packages/base/ </a>  </span> 
+     <span class='col s12 light'> src/gz simonsmh_base <a href='https://simonsmh.tk/files/openwrt/OpenWrt-SDK-15.05.1-ar71xx-nand_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64/bin/ar71xx/packages/base/'> https://simonsmh.tk/files/openwrt/OpenWrt-SDK-15.05.1-ar71xx-nand_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64/bin/ar71xx/packages/base/ </a>  </span> 
     </div> 
     </div>
   <div class='divider'></div>
