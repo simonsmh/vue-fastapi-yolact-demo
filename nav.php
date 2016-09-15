@@ -29,8 +29,8 @@
     </a>
   </li>
   <li>
-    <a href="phpMyAdmin/" class="waves-effect black-text">
-      phpMA
+    <a href="https://bt.simonsmh.tk/" class="waves-effect black-text">
+      离线下载
     </a>
   </li>
   <li>
