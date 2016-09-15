@@ -190,7 +190,7 @@ location /{
 proxy_redirect http://downloads.openwrt.org/ /;
 proxy_pass http://downloads.openwrt.org;
 proxy_set_header Accept-Encoding "";
-subs_filter downloads.openwrt.org openwrt.simonsmh.tk;
+sub_filter downloads.openwrt.org openwrt.simonsmh.tk;
 }
 }
 
@@ -209,7 +209,7 @@ location /{
 proxy_redirect http://ports.ubuntu.com/ /;
 proxy_pass http://ports.ubuntu.com;
 proxy_set_header Accept-Encoding "";
-subs_filter ports.ubuntu.com ports.simonsmh.tk;
+sub_filter ports.ubuntu.com ports.simonsmh.tk;
 }
 }
 
@@ -265,14 +265,14 @@ proxy_redirect https://www.wikipedia.org/ /;
 proxy_redirect http://www.wikipedia.org/ /;
 proxy_pass https://www.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter www.wikipedia.org wiki.simonsmh.tk r;
+#subs_filter www.wikipedia.org wiki.simonsmh.tk r;
 #fit below supported languages
-subs_filter zh.wikipedia.org zh.wiki.simonsmh.tk r;
-subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
-subs_filter en.wikipedia.org en.wiki.simonsmh.tk r;
-subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
-subs_filter ja.wikipedia.org ja.wiki.simonsmh.tk r;
-subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
+#subs_filter zh.wikipedia.org zh.wiki.simonsmh.tk r;
+#subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
+#subs_filter en.wikipedia.org en.wiki.simonsmh.tk r;
+#subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
+#subs_filter ja.wikipedia.org ja.wiki.simonsmh.tk r;
+#subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
 }
 }
 
@@ -286,8 +286,8 @@ proxy_redirect https://zh.wikipedia.org/ /;
 proxy_redirect http://zh.wikipedia.org/ /;
 proxy_pass https://zh.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter zh.wikipedia.org zh.wiki.simonsmh.tk r;
-subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
+#subs_filter zh.wikipedia.org zh.wiki.simonsmh.tk r;
+#subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
 }
 }
 server {
@@ -299,8 +299,8 @@ proxy_redirect https://zh.m.wikipedia.org/ /;
 proxy_redirect http://zh.m.wikipedia.org/ /;
 proxy_pass https://zh.m.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter zh.wikipedia.org zh.wiki.simonsmh.tk r;
-subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
+#subs_filter zh.wikipedia.org zh.wiki.simonsmh.tk r;
+#subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.tk r;
 }
 }
 
@@ -315,8 +315,8 @@ proxy_redirect https://en.wikipedia.org/ /;
 proxy_redirect http://en.wikipedia.org/ /;
 proxy_pass https://en.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter en.wikipedia.org en.wiki.simonsmh.tk r;
-subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
+#subs_filter en.wikipedia.org en.wiki.simonsmh.tk r;
+#subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
 }
 }
 server {
@@ -328,8 +328,8 @@ proxy_redirect https://en.m.wikipedia.org/ /;
 proxy_redirect http://en.m.wikipedia.org/ /;
 proxy_pass https://en.m.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter en.wikipedia.org en.wiki.simonsmh.tk r;
-subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
+#subs_filter en.wikipedia.org en.wiki.simonsmh.tk r;
+#subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.tk r;
 }
 }
 
@@ -343,8 +343,8 @@ proxy_redirect https://ja.wikipedia.org/ /;
 proxy_redirect http://ja.wikipedia.org/ /;
 proxy_pass https://ja.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter ja.wikipedia.org ja.wiki.simonsmh.tk r;
-subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
+#subs_filter ja.wikipedia.org ja.wiki.simonsmh.tk r;
+#subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
 }
 }
 server {
@@ -356,8 +356,8 @@ proxy_redirect https://ja.m.wikipedia.org/ /;
 proxy_redirect http://ja.m.wikipedia.org/ /;
 proxy_pass https://ja.m.wikipedia.org;
 proxy_set_header Accept-Encoding "";
-subs_filter ja.wikipedia.org ja.wiki.simonsmh.tk r;
-subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
+#subs_filter ja.wikipedia.org ja.wiki.simonsmh.tk r;
+#subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.tk r;
 }
 }
 
