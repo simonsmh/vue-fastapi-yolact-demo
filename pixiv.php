@@ -18,8 +18,8 @@ $html = curl_get('http://www.pixiv.net/ranking.php?mode=daily&content=illust');
 //匹配缩略图url \d为整数数字，{num}为位数
 preg_match_all('|http://i\d\.pixiv\.net/c/240x480/img-master/img/\d{4}/\d{2}/\d{2}/\d{2}/\d{2}/\d{2}/(.*?\.\w{3})|', $html, $image);
 //匹配链接
-preg_match_all('|member_illust.php\?mode=medium&amp;illust_id=\d+&amp;uarea=daily&amp;ref=rn-b-\d+-thumbnail-\d|', $html, $url);
-curl_get('http://www.pixiv.net/'.$url,array('User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2868.3 Safari/537.36')
+//preg_match_all('|member_illust.php\?mode=medium&amp;illust_id=\d+&amp;uarea=daily&amp;ref=rn-b-\d+-thumbnail-\d|', $html, $url);
+//curl_get('http://www.pixiv.net/'.$url,array('User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2868.3 Safari/537.36');
 //拼凑高分辨率图片url
 //$url = str_ireplace('240x480','600x600',$image[0][$i]);
 $url = str_ireplace('c/240x480/img-master','img-original',$image[0][$i]);
