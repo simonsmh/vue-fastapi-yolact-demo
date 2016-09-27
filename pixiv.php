@@ -32,7 +32,7 @@ $url = str_ireplace('_master1200','',$url);
 $image[1][$i] = str_ireplace('_p0_master1200.jpg','',$image[1][$i]);
 //输出图片
 $f = curl_get($url, array('User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2868.3 Safari/537.36','Referer: http://www.pixiv.net/member_illust.php?mode=medium&illust_id='.$image[1][$i]));
-//尝试jpg
+//尝试PNG
 if ( preg_match("/404/i", $f ) ) {
 $url = str_ireplace('jpg','png',$url);
 $f = curl_get($url, array('User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2868.3 Safari/537.36','Referer: http://www.pixiv.net/member_illust.php?mode=medium&illust_id='.$image[1][$i]));
