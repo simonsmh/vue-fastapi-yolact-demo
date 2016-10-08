@@ -65,7 +65,7 @@ return 301 $args;
 server {
 listen 443 ssl;
 listen [::]:443 ssl;
-server_name simonsmh.tk www.simonsmh.tk;
+server_name simonsmh.tk www.simonsmh.tk ipv6.simonsmh.tk;
 root /var/www/simonsmh.tk; 
 index index.php;
 #redir to file dir, not using link
@@ -102,14 +102,6 @@ error_page  404 /404.php;
 error_page  502 /502.php;
 }
 
-server{
-listen 443 ssl;
-listen [::]:443 ssl;
-root /root/PokemonGo-Bot/web;
-index index.html index.htm;
-server_name ipv6.simonsmh.tk;
-}
-
 #blog.simonsmh.tk
 server {
 listen 443 ssl;
@@ -130,7 +122,6 @@ fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 fastcgi_param SCRIPT_NAME $fastcgi_script_name;
 fastcgi_param PATH_INFO $path_info;
 }
-
 }
 
 #tieba
@@ -150,7 +141,6 @@ fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 fastcgi_param SCRIPT_NAME $fastcgi_script_name;
 fastcgi_param PATH_INFO $path_info;
 }
-
 }
 
 #transmission
@@ -161,6 +151,7 @@ server_name bt.simonsmh.tk;
 location /{
 proxy_pass http://127.0.0.1:9091;
 proxy_set_header Accept-Encoding "";
+proxy_pass_header  X-Transmission-Session-Id;
 }
 }
 
