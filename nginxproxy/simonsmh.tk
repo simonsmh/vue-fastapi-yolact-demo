@@ -1,7 +1,7 @@
 #One line add to nginx.conf
 #include /var/www/simonsmh/nginxproxy/*;
 #enable ssl in all secon domain server require letsencrypt installed
-#service nginx stop && certbot certonly --standalone --email simonsmh@gmail.com -d simonsmh.cc -d app.simonsmh.tk -d www.simonsmh.tk -d blog.simonsmh.cc -d tieba.simonsmh.cc -d openwrt.simonsmh.cc -d dist.simonsmh.cc -d bt.simonsmh.cc -d pan.simonsmh.cc -d url.simonsmh.cc -d ipv6.simonsmh.cc -d ports.simonsmh.cc -d wiki.simonsmh.cc -d zh.wiki.simonsmh.cc -d zh.m.wiki.simonsmh.cc -d en.wiki.simonsmh.cc -d en.m.wiki.simonsmh.cc -d ja.wiki.simonsmh.cc -d ja.m.wiki.simonsmh.cc && service nginx restart
+#service nginx stop && certbot certonly --standalone --email simonsmh@gmail.com -d simonsmh.cc -d app.simonsmh.cc -d www.simonsmh.cc -d blog.simonsmh.cc -d tieba.simonsmh.cc -d openwrt.simonsmh.cc -d dist.simonsmh.cc -d bt.simonsmh.cc -d pan.simonsmh.cc -d url.simonsmh.cc -d ipv6.simonsmh.cc -d ports.simonsmh.cc -d wiki.simonsmh.cc -d zh.wiki.simonsmh.cc -d zh.m.wiki.simonsmh.cc -d en.wiki.simonsmh.cc -d en.m.wiki.simonsmh.cc -d ja.wiki.simonsmh.cc -d ja.m.wiki.simonsmh.cc && service nginx restart
 #expire on 2016-10-18
 #add "--server https://acme-staging.api.letsencrypt.org/directory" to avoid rate limit problem.
 #SSL Settings
