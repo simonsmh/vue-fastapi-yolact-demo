@@ -1,7 +1,7 @@
 #One line add to nginx.conf
 #include /var/www/simonsmh/nginxproxy/*;
 #enable ssl in all secon domain server require letsencrypt installed
-#service nginx stop && certbot certonly --standalone --email simonsmh@gmail.com -d simonsmh.cc -d app.simonsmh.cc -d www.simonsmh.cc -d blog.simonsmh.cc -d tieba.simonsmh.cc -d openwrt.simonsmh.cc -d dist.simonsmh.cc -d bt.simonsmh.cc -d pan.simonsmh.cc -d url.simonsmh.cc -d ipv6.simonsmh.cc -d ports.simonsmh.cc -d wiki.simonsmh.cc -d zh.wiki.simonsmh.cc -d zh.m.wiki.simonsmh.cc -d en.wiki.simonsmh.cc -d en.m.wiki.simonsmh.cc -d ja.wiki.simonsmh.cc -d ja.m.wiki.simonsmh.cc && service nginx restart
+#service nginx stop && certbot certonly --standalone --email simonsmh@gmail.com -d simonsmh.cc -d app.simonsmh.cc -d www.simonsmh.cc -d blog.simonsmh.cc -d tieba.simonsmh.cc -d openwrt.simonsmh.cc -d dist.simonsmh.cc -d bt.simonsmh.cc -d pan.simonsmh.cc -d url.simonsmh.cc -d ipv6.simonsmh.cc -d ports.simonsmh.cc -d wiki.simonsmh.cc && service nginx restart
 #expire on 2016-10-18
 #add "--server https://acme-staging.api.letsencrypt.org/directory" to avoid rate limit problem.
 #SSL Settings
@@ -155,15 +155,18 @@ proxy_pass_header  X-Transmission-Session-Id;
 }
 }
 
-#seafiles
+#dist
+server {
+listen 80;
+listen [::]:80;
+server_name dist.simonsmh.cc;
+return 301 https://$server_name$request_uri;
+}
 server {
 listen 443 ssl;
 listen [::]:443 ssl;
-server_name pan.simonsmh.cc;
-location /{
-proxy_pass http://127.0.0.1:8000;
-proxy_set_header Accept-Encoding "";
-}
+server_name dist.simonsmh.cc;
+root /var/wwwfiles/files/openwrt/OpenWrt-SDK-15.05.1-ar71xx-nand_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64/bin/ar71xx/packages/base
 }
 
 #openwrt
@@ -203,152 +206,3 @@ proxy_set_header Accept-Encoding "";
 sub_filter ports.ubuntu.com ports.simonsmh.cc;
 }
 }
-
-#wikipedia welcome page
-server {
-listen 80;
-listen [::]:80;
-server_name wiki.simonsmh.cc;
-return 301 https://$server_name$request_uri;
-}
-server {
-listen 80;
-listen [::]:80;
-server_name zh.wiki.simonsmh.cc;
-return 301 https://$server_name$request_uri;
-}
-server {
-listen 80;
-listen [::]:80;
-server_name zh.m.wiki.simonsmh.cc;
-return 301 https://$server_name$request_uri;
-}
-server {
-listen 80;
-listen [::]:80;
-server_name en.wiki.simonsmh.cc;
-return 301 https://$server_name$request_uri;
-}
-server {
-listen 80;
-listen [::]:80;
-server_name en.m.wiki.simonsmh.cc;
-return 301 https://$server_name$request_uri;
-}
-server {
-listen 80;
-listen [::]:80;
-server_name ja.wiki.simonsmh.cc;
-return 301 https://$server_name$request_uri;
-}
-server {
-listen 80;
-listen [::]:80;
-server_name ja.m.wiki.simonsmh.cc;
-return 301 https://$server_name$request_uri;
-}
-server {
-listen 443 ssl;
-listen [::]:443 ssl;
-server_name wiki.simonsmh.cc;
-location /{
-proxy_redirect https://www.wikipedia.org/ /;
-proxy_redirect http://www.wikipedia.org/ /;
-proxy_pass https://www.wikipedia.org;
-proxy_set_header Accept-Encoding "";
-#subs_filter www.wikipedia.org wiki.simonsmh.cc r;
-#fit below supported languages
-#subs_filter zh.wikipedia.org zh.wiki.simonsmh.cc r;
-#subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.cc r;
-#subs_filter en.wikipedia.org en.wiki.simonsmh.cc r;
-#subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.cc r;
-#subs_filter ja.wikipedia.org ja.wiki.simonsmh.cc r;
-#subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.cc r;
-}
-}
-
-#wiki-chinese and wikim-chinese
-server {
-listen 443 ssl;
-listen [::]:443 ssl;
-server_name zh.wiki.simonsmh.cc;
-location /{
-proxy_redirect https://zh.wikipedia.org/ /;
-proxy_redirect http://zh.wikipedia.org/ /;
-proxy_pass https://zh.wikipedia.org;
-proxy_set_header Accept-Encoding "";
-#subs_filter zh.wikipedia.org zh.wiki.simonsmh.cc r;
-#subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.cc r;
-}
-}
-server {
-listen 443 ssl;
-listen [::]:443 ssl;
-server_name zh.m.wiki.simonsmh.cc;
-location /{
-proxy_redirect https://zh.m.wikipedia.org/ /;
-proxy_redirect http://zh.m.wikipedia.org/ /;
-proxy_pass https://zh.m.wikipedia.org;
-proxy_set_header Accept-Encoding "";
-#subs_filter zh.wikipedia.org zh.wiki.simonsmh.cc r;
-#subs_filter zh.m.wikipedia.org zh.m.wiki.simonsmh.cc r;
-}
-}
-
-#wiki-other language
-#wiki-english and wikim-english
-server {
-listen 443 ssl;
-listen [::]:443 ssl;
-server_name en.wiki.simonsmh.cc;
-location /{
-proxy_redirect https://en.wikipedia.org/ /;
-proxy_redirect http://en.wikipedia.org/ /;
-proxy_pass https://en.wikipedia.org;
-proxy_set_header Accept-Encoding "";
-#subs_filter en.wikipedia.org en.wiki.simonsmh.cc r;
-#subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.cc r;
-}
-}
-server {
-listen 443 ssl;
-listen [::]:443 ssl;
-server_name en.m.wiki.simonsmh.cc;
-location /{
-proxy_redirect https://en.m.wikipedia.org/ /;
-proxy_redirect http://en.m.wikipedia.org/ /;
-proxy_pass https://en.m.wikipedia.org;
-proxy_set_header Accept-Encoding "";
-#subs_filter en.wikipedia.org en.wiki.simonsmh.cc r;
-#subs_filter en.m.wikipedia.org en.m.wiki.simonsmh.cc r;
-}
-}
-
-#wiki-japan and wikim-japan
-server {
-listen 443 ssl;
-listen [::]:443 ssl;
-server_name ja.wiki.simonsmh.cc;
-location /{
-proxy_redirect https://ja.wikipedia.org/ /;
-proxy_redirect http://ja.wikipedia.org/ /;
-proxy_pass https://ja.wikipedia.org;
-proxy_set_header Accept-Encoding "";
-#subs_filter ja.wikipedia.org ja.wiki.simonsmh.cc r;
-#subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.cc r;
-}
-}
-server {
-listen 443 ssl;
-listen [::]:443 ssl;
-server_name ja.m.wiki.simonsmh.cc;
-location /{
-proxy_redirect https://ja.m.wikipedia.org/ /;
-proxy_redirect http://ja.m.wikipedia.org/ /;
-proxy_pass https://ja.m.wikipedia.org;
-proxy_set_header Accept-Encoding "";
-#subs_filter ja.wikipedia.org ja.wiki.simonsmh.cc r;
-#subs_filter ja.m.wikipedia.org ja.m.wiki.simonsmh.cc r;
-}
-}
-
