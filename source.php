@@ -12,7 +12,7 @@ curl_close($ch);
 return $data;
 }
 if($_GET["githook"] == 1){
-$dir = '/var/www/simonsmh.tk/';
+$dir = '/var/www/simonsmh/';
 $handle = popen('cd '.$dir.' && git pull && chmod -R 777 * && chown -R www-data *','r');
 $read = stream_get_contents($handle);
 printf($read);

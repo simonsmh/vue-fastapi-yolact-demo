@@ -29,17 +29,17 @@
     </a>
   </li>
   <li>
-    <a href="https://bt.simonsmh.tk/" class="waves-effect black-text">
+    <a href="https://bt.simonsmh.cc/" class="waves-effect black-text">
       离线下载
     </a>
   </li>
   <li>
-    <a href="https://tieba.simonsmh.tk/" class="waves-effect black-text">
+    <a href="https://tieba.simonsmh.cc/" class="waves-effect black-text">
       贴吧云签
     </a>
   </li>
   <li>
-    <a href="https://blog.simonsmh.tk/" class="waves-effect black-text">
+    <a href="https://blog.simonsmh.cc/" class="waves-effect black-text">
       后花园
     </a>
   </li>

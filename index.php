@@ -37,7 +37,7 @@
   </div> 
   <div class="container"> 
    <div class="row"> 
-    <h5 class="header col s12 light center"> 下面是simonsmh.tk运行的服务 </h5>  
+    <h5 class="header col s12 light center"> 下面是这里运行的服务 </h5>  
     <div class="col s12 m6 center"> 
      <div class="card hoverable waves-effect waves-light orange"> 
       <div class="card-content white-text"> 
@@ -45,7 +45,7 @@
        <p class="light"> 基于Typecho和Material主题的轻量级个人博客。 </p> 
       </div> 
       <div class="card-action white-text"> 
-       <a class="orange-text text-lighten-3" href="https://blog.simonsmh.tk/">点这里去我的后花园</a> 
+       <a class="orange-text text-lighten-3" href="https://blog.simonsmh.cc/">点这里去我的后花园</a> 
       </div> 
      </div> 
     </div> 
@@ -56,7 +56,7 @@
        <p class="light"> 由StusGame团队制作的贴吧云签到服务器软件。 </p> 
       </div> 
       <div class="card-action"> 
-       <a class="orange-text text-lighten-3" href="https://tieba.simonsmh.tk/">点这里去贴吧云签到</a> 
+       <a class="orange-text text-lighten-3" href="https://tieba.simonsmh.cc/">点这里去贴吧云签到</a> 
       </div> 
      </div> 
     </div>
@@ -78,11 +78,11 @@
        <p class="light"> 基于Transmission的开源BT或PT离线下载程序。 </p> 
       </div> 
       <div class="card-action white-text"> 
-       <a class="orange-text text-lighten-3" href="https://bt.simonsmh.tk/">点这里去Transmission</a>
+       <a class="orange-text text-lighten-3" href="https://bt.simonsmh.cc/">点这里去Transmission</a>
       </div> 
      </div> 
     </div> 
-    <h5 class="header col s12 light center"> 下面是simonsmh.tk运行的程序 </h5> 
+    <h5 class="header col s12 light center"> 下面是这里运行的程序 </h5> 
     <div class="col s12 m3 center"> 
      <div class="card hoverable waves-effect waves-light orange"> 
       <div class="card-content white-text"> 

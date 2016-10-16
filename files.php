@@ -73,7 +73,7 @@ echo <<<EOF
      </div> 
     </form> 
     <br /> 
-    <iframe name="showfiles" src="files/" width="100%" height="500" frameborder="0"> &lt;p&gt; visit http://simonsmh.tk/files/ &lt;/p&gt; </iframe> 
+    <iframe name="showfiles" src="files/" width="100%" height="500" frameborder="0"> &lt;p&gt; visit /files/ &lt;/p&gt; </iframe> 
    </div> 
   </div> 
 EOF;

@@ -14,7 +14,7 @@
           快眼熟我！
           <br>
           <br>
-          <a class="btn orange darken-1 orange-text text-lighten-3" href="https://github.com/simonsmh/simonsmh.tk">
+          <a class="btn orange darken-1 orange-text text-lighten-3" href="https://github.com/simonsmh/simonsmh">
            本站GitHub源码
           </a>
         </p>
@@ -86,11 +86,6 @@
             <li>
               <a class="orange-text text-lighten-3" href="http://shanghai-typhoon.com/">
                 上海追风团队
-              </a>
-            </li>
-            <li>
-              <a class="orange-text text-lighten-3" href="http://fatesakura.tk/">
-                命若樱花
               </a>
             </li>
           </ul>
