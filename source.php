@@ -37,8 +37,10 @@ echo $fh;
 echo $_SERVER["REMOTE_ADDR"];
 }elseif($_GET["ua"] == 1){
 echo $_SERVER["HTTP_USER_AGENT"]; 
-}
-else{
+}elseif($_GET["ip"] == 2){
+$output = curl_get("http://members.3322.org/dyndns/getip");
+echo $output;
+}else{
 include( "header.php");
 echo <<<END
 <html lang="zh-cn">
@@ -118,8 +120,9 @@ echo <<<END
   <div class='section'>
     <h5 class='center'>PHP INFO</h5>
     <div class='row'> 
-     <span class='col s12 light'><a href='source.php?ip=1'>直接获取IP</a></span> 
-     <span class='col s12 light'><a href='source.php?ua=1'>直接获取UserAgent</a></span> 
+     <span class='col s12 light'><a href='source.php?ip=2'>直接获取本机IP</a></span> 
+     <span class='col s12 light'><a href='source.php?ip=1'>直接获取你的IP</a></span> 
+     <span class='col s12 light'><a href='source.php?ua=1'>直接获取你的UserAgent</a></span> 
      <div class='col s12'><br></div> 
 
 <span class="col s12 light">本机IP（PHP-cURL>members.3322.org/dyndns/getip）</span> 
