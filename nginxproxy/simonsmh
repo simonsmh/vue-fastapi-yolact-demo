@@ -181,6 +181,8 @@ listen 443 ssl;
 listen [::]:443 ssl;
 server_name openwrt.simonsmh.cc;
 location /{
+resolver 8.8.8.8 valid=3600s;
+resolver_timeout 10s;
 proxy_redirect http://downloads.openwrt.org/ /;
 proxy_pass http://downloads.openwrt.org;
 proxy_set_header Accept-Encoding "";
@@ -200,6 +202,8 @@ listen 443 ssl;
 listen [::]:443 ssl;
 server_name ports.simonsmh.cc;
 location /{
+resolver 8.8.8.8 valid=3600s;
+resolver_timeout 10s;
 proxy_redirect http://ports.ubuntu.com/ /;
 proxy_pass http://ports.ubuntu.com;
 proxy_set_header Accept-Encoding "";
