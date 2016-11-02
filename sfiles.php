@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <?php 
+$dir = "/var/wwwfiles/sfiles/";
+$webpath = "/sfiles/";
 if($_GET["up"] == 1){
 echo "<script type='text/javascript'>alert('";
-$dir = "/var/wwwfiles/sfiles/";
 if ($_FILES["file"]["error"] > 0){
 echo "发生错误:".$_FILES["file"]["error"];
 }else{
@@ -60,23 +61,40 @@ echo <<<EOF
   </div> 
   <div class="container"> 
    <div class="section"> 
-    <form id="file" name="file" action="sfiles.php?up=1" method="post" enctype="multipart/form-data"> 
+    <form id="file" name="file" action="files.php?up=1" method="post" enctype="multipart/form-data"> 
      <div class="file-field input-field"> 
-      <div class="btn orange"> 
+      <div >
+       <button class="btn orange waves-effect waves-light" onclick="submit()" type="submit" name="action">上传 <i class="material-icons right">send</i> </button> 
+      </div>
+      <div class="btn orange waves-effect waves-light"> 
        <span> 选择文件 </span> 
-       <input type="file" name="file" id="file" /> 
+       <input type="file" name="file" id="file"> 
       </div> 
       <div class="file-path-wrapper"> 
-       <input class="file-path validate" type="text" placeholder="文件名" /> 
+       <input class="file-path validate" type="text" placeholder="文件名"> 
       </div> 
-      <button class="btn orange waves-effect waves-light" onclick="submit()" type="submit" name="action">上传 <i class="material-icons right">send</i> </button> 
      </div> 
     </form> 
     <br /> 
-    <iframe src="sfiles/" width="100%" height="500" frameborder="0"> &lt;p&gt; visit http://simonsmh.tk/sfiles/ &lt;/p&gt; </iframe> 
-   </div> 
-  </div> 
 EOF;
-include( "footer.php"); 
+$files = array_diff(scandir($dir), array('.','..','openwrt'));
+echo "<table class='bordered'><thead><tr><th data-field='name'>文件名</th><th data-field='time'>修改时间</th><th data-field='size'>文件大小</th></tr>";
+#计算文件大小
+function format_bytes($size) { 
+$units = array(' B', ' KB', ' MB', ' GB', ' TB'); 
+for ($i = 0; $size >= 1024 && $i < 4; $i++) $size /= 1024; 
+return round($size, 2).$units[$i]; 
+} 
+foreach ($files as $filename){
+$stat = stat($dir.$filename);
+echo "<tr>";
+echo "<td><a href='".$webpath.$filename."'>".$filename."</a></td>";
+echo "<td>".date('Y-m-d H:i:s',$stat['mtime'])."</td>";
+echo "<td>".format_bytes($stat['size'])."</td>";
+echo "</tr>";
+}
+echo "</thead></table>";
+echo "</div></div>";
+include("footer.php"); 
 echo "</body></html>";}
 ?>
