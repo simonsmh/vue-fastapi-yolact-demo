@@ -8,9 +8,14 @@ echo "<script type='text/javascript'>alert('";
 if ($_FILES["file"]["error"] > 0){
 echo "发生错误:".$_FILES["file"]["error"];
 }else{
+$units = array(' B',' KB',' MB',' GB',' TB',' PB',' EB',' ZB',' YB'); 
+for ($i = 0; $_FILES["file"]["size"] >= 1024 && $i < 8; $i++){
+$_FILES["file"]["size"] /= 1024;
+}
+$_FILES["file"]["size"] = round($_FILES["file"]["size"], 2).$units[$i]; 
 echo "上传文件:".$_FILES["file"]["name"]." \/n ";
 echo "文件类型:".$_FILES["file"]["type"]." \/n ";
-echo "文件大小:".($_FILES["file"]["size"]/1000000)."MiB \/n ";
+echo "文件大小:".$_FILES["file"]["size"]." \/n ";
 echo "临时文件:".$_FILES["file"]["tmp_name"]." \/n ";
 if (file_exists($dir.$_FILES["file"]["name"])){
 echo "警告:文件已经存在并被删除.";
@@ -77,20 +82,19 @@ echo <<<EOF
     </form> 
     <br /> 
 EOF;
-$files = array_diff(scandir($dir), array('.','..','openwrt'));
+$files = array_diff(scandir($dir), array('.','..'));
 echo "<table class='bordered'><thead><tr><th data-field='name'>文件名</th><th data-field='time'>修改时间</th><th data-field='size'>文件大小</th></tr>";
-#计算文件大小
-function format_bytes($size) { 
-$units = array(' B', ' KB', ' MB', ' GB', ' TB'); 
-for ($i = 0; $size >= 1024 && $i < 4; $i++) $size /= 1024; 
-return round($size, 2).$units[$i]; 
-} 
 foreach ($files as $filename){
 $stat = stat($dir.$filename);
+$units = array(' B',' KB',' MB',' GB',' TB',' PB',' EB',' ZB',' YB'); 
+for ($i = 0; $stat['size'] >= 1024 && $i < 8; $i++){
+$stat['size'] /= 1024;
+}
+$stat['size'] = round($stat['size'], 2).$units[$i]; 
 echo "<tr>";
 echo "<td><a href='".$webpath.$filename."'>".$filename."</a></td>";
 echo "<td>".date('Y-m-d H:i:s',$stat['mtime'])."</td>";
-echo "<td>".format_bytes($stat['size'])."</td>";
+echo "<td>".$stat['size']."</td>";
 echo "</tr>";
 }
 echo "</thead></table>";
