@@ -65,7 +65,8 @@ echo <<<EOF
    </div> 
   </div> 
   <div class="container"> 
-   <div class="section"> 
+   <div class="row">
+    <div class="col s12">  
     <form id="file" name="file" action="files.php?up=1" method="post" enctype="multipart/form-data"> 
      <div class="file-field input-field"> 
       <div >
@@ -81,7 +82,7 @@ echo <<<EOF
      </div> 
     </form> 
     </div>
-    <div class="section"> 
+    <div class="col s12"> 
 EOF;
 $files = array_diff(scandir($dir), array('.','..','openwrt'));
 echo "<table class='bordered'><thead><tr><th data-field='name'>文件名</th><th data-field='time'>修改时间</th><th data-field='size'>文件大小</th></tr>";
@@ -99,7 +100,7 @@ echo "<td>".$stat['size']."</td>";
 echo "</tr>";
 }
 echo "</thead></table>";
-echo "</div></div></div>";
+echo "</div></div></div></div>";
 include("footer.php"); 
 echo "</body></html>";}
 ?>
