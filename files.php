@@ -8,9 +8,14 @@ echo "<script type='text/javascript'>alert('";
 if ($_FILES["file"]["error"] > 0){
 echo "发生错误:".$_FILES["file"]["error"];
 }else{
+$units = array(' B',' KB',' MB',' GB',' TB',' PB',' EB',' ZB',' YB'); 
+for ($i = 0; $_FILES["file"]["size"] >= 1024 && $i < 8; $i++){
+$_FILES["file"]["size"] /= 1024;
+}
+$_FILES["file"]["size"] = round($_FILES["file"]["size"], 2).$units[$i]; 
 echo "上传文件:".$_FILES["file"]["name"]." \/n ";
 echo "文件类型:".$_FILES["file"]["type"]." \/n ";
-echo "文件大小:".($_FILES["file"]["size"]/1000000)."MiB \/n ";
+echo "文件大小:".$_FILES["file"]["size"]." \/n ";
 echo "临时文件:".$_FILES["file"]["tmp_name"]." \/n ";
 if (file_exists($dir.$_FILES["file"]["name"])){
 echo "警告:文件已经存在并被删除.";
