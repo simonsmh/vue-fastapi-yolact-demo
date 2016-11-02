@@ -79,14 +79,13 @@ echo <<<EOF
 EOF;
 $files = array_diff(scandir($dir), array('.','..','openwrt'));
 echo "<table class='bordered'><thead><tr><th data-field='name'>文件名</th><th data-field='time'>修改时间</th><th data-field='size'>文件大小</th></tr>";
-#计算文件大小
-function format_bytes($size) { 
-$units = array(' B', ' KB', ' MB', ' GB', ' TB'); 
-for ($i = 0; $size >= 1024 && $i < 4; $i++) $size /= 1024; 
-return round($size, 2).$units[$i]; 
-} 
 foreach ($files as $filename){
 $stat = stat($dir.$filename);
+$units = array(' B',' KB',' MB',' GB',' TB',' PB',' EB',' ZB',' YB'); 
+for ($i = 0; $stat['size'] >= 1024 && $i < 8; $i++){
+$stat['size'] /= 1024;
+}
+$stat['size'] = round($size, 2).$units[$i]; 
 echo "<tr>";
 echo "<td><a href='".$webpath.$filename."'>".$filename."</a></td>";
 echo "<td>".date('Y-m-d H:i:s',$stat['mtime'])."</td>";
