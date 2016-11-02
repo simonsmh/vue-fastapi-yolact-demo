@@ -85,7 +85,7 @@ echo <<<EOF
     <div class="col s12"> 
 EOF;
 $files = array_diff(scandir($dir), array('.','..','openwrt'));
-echo "<table class='bordered'><thead><tr><th data-field='name'>文件名</th><th data-field='time'>修改时间</th><th data-field='size'>文件大小</th></tr>";
+echo "<table class='responsive-table'><thead><tr><th data-field='name'>文件名</th><th data-field='time'>修改时间</th><th data-field='size'>文件大小</th></tr>";
 foreach ($files as $filename){
 $stat = stat($dir.$filename);
 $units = array(' B',' KB',' MB',' GB',' TB',' PB',' EB',' ZB',' YB'); 
