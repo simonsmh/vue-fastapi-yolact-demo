@@ -85,11 +85,11 @@ $units = array(' B',' KB',' MB',' GB',' TB',' PB',' EB',' ZB',' YB');
 for ($i = 0; $stat['size'] >= 1024 && $i < 8; $i++){
 $stat['size'] /= 1024;
 }
-$stat['size'] = round($size, 2).$units[$i]; 
+$stat['size'] = round($stat['size'], 2).$units[$i]; 
 echo "<tr>";
 echo "<td><a href='".$webpath.$filename."'>".$filename."</a></td>";
 echo "<td>".date('Y-m-d H:i:s',$stat['mtime'])."</td>";
-echo "<td>".format_bytes($stat['size'])."</td>";
+echo "<td>".$stat['size']."</td>";
 echo "</tr>";
 }
 echo "</thead></table>";
