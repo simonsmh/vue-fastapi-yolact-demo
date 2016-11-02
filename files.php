@@ -85,7 +85,7 @@ echo <<<EOF
     <div class="col s12"> 
 EOF;
 $files = array_diff(scandir($dir), array('.','..','openwrt'));
-echo "<table class='responsive-table'><thead><tr><th data-field='name'>文件名</th><th data-field='time'>修改时间</th><th data-field='size'>文件大小</th></tr>";
+echo "<table class='bordered'><thead><tr><th data-field='name'>文件名</th><th data-field='time'>修改时间</th><th data-field='size'>文件大小</th></tr>";
 foreach ($files as $filename){
 $stat = stat($dir.$filename);
 $units = array(' B',' KB',' MB',' GB',' TB',' PB',' EB',' ZB',' YB'); 
@@ -94,7 +94,7 @@ $stat['size'] /= 1024;
 }
 $stat['size'] = round($stat['size'], 2).$units[$i]; 
 echo "<tr>";
-echo "<td><a href='".$webpath.$filename."'>".$filename."</a></td>";
+echo "<td  style='word-break:break-all'><a href='".$webpath.$filename."'>".$filename."</a></td>";
 echo "<td>".date('Y-m-d H:i:s',$stat['mtime'])."</td>";
 echo "<td>".$stat['size']."</td>";
 echo "</tr>";
