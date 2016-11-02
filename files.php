@@ -80,7 +80,8 @@ echo <<<EOF
       </div> 
      </div> 
     </form> 
-    <br /> 
+    </div>
+    <div class="section"> 
 EOF;
 $files = array_diff(scandir($dir), array('.','..','openwrt'));
 echo "<table class='bordered'><thead><tr><th data-field='name'>文件名</th><th data-field='time'>修改时间</th><th data-field='size'>文件大小</th></tr>";
@@ -98,7 +99,7 @@ echo "<td>".$stat['size']."</td>";
 echo "</tr>";
 }
 echo "</thead></table>";
-echo "</div></div>";
+echo "</div></div></div>";
 include("footer.php"); 
 echo "</body></html>";}
 ?>
