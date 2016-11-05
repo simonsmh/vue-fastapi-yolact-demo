@@ -3,7 +3,7 @@
  <?php include( "header.php"); ?>
  <head></head>
  <body> 
- 
+<div class="navbar-fixed"> 
   <nav class="indigo"> 
    <div class="nav-wrapper container"> 
     <a id="logo-container" href="index.php" class="brand-logo"> 主页 </a> 
@@ -19,7 +19,7 @@
     <a href="#" data-activates="nav-mobile" class="button-collapse"> <i class="material-icons"> &#xE5D2; </i> </a> 
    </div> 
   </nav> 
-
+</div> 
   <div class="section no-pad-bot" id="index-banner"> 
    <div class="container"> 
     <br /> 
