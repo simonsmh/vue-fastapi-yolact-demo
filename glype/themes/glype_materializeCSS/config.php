@@ -25,12 +25,12 @@ OUT;
 
 // Website home
 $themeReplace['home'] = <<<OUT
-https://simonsmh.tk
+https://app.simonsmh.cc
 OUT;
 
 // Page title
 $themeReplace['header'] = <<<OUT
-&nbsp;simonsmh <br /> Glype
+simonsmh<br>Glype
 OUT;
 
 // Descibtion
@@ -45,7 +45,7 @@ OUT;
 
 // CDN (please update it frequently)
 $themeReplace['cdn'] = <<<OUT
-https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5
+https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8
 OUT;
 
 //Jquery CDN (please update it frequently)
