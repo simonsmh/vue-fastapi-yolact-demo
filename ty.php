@@ -61,7 +61,7 @@ echo <<< EOF
               <p>中央气象台报文解析</p>
             </div>
             <div class="card-action">
-              <a href='https://simonsmh.tk/ty.php?type=nmc'>点击前往NMC报文解析</a>
+              <a href='ty.php?type=nmc'>点击前往NMC报文解析</a>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ echo <<< EOF
               <p>中央气象台路径预报</p>
             </div>
             <div class="card-action">
-              <a href='https://simonsmh.tk/ty.php?type=nmcpic'>点击前往NMC路径预报</a>
+              <a href='ty.php?type=nmcpic'>点击前往NMC路径预报</a>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@ echo <<< EOF
               <p>JTWC路径预报</p>
             </div>
             <div class="card-action">
-              <a href='https://simonsmh.tk/ty.php?type=jtwc'>点击前往JTWC报文解析</a>
+              <a href='ty.php?type=jtwc'>点击前往JTWC报文解析</a>
             </div>
           </div>
         </div>
@@ -100,7 +100,7 @@ echo <<< EOF
               <p>JTWC路径预报</p>
             </div>
             <div class="card-action">
-              <a href='https://simonsmh.tk/ty.php?type=jtwcpic'>点击前往JTWC路径预报</a>
+              <a href='ty.php?type=jtwcpic'>点击前往JTWC路径预报</a>
             </div>
           </div>
         </div>
