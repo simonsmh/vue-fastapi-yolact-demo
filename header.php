@@ -32,8 +32,8 @@
     $('.parallax').parallax();
     $('.modal').modal();
     $('.scrollspy').scrollSpy();
-    $('.button-collapse').sideNav({'edge': 'left'});
-    $('.datepicker').pickadate({selectYears: 20});
+    $('.button-collapse').sideNav();
+    $('.datepicker').pickadate();
     $('select').not('.disabled').material_select();
   }); // end of document ready
   })(jQuery); // end of jQuery name space
