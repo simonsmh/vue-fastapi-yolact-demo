@@ -20,12 +20,12 @@
 
 // Website title
 $themeReplace['title'] = <<<OUT
-simonsmh - Glype
+simonsmh - server Website
 OUT;
 
 // Website home
 $themeReplace['home'] = <<<OUT
-https://app.simonsmh.cc
+https://app.simonsmh.cc/
 OUT;
 
 // Page title

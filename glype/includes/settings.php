@@ -41,11 +41,11 @@ $CONFIG['plugins'] = 'yahoo.com,msn.com,youtube.com,hotmail.com,myspace.com,ytim
 # Temporary directory used by the script. Many features require
 # write permission to the temporary directory. Ensure this
 # directory exists and is writable for best performance.
-$CONFIG['tmp_dir'] = '/tmp/';
+$CONFIG['tmp_dir'] = GLYPE_ROOT . '/tmp/';
 
 # Use GZIP compression when sending pages back to the user. This
 # reduces bandwidth usage but at the cost of increased CPU load.
-$CONFIG['gzip_return'] = false;
+$CONFIG['gzip_return'] = true;
 
 # Warn users before browsing a secure site if on an insecure
 # connection. This option has no effect if your proxy is on https.
@@ -140,7 +140,7 @@ $CONFIG['ip_bans'] = array();
 # Time to wait for while establishing a connection to the target
 # server. If the connection takes longer, the transfer will be
 # aborted.
-$CONFIG['connection_timeout'] = 5;
+$CONFIG['connection_timeout'] = 60;
 
 # Time to allow for the entire transfer. You will need a longer
 # time limit to download larger files.
@@ -159,7 +159,7 @@ $CONFIG['download_speed_limit'] = 0;
 # it possible to resume previous downloads. Depending on the "Queue
 # transfers" option below, it may also allow users to download
 # multiple segments of a file simultaneously.
-$CONFIG['resume_transfers'] = false;
+$CONFIG['resume_transfers'] = true;
 
 # You can limit use of your proxy to allow only one transfer at a
 # time per user. Disable this for faster browsing.
@@ -205,21 +205,21 @@ $CONFIG['options']['encodeURL'] = array(
 	'title'	 => 'Encrypt URL',
 	'desc'	 => 'Encrypts the URL of the page you are viewing so that it does not contain the target site in plaintext.',
 	'default' => true,
-	'force'	 => true
+	'force'	 => false
 );
 
 $CONFIG['options']['encodePage'] = array(
 	'title'	 => 'Encrypt Page',
 	'desc'	 => 'Helps avoid filters by encrypting the page before sending it and decrypting it with javascript once received.',
 	'default' => false,
-	'force'	 => true
+	'force'	 => false
 );
 
 $CONFIG['options']['showForm'] = array(
 	'title'	 => 'Show Form',
 	'desc'	 => 'This provides a mini form at the top of each page to allow you to quickly jump to another site without returning to our homepage.',
 	'default' => true,
-	'force'	 => true
+	'force'	 => false
 );
 
 $CONFIG['options']['allowCookies'] = array(
@@ -233,28 +233,28 @@ $CONFIG['options']['tempCookies'] = array(
 	'title'	 => 'Force Temporary Cookies',
 	'desc'	 => 'This option overrides the expiry date for all cookies and sets it to at the end of the session only - all cookies will be deleted when you shut your browser. (Recommended)',
 	'default' => true,
-	'force'	 => true
+	'force'	 => false
 );
 
 $CONFIG['options']['stripTitle'] = array(
 	'title'	 => 'Remove Page Titles',
 	'desc'	 => 'Removes titles from proxied pages.',
 	'default' => false,
-	'force'	 => true
+	'force'	 => false
 );
 
 $CONFIG['options']['stripJS'] = array(
 	'title'	 => 'Remove Scripts',
 	'desc'	 => 'Remove scripts to protect your anonymity and speed up page loads. However, not all sites will provide an HTML-only alternative. (Recommended)',
 	'default' => false,
-	'force'	 => true
+	'force'	 => false
 );
 
 $CONFIG['options']['stripObjects'] = array(
 	'title'	 => 'Remove Objects',
 	'desc'	 => 'You can increase page load times by removing unnecessary Flash, Java and other objects. If not removed, these may also compromise your anonymity.',
 	'default' => false,
-	'force'	 => true
+	'force'	 => false
 );
 
 
@@ -264,10 +264,8 @@ $CONFIG['options']['stripObjects'] = array(
 
 # Settings file version for determining compatibility with admin
 # tool.
-$CONFIG['version'] = '1.4.14';
+$CONFIG['version'] = '1.4.15';
 
 //---PRESERVE ME---
 // Anything below this line will be preserved when the admin control panel rewrites
 // the settings. Useful for storing settings that don't/can't be changed from the control panel
-
-$adminDetails['root'] = '5597f0bb6d283353a579b68b8a5d9921';
