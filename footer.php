@@ -1,7 +1,9 @@
 <footer class="page-footer orange">
+  <!--
   <div id="gototop" class="fixed-action-btn" style="bottom: 45px; right: 24px;">
     <a class="waves-effect waves-light btn-floating btn-large red" href="#"><i class="large material-icons">&#xE255;</i></a>
   </div>
+  -->
   <div class="container">
     <div class="row">
       <div class="col l3 s12 center">
@@ -155,14 +157,26 @@
 </footer>
 <script src="js/jquery.min.js">
   </script>
-  <script src="js/materialize.js">
-  </script>
-  <script src="js/init.js">
+  <script src="js/materialize.min.js">
   </script>
   <script src="js/fool.min.js">
   </script>
   <script>
-  $(document).ready(function(){$(function(){$(window).scroll(function(){$("#gototop").openFAB();});$("#gototop").click(function(){$('body,html').animate({scrollTop: 0},400);return false;});});});
+  (function($){
+    $(function(){
+    // Plugin initialization
+    $('.carousel.carousel-slider').carousel({full_width: true});
+    $('.carousel').carousel();
+    $('.slider').slider({full_width: true});
+    $('.parallax').parallax();
+    $('.modal').modal();
+    $('.scrollspy').scrollSpy();
+    $('.button-collapse').sideNav();
+    $('.datepicker').pickadate();
+    $('select').not('.disabled').material_select();
+    $('.chips').material_chip();
+    }); // end of document ready
+  })(jQuery); // end of jQuery name space
   </script>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','js/analytics.js','ga');ga('create', 'UA-73742380-1', 'auto');ga('send', 'pageview');
