@@ -13,6 +13,7 @@ ssl_prefer_server_ciphers on;
 ssl_ciphers ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM;
 ssl_session_cache shared:SSL:10m;
 add_header Strict-Transport-Security "max-age=3153600; includeSubdomains; preload";
+resolver 8.8.8.8 8.8.4.4;
 server {
 listen 80;
 listen [::]:80;
@@ -172,15 +173,6 @@ autoindex_exact_size off;
 autoindex_localtime on;
 }
 
-#upstream
-resolver 8.8.8.8 8.8.4.4;
-upstream openwrt{ 
-server downloads.openwrt.org resolve;
-}
-upstream ubuntu{ 
-server ports.ubuntu.com resolve;
-}
-
 #openwrt
 server {
 listen 80;
@@ -196,7 +188,7 @@ location /{
 resolver 8.8.8.8 valid=3600s;
 resolver_timeout 10s;
 proxy_redirect http://downloads.openwrt.org/ /;
-proxy_pass http://openwrt;
+proxy_pass http://downloads.openwrt.org;
 proxy_set_header Accept-Encoding "";
 sub_filter downloads.openwrt.org openwrt.simonsmh.cc;
 }
@@ -217,7 +209,7 @@ location /{
 resolver 8.8.8.8 valid=3600s;
 resolver_timeout 10s;
 proxy_redirect http://ports.ubuntu.com/ /;
-proxy_pass http://ubuntu;
+proxy_pass http://ports.ubuntu.com;
 proxy_set_header Accept-Encoding "";
 sub_filter ports.ubuntu.com ports.simonsmh.cc;
 }
