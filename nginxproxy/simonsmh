@@ -174,10 +174,10 @@ autoindex_localtime on;
 
 #upstream
 upstream openwrt{ 
-server downloads.openwrt.org max_fails=10 fail_timeout=5s slow_start=10s;
+server downloads.openwrt.org max_fails=10 fail_timeout=5s;
 }
 upstream ubuntu{ 
-server ports.ubuntu.com max_fails=10 fail_timeout=5s slow_start=10s;
+server ports.ubuntu.com max_fails=10 fail_timeout=5s;
 }
 
 #openwrt
