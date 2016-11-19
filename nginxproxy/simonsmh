@@ -173,11 +173,12 @@ autoindex_localtime on;
 }
 
 #upstream
+resolver 8.8.8.8 8.8.4.4;
 upstream openwrt{ 
-server downloads.openwrt.org max_fails=10 fail_timeout=5s;
+server downloads.openwrt.org resolve;
 }
 upstream ubuntu{ 
-server ports.ubuntu.com max_fails=10 fail_timeout=5s;
+server ports.ubuntu.com resolve;
 }
 
 #openwrt
