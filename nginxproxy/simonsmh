@@ -1,19 +1,22 @@
 #One line add to nginx.conf
 #include /var/www/simonsmh/nginxproxy/*;
-#enable ssl in all secon domain server require letsencrypt installed
+#enable ssl http2 in all secon domain server require letsencrypt installed
 #service nginx stop && certbot certonly --standalone --email simonsmh@gmail.com -d simonsmh.cc -d app.simonsmh.cc -d www.simonsmh.cc -d blog.simonsmh.cc -d tieba.simonsmh.cc -d openwrt.simonsmh.cc -d dist.simonsmh.cc -d bt.simonsmh.cc -d pan.simonsmh.cc -d url.simonsmh.cc -d ipv6.simonsmh.cc -d ports.simonsmh.cc -d wiki.simonsmh.cc && service nginx restart
 #expire on 2016-10-18
 #add "--server https://acme-staging.api.letsencrypt.org/directory" to avoid rate limit problem.
-#SSL Settings
+#ssl Settings
 ssl_certificate /etc/letsencrypt/live/simonsmh.cc/fullchain.pem;
 ssl_certificate_key /etc/letsencrypt/live/simonsmh.cc/privkey.pem;
 ssl_session_timeout 10m;
-ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ssl_stapling on;
+ssl_stapling_verify on;
+ssl_trusted_certificate /etc/nginx/cert/trustchain.crt;
+ssl_protocols TLSv1.1 TLSv1.2;
 ssl_prefer_server_ciphers on;
 ssl_ciphers ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM;
-ssl_session_cache shared:SSL:10m;
+ssl_session_cache shared:ssl:10m;
 add_header Strict-Transport-Security "max-age=3153600; includeSubdomains; preload";
-resolver 8.8.8.8 8.8.4.4;
+resolver 8.8.8.8 8.8.4.4 valid=300s;
 server {
 listen 80;
 listen [::]:80;
@@ -57,15 +60,15 @@ server_name url.simonsmh.cc;
 return 301 https://$server_name$request_uri;
 }
 server {
-listen 443 ssl;
-listen [::]:443 ssl;
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
 server_name url.simonsmh.cc;
 return 301 $args;
 }
 #defalt
 server {
-listen 443 ssl;
-listen [::]:443 ssl;
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
 server_name app.simonsmh.cc ipv6.simonsmh.cc;
 root /var/www/simonsmh; 
 index index.php;
@@ -105,8 +108,8 @@ error_page  502 /502.php;
 
 #blog.simonsmh.cc
 server {
-listen 443 ssl;
-listen [::]:443 ssl;
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
 root /var/www/blog.simonsmh;
 index index.php index.html index.htm;
 server_name simonsmh.cc blog.simonsmh.cc;
@@ -127,8 +130,8 @@ fastcgi_param PATH_INFO $path_info;
 
 #tieba
 server {
-listen 443 ssl;
-listen [::]:443 ssl;
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
 root /var/www/tieba.simonsmh;
 index index.php index.html index.htm;
 server_name tieba.simonsmh.cc;
@@ -146,8 +149,8 @@ fastcgi_param PATH_INFO $path_info;
 
 #transmission
 server {
-listen 443 ssl;
-listen [::]:443 ssl;
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
 server_name bt.simonsmh.cc;
 location /{
 proxy_pass http://127.0.0.1:9091;
@@ -164,8 +167,8 @@ server_name dist.simonsmh.cc;
 return 301 https://$server_name$request_uri;
 }
 server {
-listen 443 ssl;
-listen [::]:443 ssl;
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
 server_name dist.simonsmh.cc;
 root /var/wwwfiles/files/openwrt/OpenWrt-SDK-15.05.1-ar71xx-nand_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64/bin/ar71xx/packages/base;
 autoindex on;
@@ -181,8 +184,8 @@ server_name openwrt.simonsmh.cc;
 return 301 https://$server_name$request_uri;
 }
 server {
-listen 443 ssl;
-listen [::]:443 ssl;
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
 server_name openwrt.simonsmh.cc;
 location /{
 resolver 8.8.8.8 valid=3600s;
@@ -202,8 +205,8 @@ server_name ports.simonsmh.cc;
 return 301 https://$server_name$request_uri;
 }
 server {
-listen 443 ssl;
-listen [::]:443 ssl;
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
 server_name ports.simonsmh.cc;
 location /{
 resolver 8.8.8.8 valid=3600s;
