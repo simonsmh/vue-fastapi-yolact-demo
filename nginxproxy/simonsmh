@@ -4,18 +4,9 @@
 #service nginx stop && certbot certonly --standalone --email simonsmh@gmail.com -d simonsmh.cc -d app.simonsmh.cc -d www.simonsmh.cc -d blog.simonsmh.cc -d tieba.simonsmh.cc -d openwrt.simonsmh.cc -d dist.simonsmh.cc -d bt.simonsmh.cc -d pan.simonsmh.cc -d url.simonsmh.cc -d ipv6.simonsmh.cc -d ports.simonsmh.cc -d wiki.simonsmh.cc && service nginx restart
 #expire on 2016-10-18
 #add "--server https://acme-staging.api.letsencrypt.org/directory" to avoid rate limit problem.
-#ssl Settings
+#ssl certificate settings
 ssl_certificate /etc/letsencrypt/live/simonsmh.cc/fullchain.pem;
 ssl_certificate_key /etc/letsencrypt/live/simonsmh.cc/privkey.pem;
-ssl_session_timeout 10m;
-ssl_stapling on;
-ssl_stapling_verify on;
-ssl_protocols TLSv1.1 TLSv1.2;
-ssl_prefer_server_ciphers on;
-ssl_ciphers ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!AESGCM;
-ssl_session_cache shared:ssl:10m;
-add_header Strict-Transport-Security "max-age=3153600; includeSubdomains; preload";
-resolver 8.8.8.8 8.8.4.4 valid=300s;
 server {
 listen 80;
 listen [::]:80;
