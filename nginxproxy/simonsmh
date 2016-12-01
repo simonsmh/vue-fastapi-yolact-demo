@@ -1,8 +1,5 @@
-#One line add to nginx.conf
 #include /var/www/simonsmh/nginxproxy/*;
-#enable ssl http2 in all secon domain server require letsencrypt installed
 #service nginx stop && certbot certonly --standalone --email simonsmh@gmail.com -d simonsmh.cc -d app.simonsmh.cc -d www.simonsmh.cc -d blog.simonsmh.cc -d tieba.simonsmh.cc -d openwrt.simonsmh.cc -d dist.simonsmh.cc -d bt.simonsmh.cc -d pan.simonsmh.cc -d url.simonsmh.cc -d ipv6.simonsmh.cc -d ports.simonsmh.cc -d wiki.simonsmh.cc && service nginx restart
-#expire on 2016-10-18
 #add "--server https://acme-staging.api.letsencrypt.org/directory" to avoid rate limit problem.
 #ssl certificate settings
 ssl_certificate /etc/letsencrypt/live/simonsmh.cc/fullchain.pem;
@@ -109,11 +106,11 @@ root /var/www/blog.simonsmh;
 index index.php index.html index.htm;
 server_name simonsmh.cc blog.simonsmh.cc;
 add_header Strict-Transport-Security "max-age=10886400; includeSubdomains; preload";
-if (!-e $request_filename) {
-rewrite ^(.*)$ /index.php$1 last;
-}
 location /generate_204 {
 return 204;
+}
+if (!-e $request_filename) {
+rewrite ^(.*)$ /index.php$1 last;
 }
 location ~ .*\.php(\/.*)*$ {
 set $path_info "";
@@ -134,7 +131,6 @@ listen [::]:443 ssl http2;
 root /var/www/tieba.simonsmh;
 index index.php index.html index.htm;
 server_name tieba.simonsmh.cc;
-add_header Strict-Transport-Security "max-age=10886400; includeSubdomains; preload";
 location ~ .*\.php(\/.*)*$ {
 set $path_info "";
 fastcgi_split_path_info ^(.+\.php)(/.+)$;
@@ -152,7 +148,6 @@ server {
 listen 443 ssl http2;
 listen [::]:443 ssl http2;
 server_name bt.simonsmh.cc;
-add_header Strict-Transport-Security "max-age=10886400; includeSubdomains; preload";
 location /{
 proxy_pass http://127.0.0.1:9091;
 proxy_set_header Accept-Encoding "";
@@ -172,7 +167,6 @@ listen 443 ssl http2;
 listen [::]:443 ssl http2;
 server_name dist.simonsmh.cc;
 root /var/wwwfiles/files/openwrt/OpenWrt-SDK-15.05.1-ar71xx-nand_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64/bin/ar71xx/packages/base;
-add_header Strict-Transport-Security "max-age=10886400; includeSubdomains; preload";
 autoindex on;
 autoindex_exact_size off;
 autoindex_localtime on;
@@ -189,7 +183,6 @@ server {
 listen 443 ssl http2;
 listen [::]:443 ssl http2;
 server_name openwrt.simonsmh.cc;
-add_header Strict-Transport-Security "max-age=10886400; includeSubdomains; preload";
 location /{
 resolver 8.8.8.8 valid=3600s;
 resolver_timeout 10s;
@@ -211,7 +204,6 @@ server {
 listen 443 ssl http2;
 listen [::]:443 ssl http2;
 server_name ports.simonsmh.cc;
-add_header Strict-Transport-Security "max-age=10886400; includeSubdomains; preload";
 location /{
 resolver 8.8.8.8 valid=3600s;
 resolver_timeout 10s;
