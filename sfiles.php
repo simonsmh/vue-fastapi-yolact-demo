@@ -40,15 +40,15 @@ EOF;
  include( "nav.php");
 echo <<<EOF
     </ul> 
+    <a href="#" data-activates="nav-mobile" class="button-collapse"> <i class="material-icons"> &#xE5D2; </i> </a> 
+   </div> 
+  </nav> 
+</div> 
     <ul id="nav-mobile" class="side-nav"> 
 EOF;
  include( "nav.php"); 
 echo <<<EOF
     </ul> 
-    <a href="#" data-activates="nav-mobile" class="button-collapse"> <i class="material-icons"> &#xE5D2; </i> </a> 
-   </div> 
-  </nav> 
-</div> 
   <div class="section no-pad-bot" id="index-banner"> 
    <div class="container"> 
     <br /> 

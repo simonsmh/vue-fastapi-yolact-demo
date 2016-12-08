@@ -58,15 +58,15 @@ END;
 include( 'nav.php');
 echo <<<END
     </ul> 
-    <ul id='nav-mobile' class='side-nav'> 
-END;
-include( 'nav.php');
-echo <<<END
-    </ul> 
     <a href='#' data-activates='nav-mobile' class='button-collapse'> <i class='material-icons'> &#xE5D2; </i> </a> 
    </div> 
   </nav> 
 </div>
+ <ul id='nav-mobile' class='side-nav'> 
+END;
+include( 'nav.php');
+echo <<<END
+    </ul> 
   <div class='section no-pad-bot' id='index-banner'> 
    <div class='container'> 
     <br /> 

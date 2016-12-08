@@ -13,13 +13,13 @@
     <ul id="dropdown1" class="dropdown-content"> 
      <?php include( "nav.php"); ?>
     </ul> 
-    <ul id="nav-mobile" class="side-nav"> 
-     <?php include( "nav.php"); ?>
-    </ul> 
     <a href="#" data-activates="nav-mobile" class="button-collapse"> <i class="material-icons"> &#xE5D2; </i> </a> 
    </div> 
   </nav> 
 </div> 
+<ul id="nav-mobile" class="side-nav"> 
+     <?php include( "nav.php"); ?>
+    </ul> 
   <div class="section no-pad-bot" id="index-banner"> 
    <div class="container"> 
     <br /> 
