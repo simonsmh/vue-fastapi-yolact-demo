@@ -82,7 +82,7 @@ echo <<<EOF
     </form> 
     <br /> 
 EOF;
-$files = array_diff(scandir($dir), array('.','..','openwrt'));
+$files = array_diff(scandir($dir), array('.','..','android-ndk-r13','android-sdk-linux','lost+found'));
 echo "<table class='bordered'><thead><tr><th data-field='name'>文件名</th><th data-field='time'>修改时间</th><th data-field='size'>文件大小</th></tr>";
 foreach ($files as $filename){
 $stat = stat($dir.$filename);
