@@ -45,7 +45,7 @@
        <p class="light"> 基于Typecho和Material主题的轻量级个人博客。 </p> 
       </div> 
       <div class="card-action white-text"> 
-       <a class="orange-text text-lighten-3" href="https://blog.simonsmh.cc/">点这里去我的后花园</a> 
+       <a class="orange-text text-lighten-3" href="https://simonsmh.cc/">点这里去我的后花园</a> 
       </div> 
      </div> 
     </div> 
