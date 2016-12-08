@@ -56,7 +56,8 @@ root /var/www/simonsmh;
 index index.php;
 #redir to file dir, not using link
 location ~ /(files|sfiles)/ {
-root /var/wwwfiles/; 
+root /var/wwwfiles/;
+autoindex on;
 }
 #Disable upload&run .php files
 location ~ ^/(files|sfiles)/.*\.php(\/.*)*$
