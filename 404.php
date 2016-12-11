@@ -42,20 +42,20 @@
     <div class="col s12"> 
 <?php 
 $dir = "/var/wwwfiles";
-$files = array_diff(scandir(dirname($dir.$_SERVER["REQUEST_URI"])), array('.','..'));
+$files = array_diff(scandir(dirname($dir.urldecode($_SERVER["REQUEST_URI"]))), array('.','..'));
 echo "<table class='bordered'><thead><tr><th data-field='name'>文件名</th><th data-field='time'>修改时间</th><th data-field='size'>文件大小</th></tr>";
 foreach ($files as $filename){
-$stat = stat($dir.dirname($_SERVER["REQUEST_URI"])."/".$filename);
-if (is_file(dirname($dir.$_SERVER["REQUEST_URI"])."/".$filename)){
+$stat = stat($dir.dirname(urldecode($_SERVER["REQUEST_URI"]))."/".$filename);
+if (is_file(dirname($dir.urldecode($_SERVER["REQUEST_URI"]))."/".$filename)){
 $units = array(' B',' KB',' MB',' GB',' TB',' PB',' EB',' ZB',' YB'); 
 for ($i = 0; $stat['size'] >= 1024 && $i < 8; $i++){
 $stat['size'] /= 1024;
 }
 $stat['size'] = round($stat['size'], 2).$units[$i]; 
-echo "<tr><td  style='word-break:break-all'><a href='".dirname($_SERVER["REQUEST_URI"])."/".$filename."'>".$filename."</a></td>";
+echo "<tr><td  style='word-break:break-all'><a href='".dirname(urldecode($_SERVER["REQUEST_URI"]))."/".$filename."'>".$filename."</a></td>";
 }else{
 $stat['size'] = "DIR";
-echo "<tr><td  style='word-break:break-all'><a href='".dirname($_SERVER["REQUEST_URI"])."/".$filename."/index.php'>".$filename."</a></td>";
+echo "<tr><td  style='word-break:break-all'><a href='".dirname(urldecode($_SERVER["REQUEST_URI"]))."/".$filename."/index.php'>".$filename."</a></td>";
 }
 echo "<td>".date('Y-m-d H:i:s',$stat['mtime'])."</td>";
 echo "<td>".$stat['size']."</td></tr>";

@@ -84,7 +84,7 @@ echo <<<EOF
 EOF;
 $dir = "/var/wwwfiles/files/";
 $webdir = "files";
-$files = array_diff(scandir(dirname($dir.$_SERVER["REQUEST_URI"])), array('.','..','openwrt'));
+$files = array_diff(scandir(dirname($dir.urldecode($_SERVER["REQUEST_URI"]))), array('.','..','openwrt'));
 echo "<table class='bordered'><thead><tr><th data-field='name'>文件名</th><th data-field='time'>修改时间</th><th data-field='size'>文件大小</th></tr>";
 foreach ($files as $filename){
 $stat = stat($dir.$filename);
@@ -94,10 +94,10 @@ for ($i = 0; $stat['size'] >= 1024 && $i < 8; $i++){
 $stat['size'] /= 1024;
 }
 $stat['size'] = round($stat['size'], 2).$units[$i]; 
-echo "<tr><td  style='word-break:break-all'><a href='".dirname($_SERVER["REQUEST_URI"]).$webdir."/".$filename."'>".$filename."</a></td>";
+echo "<tr><td  style='word-break:break-all'><a href='".dirname(urldecode($_SERVER["REQUEST_URI"])).$webdir."/".$filename."'>".$filename."</a></td>";
 }else{
 $stat['size'] = "DIR";
-echo "<tr><td  style='word-break:break-all'><a href='".dirname($_SERVER["REQUEST_URI"]).$webdir."/".$filename."/index.php'>".$filename."</a></td>";
+echo "<tr><td  style='word-break:break-all'><a href='".dirname(urldecode($_SERVER["REQUEST_URI"])).$webdir."/".$filename."/index.php'>".$filename."</a></td>";
 }
 echo "<td>".date('Y-m-d H:i:s',$stat['mtime'])."</td>";
 echo "<td>".$stat['size']."</td></tr>";
