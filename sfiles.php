@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <?php 
-$dir = "/var/wwwfiles/sfiles/";
-$webpath = "/sfiles/";
 if($_GET["up"] == 1){
 echo "<script type='text/javascript'>alert('";
 if ($_FILES["file"]["error"] > 0){
@@ -80,25 +78,31 @@ echo <<<EOF
       </div> 
      </div> 
     </form> 
-    <br /> 
+    </div>
+    <div class="col s12"> 
 EOF;
-$files = array_diff(scandir($dir), array('.','..','android-ndk-r13','android-sdk-linux','lost+found'));
+$dir = "/var/wwwfiles/sfiles/";
+$webdir = "sfiles";
+$files = array_diff(scandir(dirname($dir.$_SERVER["REQUEST_URI"])), array('.','..','openwrt'));
 echo "<table class='bordered'><thead><tr><th data-field='name'>文件名</th><th data-field='time'>修改时间</th><th data-field='size'>文件大小</th></tr>";
 foreach ($files as $filename){
 $stat = stat($dir.$filename);
+if (is_file($dir.$filename)){
 $units = array(' B',' KB',' MB',' GB',' TB',' PB',' EB',' ZB',' YB'); 
 for ($i = 0; $stat['size'] >= 1024 && $i < 8; $i++){
 $stat['size'] /= 1024;
 }
 $stat['size'] = round($stat['size'], 2).$units[$i]; 
-echo "<tr>";
-echo "<td  style='word-break:break-all'><a href='".$webpath.$filename."'>".$filename."</a></td>";
+echo "<tr><td  style='word-break:break-all'><a href='".dirname($_SERVER["REQUEST_URI"]).$webdir."/".$filename."'>".$filename."</a></td>";
+}else{
+$stat['size'] = "DIR";
+echo "<tr><td  style='word-break:break-all'><a href='".dirname($_SERVER["REQUEST_URI"]).$webdir."/".$filename."/index.php'>".$filename."</a></td>";
+}
 echo "<td>".date('Y-m-d H:i:s',$stat['mtime'])."</td>";
-echo "<td>".$stat['size']."</td>";
-echo "</tr>";
+echo "<td>".$stat['size']."</td></tr>";
 }
 echo "</thead></table>";
-echo "</div></div>";
+echo "</div></div></div></div>";
 include("footer.php"); 
 echo "</body></html>";}
 ?>

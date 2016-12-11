@@ -1,25 +1,25 @@
   <li>
-    <a href="index.php" class="waves-effect black-text">
+    <a href="https://app.simonsmh.cc/index.php" class="waves-effect black-text">
       主页
     </a>
   </li>
   <li>
-    <a href="review.php" class="waves-effect black-text">
+    <a href="https://app.simonsmh.cc/review.php" class="waves-effect black-text">
       留言板
     </a>
   </li>
   <li>
-    <a href="files.php" class="waves-effect black-text">
+    <a href="https://app.simonsmh.cc/files.php" class="waves-effect black-text">
       文件储存
     </a>
   </li>
   <li>
-    <a href="source.php" class="waves-effect black-text">
+    <a href="https://app.simonsmh.cc/source.php" class="waves-effect black-text">
       杂货铺
     </a>
   </li>
   <li>
-    <a href="shell.php" class="waves-effect black-text">
+    <a href="https://app.simonsmh.cc/shell.php" class="waves-effect black-text">
       Shell
     </a>
   </li>

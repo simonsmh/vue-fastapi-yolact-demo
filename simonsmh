@@ -57,9 +57,6 @@ index index.php;
 #redir to file dir, not using link
 location ~ /(files|sfiles)/ {
 root /var/wwwfiles/;
-autoindex on;
-autoindex_exact_size off;
-autoindex_localtime on;
 }
 #Disable upload&run .php files
 location ~ ^/(files|sfiles)/.*\.php(\/.*)*$

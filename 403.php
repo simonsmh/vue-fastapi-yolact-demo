@@ -1,28 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
- <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-  <meta name="theme-color" content="#3f51b5">
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" media="screen" />
-  <title>
-    simonsmh - server Website
-  </title>
-  <!-- CSS -->
-  <link href="https://app.simonsmh.cc/css/googleapi.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="https://app.simonsmh.cc/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <style type="text/css">
-  body{font-family:"Roboto","思源黑体 CN Regular","思源黑体 Regular","Noto Sans S Chinese","微软雅黑","Microsoft YaHei",sans-serif;}
-  .indigo{opacity:.92;}
-  .icon-block{padding: 0 15px;}
-  .icon-block.material-icons{font-size: inherit;}
-  </style>
-</head>
+<?php include( "header.php"); ?>
  <body> 
 <div class="navbar-fixed"> 
   <nav class="indigo" role="navigation"> 
    <div class="nav-wrapper container"> 
-    <a id="logo-container" href="index.php" class="brand-logo"> 403 </a> 
+    <a id="logo-container" href="https://app.simonsmh.cc/index.php" class="brand-logo"> 403页面 </a> 
     <ul class="right hide-on-med-and-down"> 
      <li> <a class="dropdown-button waves-effect waves-light" href="#" data-activates="dropdown1"> 菜单 <i class="material-icons right"> &#xE5C5; </i> </a> </li> 
     </ul> 
@@ -49,16 +32,65 @@
      </div> 
     </div> 
     <div class="row center">
-     <a href="index.php" id="download-button" class="btn-large waves-effect waves-light orange">访问主页</a>
+     <a href="https://app.simonsmh.cc/" id="download-button" class="btn-large waves-effect waves-light orange">访问主页</a>
     </div>
     <br /> 
    </div> 
   </div> 
   <div class="container"> 
    <div class="section">
-   
+
    </div> 
   </div> 
-  <?php include( "footer.php"); ?>
+  <footer class="page-footer orange">
+  <div id="gototop" class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="waves-effect waves-light btn-floating btn-large red" href="#"><i class="large material-icons">&#xE255;</i></a>
+  </div>
+  <div class="footer-copyright">
+    <div class="container" style="word-break:break-all">
+      <a class="orange-text text-lighten-3" href="https://app.simonsmh.cc/tz.php">
+        Powered by
+      </a>
+      <a class="orange-text text-lighten-3" href="https://app.simonsmh.cc/sfiles.php">
+        simonsmh.
+      </a>
+      <a class="orange-text text-lighten-3" href="http://materializecss.com">
+       CSS from Materialize.
+      </a>
+      <a class="orange-text text-lighten-3" href="https://www.google.com/design/icons/">
+       Icons from Google.
+      </a>
+    </div>
+  </div>
+</footer>
+  <script src="https://app.simonsmh.cc/js/jquery.min.js">
+  </script>
+  <script src="https://app.simonsmh.cc/js/materialize.min.js">
+  </script>
+  <script src="https://app.simonsmh.cc/js/fool.min.js">
+  </script>
+  <script>
+  (function($){
+    $(function(){
+    // Plugin initialization
+    $('.carousel.carousel-slider').carousel({full_width: true});
+    $('.carousel').carousel();
+    $('.slider').slider({full_width: true});
+    $('.parallax').parallax();
+    $('.modal').modal();
+    $('.scrollspy').scrollSpy();
+    $('.button-collapse').sideNav();
+    $('.datepicker').pickadate();
+    $('select').not('.disabled').material_select();
+    $('.chips').material_chip();
+    }); // end of document ready
+  })(jQuery); // end of jQuery name space
+  </script>
+  <script>
+  $(document).ready(function(){$(function(){$(window).scroll(function(){$("#gototop").openFAB();});$("#gototop").click(function(){$('body,html').animate({scrollTop: 0},400);return false;});});});
+  </script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','js/analytics.js','ga');ga('create', 'UA-73742380-1', 'auto');ga('send', 'pageview');
+  </script>
  </body>
 </html>
