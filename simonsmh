@@ -1,44 +1,51 @@
 #include /var/www/simonsmh/nginxproxy/*;
 #systemctl stop nginx && certbot certonly --standalone --email simonsmh@gmail.com -d simonsmh.cc -d app.simonsmh.cc -d www.simonsmh.cc -d blog.simonsmh.cc -d tieba.simonsmh.cc -d openwrt.simonsmh.cc -d dist.simonsmh.cc -d bt.simonsmh.cc -d url.simonsmh.cc -d ipv6.simonsmh.cc -d ports.simonsmh.cc && systemctl start nginx
 #--server https://acme-staging.api.letsencrypt.org/directory
-#ssl certificate settings
+#hsts/ssl certificate settings
 ssl_certificate /etc/letsencrypt/live/simonsmh.cc/fullchain.pem;
 ssl_certificate_key /etc/letsencrypt/live/simonsmh.cc/privkey.pem;
+add_header Strict-Transport-Security "max-age=10886400;preload";
 server {
 listen 80;
 listen [::]:80;
 server_name simonsmh.cc;
 return 301 https://$server_name$request_uri;
+add_header Strict-Transport-Security "";
 }
 server {
 listen 80;
 listen [::]:80;
 server_name ipv6.simonsmh.cc;
 return 301 https://$server_name$request_uri;
+add_header Strict-Transport-Security "";
 }
 server {
 listen 80;
 listen [::]:80;
 server_name app.simonsmh.cc;
 return 301 https://$server_name$request_uri;
+add_header Strict-Transport-Security "";
 }
 server {
 listen 80;
 listen [::]:80;
 server_name tieba.simonsmh.cc;
 return 301 https://$server_name$request_uri;
+add_header Strict-Transport-Security "";
 }
 server {
 listen 80;
 listen [::]:80;
 server_name bt.simonsmh.cc;
 return 301 https://$server_name$request_uri;
+add_header Strict-Transport-Security "";
 }
 server {
 listen 80;
 listen [::]:80;
 server_name url.simonsmh.cc;
 return 301 https://$server_name$request_uri;
+add_header Strict-Transport-Security "";
 }
 #url usage: [server_name]/?[url]
 server {
@@ -94,7 +101,7 @@ listen 443 ssl http2;
 listen [::]:443 ssl http2;
 root /var/www/blog.simonsmh;
 index index.php index.html index.htm;
-server_name simonsmh.cc blog.simonsmh.cc;
+server_name simonsmh.cc www.simonsmh.cc blog.simonsmh.cc;
 add_header Strict-Transport-Security "max-age=10886400; includeSubdomains; preload";
 location /generate_204 {
 return 204;
@@ -174,10 +181,10 @@ listen 443 ssl http2;
 listen [::]:443 ssl http2;
 server_name openwrt.simonsmh.cc;
 location /{
-resolver 8.8.8.8 valid=3600s;
-resolver_timeout 10s;
+resolver 127.0.0.1 valid=3600s;
+set $openwrt "downloads.openwrt.org";
+proxy_pass http://$openwrt;
 proxy_redirect http://downloads.openwrt.org/ /;
-proxy_pass http://downloads.openwrt.org;
 proxy_set_header Accept-Encoding "";
 sub_filter downloads.openwrt.org openwrt.simonsmh.cc;
 }
@@ -195,10 +202,10 @@ listen 443 ssl http2;
 listen [::]:443 ssl http2;
 server_name ports.simonsmh.cc;
 location /{
-resolver 8.8.8.8 valid=3600s;
-resolver_timeout 10s;
+resolver 127.0.0.1 valid=3600s;
+set $ubuntu "ports.ubuntu.com";
+proxy_pass http://$ubuntu;
 proxy_redirect http://ports.ubuntu.com/ /;
-proxy_pass http://ports.ubuntu.com;
 proxy_set_header Accept-Encoding "";
 sub_filter ports.ubuntu.com ports.simonsmh.cc;
 }
