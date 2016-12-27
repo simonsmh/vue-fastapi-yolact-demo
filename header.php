@@ -2,7 +2,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
   <meta name="theme-color" content="#3f51b5">
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" media="screen" />
+  <link href="https://app.simonsmh.cc/favicon.ico" rel="shortcut icon" type="image/x-icon" media="screen" />
   <title>
     simonsmh - server Website
   </title>
