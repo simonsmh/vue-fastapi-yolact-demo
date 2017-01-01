@@ -63,6 +63,7 @@ root /var/www/simonsmh;
 index index.php;
 #redir to file dir, not using link
 location ~ /(files|sfiles)/ {
+default_type application/octet-stream;
 root /var/wwwfiles/;
 }
 #Disable upload&run .php files
