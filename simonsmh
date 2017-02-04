@@ -58,7 +58,7 @@ return 301 $args;
 server {
 listen 443 ssl http2;
 listen [::]:443 ssl http2;
-server_name app.simonsmh.cc ipv6.simonsmh.cc;
+server_name app.simonsmh.cc ipv4.simonsmh.cc ipv6.simonsmh.cc;
 root /var/www/simonsmh; 
 index index.php;
 #redir to file dir, not using link
