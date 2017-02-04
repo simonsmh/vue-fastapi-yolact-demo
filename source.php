@@ -110,17 +110,9 @@ echo <<<END
     </div>
   <div class='divider'></div>
   <div class='section'>
-    <h5 class='center'>镜像源（如有其他需求请联系我）</h5>
-    <div class='row'> 
-     <span class='col s12 light'> INFO： <br /> <a href='https://openwrt.simonsmh.cc/'> https://openwrt.simonsmh.cc/ </a> 现在成为了 <a href='http://downloads.openwrt.org/'> http://downloads.openwrt.org/ </a> 的镜像站 </br> SSL证书依赖ca-certificates与openssl-util </br> 快速执行替换代码： </br> sed -i 's/downloads.openwrt.org/openwrt.simonsmh.cc/g' /etc/opkg.conf </span>
-     <span class='col s12 light'> <br /><br /> <a href='https://ports.simonsmh.cc/'> https://ports.simonsmh.cc/ </a> 现在成为了 <a href='http://ports.ubuntu.com/'> http://ports.ubuntu.com/ </a> 的镜像站 </br> 快速执行替换代码： </br> sed -i 's/ports.ubuntu.com/ports.simonsmh.cc/g' /etc/apt/sources.list </span>
-    </div> 
-    </div>
-  <div class='divider'></div>
-  <div class='section'>
     <h5 class='center'>openwrt私有源（ar71xx平台，自动化编译ss）</h5>
     <div class='row'> 
-     <span class='col s12 light'> src/gz simonsmh_base <a href='https://dist.simonsmh.cc/'> https://dist.simonsmh.cc/ </a>  </span> 
+     <span class='col s12 light'> <a href='https://dist.simonsmh.cc/'> https://dist.simonsmh.cc/ </a>  </span> 
     </div> 
     </div>
   <div class='divider'></div>
