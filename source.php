@@ -17,14 +17,13 @@ $handle = popen('cd '.$dir.' && git pull && chmod -R 777 * && chown -R www-data 
 $read = stream_get_contents($handle);
 printf($read);
 pclose($handle);
-}
-/*elseif($_GET["bloghook"] == 1){
+}elseif($_GET["bloghook"] == 1){
 $dir = '/var/www/simonsmh/';
-$handle = popen('cd '.$dir.' && git clone https://github.com/simonsmh/simonsmh.github.io.git -b master && cd simonsmh.github.io && git pull origin master && chmod -R 777 * && chown -R www-data *','r');
+$handle = popen('cd '.$dir.' && git clone https://github.com/simonsmh/simonsmh.github.io.git -b master && cd simonsmh.github.io && git fetch && git reset --hard && git pull origin master && chmod -R 777 * && chown -R www-data *','r');
 $read = stream_get_contents($handle);
 printf($read);
 pclose($handle);
-}*/
+}
 elseif($_GET["url"] == 1){
 $http = "http://";
 $choose = $_POST['choose'];
