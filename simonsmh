@@ -171,7 +171,9 @@ root /var/wwwfiles/files/openwrt/OpenWrt-SDK-15.05.1-ar71xx-nand_gcc-4.8-linaro_
 location ~ /dist.html {
 alias /var/www/simonsmh/dist.html;
 }
+location = / {
 add_before_body "/dist.html";
+}
 autoindex on;
 autoindex_exact_size off;
 autoindex_localtime on;
