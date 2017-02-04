@@ -102,7 +102,7 @@ listen 443 ssl http2;
 listen [::]:443 ssl http2;
 root /var/www/blog.simonsmh;
 index index.php index.html index.htm;
-server_name simonsmh.cc www.simonsmh.cc blog.simonsmh.cc;
+server_name simonsmh.cc www.simonsmh.cc;
 add_header Strict-Transport-Security "max-age=10886400; includeSubdomains; preload";
 location /generate_204 {
 return 204;
@@ -120,6 +120,13 @@ fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 fastcgi_param SCRIPT_NAME $fastcgi_script_name;
 fastcgi_param PATH_INFO $path_info;
 }
+}
+
+server {
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
+server_name blog.simonsmh.cc;
+root /var/www/simonsmh/simonsmh.github.io;
 }
 
 #tieba
