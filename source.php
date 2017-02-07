@@ -110,13 +110,6 @@ echo <<<END
     </div>
   <div class='divider'></div>
   <div class='section'>
-    <h5 class='center'>openwrt私有源（ar71xx平台，自动化编译ss）</h5>
-    <div class='row'> 
-     <span class='col s12 light'> <a href='https://dist.simonsmh.cc/'> https://dist.simonsmh.cc/ </a>  </span> 
-    </div> 
-    </div>
-  <div class='divider'></div>
-  <div class='section'>
     <h5 class='center'>PHP INFO</h5>
     <div class='row'> 
      <span class='col s12 light'><a href='source.php?ip=2'>直接获取本机IP</a></span> 

@@ -141,7 +141,7 @@
       <a class="orange-text text-lighten-3" href="tz.php">
         Powered by
       </a>
-      <a class="orange-text text-lighten-3" href="sfiles.php">
+      <a class="orange-text text-lighten-3" href="mailto:simonsmh@gmail.com">
         simonsmh.
       </a>
       <a class="orange-text text-lighten-3" href="http://materializecss.com">
