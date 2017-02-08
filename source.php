@@ -18,8 +18,8 @@ $read = stream_get_contents($handle);
 printf($read);
 pclose($handle);
 }elseif($_GET["bloghook"] == 1){
-$dir = '/var/www/simonsmh/';
-$handle = popen('cd '.$dir.' && git clone https://github.com/simonsmh/simonsmh.github.io.git -b master && cd simonsmh.github.io && git fetch && git reset --hard && git pull origin master && chmod -R 777 * && chown -R www-data *','r');
+$dir = '/var/www/simonsmh.github.io/';
+$handle = popen('cd '.$dir.' && git fetch origin && git reset origin master --hard && git pull origin master','r');
 $read = stream_get_contents($handle);
 printf($read);
 pclose($handle);

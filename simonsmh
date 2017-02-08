@@ -15,21 +15,18 @@ add_header Strict-Transport-Security "";
 server {
 listen 80;
 listen [::]:80;
-server_name www.simonsmh.cc;
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
+server_name www.simonsmh.cc blog.simonsmh.cc;
 return 301 https://simonsmh.cc$request_uri;
 add_header Strict-Transport-Security "";
 }
 server {
 listen 80;
 listen [::]:80;
-server_name ipv4.simonsmh.cc;
-return 301 https://app.simonsmh.cc$request_uri;
-add_header Strict-Transport-Security "";
-}
-server {
-listen 80;
-listen [::]:80;
-server_name ipv6.simonsmh.cc;
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
+server_name ipv4.simonsmh.cc ipv6.simonsmh.cc;
 return 301 https://app.simonsmh.cc$request_uri;
 add_header Strict-Transport-Security "";
 }
@@ -67,7 +64,7 @@ return 301 $args;
 server {
 listen 443 ssl http2;
 listen [::]:443 ssl http2;
-server_name app.simonsmh.cc ipv4.simonsmh.cc ipv6.simonsmh.cc;
+server_name app.simonsmh.cc;
 root /var/www/simonsmh; 
 index index.php;
 #redir to file dir, not using link
@@ -105,37 +102,12 @@ error_page  403 /403.php;
 error_page  404 /404.php;
 }
 
-#blog of simonsmh.cc
+#hexo image
 server {
 listen 443 ssl http2;
 listen [::]:443 ssl http2;
-root /var/www/blog.simonsmh;
-index index.php index.html index.htm;
-server_name simonsmh.cc www.simonsmh.cc;
-add_header Strict-Transport-Security "max-age=10886400; includeSubdomains; preload";
-location /generate_204 {
-return 204;
-}
-if (!-e $request_filename) {
-rewrite ^(.*)$ /index.php$1 last;
-}
-location ~ .*\.php(\/.*)*$ {
-set $path_info "";
-fastcgi_split_path_info ^(.+\.php)(/.+)$;
-fastcgi_pass unix:/run/php/php7.0-fpm.sock;
-fastcgi_index index.php;
-include fastcgi_params;
-fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-fastcgi_param SCRIPT_NAME $fastcgi_script_name;
-fastcgi_param PATH_INFO $path_info;
-}
-}
-
-server {
-listen 443 ssl http2;
-listen [::]:443 ssl http2;
-server_name blog.simonsmh.cc;
-root /var/www/simonsmh/simonsmh.github.io;
+server_name simonsmh.cc;
+root /var/www/simonsmh.github.io;
 }
 
 #tieba
@@ -168,3 +140,4 @@ proxy_set_header Accept-Encoding "";
 proxy_pass_header  X-Transmission-Session-Id;
 }
 }
+
