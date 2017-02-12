@@ -19,7 +19,7 @@ printf($read);
 pclose($handle);
 }elseif($_GET["bloghook"] == 1){
 $dir = '/var/www/simonsmh.github.io/';
-$handle = popen('cd '.$dir.' && git fetch origin && git reset origin master --hard && git pull origin master','r');
+$handle = popen('cd '.$dir.' && git fetch --all && git checkout origin/master -f && git pull origin master','r');
 $read = stream_get_contents($handle);
 printf($read);
 pclose($handle);
