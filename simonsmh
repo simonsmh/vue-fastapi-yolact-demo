@@ -74,6 +74,9 @@ add_header Access-Control-Allow-Origin *;
 location = /generate_204 {
 return 204;
 }
+location = /shell.php {
+deny all;
+}
 location ~ .*\.php(\/.*)*$ {
 set $path_info "";
 fastcgi_split_path_info ^(.+\.php)(/.+)$;
