@@ -19,7 +19,7 @@
     </a>
   </li>
   <li>
-    <a href="https://app.simonsmh.cc/shell.php" class="waves-effect black-text">
+    <a href="https://app.simonsmh.cc/shell/" class="waves-effect black-text">
       Shell
     </a>
   </li>
