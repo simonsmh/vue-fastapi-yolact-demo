@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <?php 
+$dir = "/var/wwwfiles/files/";
+$webdir = "files";
 if($_GET["up"] == 1){
 echo "<script type='text/javascript'>alert('";
 if ($_FILES["file"]["error"] > 0){
@@ -19,9 +21,9 @@ if (file_exists($dir.$_FILES["file"]["name"])){
 echo "警告:文件已经存在并被删除.";
 unlink ($dir.$_FILES["file"]["name"]); 
 }
-move_uploaded_file($_FILES["file"]["tmp_name"],
-$dir.$_FILES["file"]["name"]);
-echo "存放位置:".$dir.$_FILES["file"]["name"];}
+move_uploaded_file($_FILES["file"]["tmp_name"],$dir.$_FILES["file"]["name"]);
+echo "存放位置:".$dir.$_FILES["file"]["name"];
+}
 echo "');location.replace(document.referrer);document.frames('ifrmname').location.reload();</script>";
 }else{include( "header.php");
 echo <<<EOF
@@ -82,8 +84,6 @@ echo <<<EOF
     </div>
     <div class="col s12"> 
 EOF;
-$dir = "/var/wwwfiles/files/";
-$webdir = "files";
 $files = array_diff(scandir(dirname($dir.urldecode($_SERVER["REQUEST_URI"]))), array('.','..',));
 echo "<table class='bordered'><thead><tr><th data-field='name'>文件名</th><th data-field='time'>修改时间</th><th data-field='size'>文件大小</th></tr>";
 foreach ($files as $filename){
