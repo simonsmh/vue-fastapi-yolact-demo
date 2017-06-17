@@ -19,12 +19,7 @@
     </a>
   </li>
   <li>
-    <a href="https://app.simonsmh.cc/shell/" class="waves-effect black-text">
-      Shell
-    </a>
-  </li>
-  <li>
-    <a href="https://bt.simonsmh.cc/" class="waves-effect black-text">
+    <a href="https://app.simonsmh.cc/bt/" class="waves-effect black-text">
       离线下载
     </a>
   </li>
@@ -34,12 +29,17 @@
     </a>
   </li>
   <li>
-    <a href="https://blog.simonsmh.cc/" class="waves-effect black-text">
+    <a href="https://simonsmh.cc/" class="waves-effect black-text">
       后花园
     </a>
   </li>
   <li>
-    <a href="glype/" class="waves-effect black-text">
+    <a href="https://app.simonsmh.cc/glype/" class="waves-effect black-text">
       Glype
+    </a>
+  </li>
+  <li>
+    <a href="https://app.simonsmh.cc/shell/" class="waves-effect black-text">
+      Shell
     </a>
   </li>

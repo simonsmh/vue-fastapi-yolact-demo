@@ -41,7 +41,7 @@
      <div class="card hoverable waves-effect waves-light orange"> 
       <div class="card-content white-text"> 
        <span class="card-title white-text"> <i class="tiny material-icons white-text">&#xE0BF;</i>simon的后花园 </span> 
-       <p class="light"> 基于Typecho和Material主题的轻量级个人博客。 </p> 
+       <p class="light"> 挂靠在GitHub持续集成的Hexo轻量级个人博客。 </p> 
       </div> 
       <div class="card-action white-text"> 
        <a class="orange-text text-lighten-3" href="https://simonsmh.cc/">点这里去我的后花园</a> 
@@ -77,7 +77,7 @@
        <p class="light"> 基于Transmission的开源BT或PT离线下载程序。 </p> 
       </div> 
       <div class="card-action white-text"> 
-       <a class="orange-text text-lighten-3" href="https://bt.simonsmh.cc/">点这里去Transmission</a>
+       <a class="orange-text text-lighten-3" href="bt/">点这里去Transmission</a>
       </div> 
      </div> 
     </div> 

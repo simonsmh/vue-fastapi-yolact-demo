@@ -10,7 +10,7 @@
   <link href="https://app.simonsmh.cc/css/googleapi.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="https://app.simonsmh.cc/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <style type="text/css">
-  body{font-family:"Roboto","思源黑体 CN Regular","思源黑体 Regular","Noto Sans S Chinese","微软雅黑","Microsoft YaHei",sans-serif;}
+  body{font-family:"Roboto","思源黑体 CN Regular","思源黑体 Regular","Noto Sans CJK SC","微软雅黑","Microsoft YaHei",sans-serif;}
   .indigo{opacity:.92;}
   .icon-block{padding: 0 15px;}
   .icon-block.material-icons{font-size: inherit;}
