@@ -99,7 +99,7 @@ echo <<<END
       </div> 
       <br /> 
       <div class='row input-field'> 
-       <input value='https://twitter.com/MinhaoShi' id='website' name='website' type='text' class='validate' /> 
+       <input value='https://twitter.com/simonsmhsmh' id='website' name='website' type='text' class='validate' /> 
        <label class='active' for='website'>填写网址</label> 
       </div> 
       <div class='row center'>
