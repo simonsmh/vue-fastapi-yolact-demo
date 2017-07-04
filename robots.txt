@@ -1,20 +1,2 @@
 User-agent: *
-Disallow: /css/
-Disallow: /font/
-Disallow: /js/
-Disallow: /nginxproxy/
-Disallow: /files/
-Disallow: /sfiles/
-Disallow: /phpMyAdmin/
-Disallow: /glype/
-Disallow: /add_review.php
-Disallow: /add_source.php
-Disallow: /footer.php
-Disallow: /header.php
-Disallow: /nav.php
-Disallow: /shell.php
-Disallow: /tz.php
-Disallow: /sfiles.php
-Disallow: /files.php
-Disallow: /README.md
-
+Disallow: /
