@@ -12,6 +12,7 @@ return 301 https://app.simonsmh.cc$request_uri;
 ssl_certificate /etc/nginx/ssl/simonsmh.cc/fullchain.cer;
 ssl_certificate_key /etc/nginx/ssl/simonsmh.cc/privkey.key;
 add_header Strict-Transport-Security "max-age=10886400;preload";
+add_header X-Robots-Tag "none";
 }
 
 #url redirect usage: [server_name]/?[url]
@@ -25,6 +26,7 @@ return 301 $args;
 ssl_certificate /etc/nginx/ssl/simonsmh.cc/fullchain.cer;
 ssl_certificate_key /etc/nginx/ssl/simonsmh.cc/privkey.key;
 add_header Strict-Transport-Security "max-age=10886400;preload";
+add_header X-Robots-Tag "none";
 }
 
 #defalt app
@@ -80,6 +82,7 @@ error_page  404 /404.php;
 ssl_certificate /etc/nginx/ssl/simonsmh.cc/fullchain.cer;
 ssl_certificate_key /etc/nginx/ssl/simonsmh.cc/privkey.key;
 add_header Strict-Transport-Security "max-age=10886400;preload";
+add_header X-Robots-Tag "none";
 }
 
 #tieba
@@ -100,4 +103,5 @@ fastcgi_index index.php;
 ssl_certificate /etc/nginx/ssl/simonsmh.cc/fullchain.cer;
 ssl_certificate_key /etc/nginx/ssl/simonsmh.cc/privkey.key;
 add_header Strict-Transport-Security "max-age=10886400;preload";
+add_header X-Robots-Tag "none";
 }
