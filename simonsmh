@@ -71,7 +71,7 @@ proxy_pass http://127.0.0.1:6800/jsonrpc;
 location ~ .*\.php(\/.*)*$ {
 set $path_info "";
 fastcgi_split_path_info ^(.+\.php)(/.+)$;
-fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+fastcgi_pass unix:/run/php/php7.1-fpm.sock;
 fastcgi_index index.php;
 }
 location ~* ^.+\.(eot|ttf|otf|woff|svg|woff2)$ {
@@ -97,7 +97,7 @@ server_name tieba.simonsmh.cc;
 location ~ .*\.php(\/.*)*$ {
 set $path_info "";
 fastcgi_split_path_info ^(.+\.php)(/.+)$;
-fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+fastcgi_pass unix:/run/php/php7.1-fpm.sock;
 fastcgi_index index.php;
 }
 ssl_certificate /etc/nginx/ssl/simonsmh.cc/fullchain.cer;
