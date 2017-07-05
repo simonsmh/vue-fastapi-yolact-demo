@@ -13,18 +13,11 @@ return $data;
 }
 if($_GET["githook"] == 1){
 $dir = '/var/www/simonsmh/';
-$handle = popen('cd '.$dir.' && git pull && chmod -R 777 * && chown -R www-data *','r');
+$handle = popen('cd '.$dir.' && git pull && chown -R www-data *','r');
 $read = stream_get_contents($handle);
 printf($read);
 pclose($handle);
-}elseif($_GET["bloghook"] == 1){
-$dir = '/var/www/simonsmh.github.io/';
-$handle = popen('cd '.$dir.' && git fetch --all && git checkout origin/master -f && git pull origin master','r');
-$read = stream_get_contents($handle);
-printf($read);
-pclose($handle);
-}
-elseif($_GET["url"] == 1){
+}elseif($_GET["url"] == 1){
 $http = "http://";
 $choose = $_POST['choose'];
 $website = $_POST['website'];
