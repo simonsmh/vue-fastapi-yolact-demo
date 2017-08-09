@@ -41,7 +41,7 @@ $CONFIG['plugins'] = 'yahoo.com,msn.com,youtube.com,hotmail.com,myspace.com,ytim
 # Temporary directory used by the script. Many features require
 # write permission to the temporary directory. Ensure this
 # directory exists and is writable for best performance.
-$CONFIG['tmp_dir'] = GLYPE_ROOT . '/tmp/';
+$CONFIG['tmp_dir'] = '/tmp/';
 
 # Use GZIP compression when sending pages back to the user. This
 # reduces bandwidth usage but at the cost of increased CPU load.
@@ -270,4 +270,5 @@ $CONFIG['version'] = '1.4.15';
 // Anything below this line will be preserved when the admin control panel rewrites
 // the settings. Useful for storing settings that don't/can't be changed from the control panel
 
-$adminDetails['testuser'] = '16d7a4fca7442dda3ad93c9a726597e4';
+
+$adminDetails['simonsmh'] = '5597f0bb6d283353a579b68b8a5d9921';

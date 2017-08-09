@@ -42,8 +42,7 @@ location ~ /(files|sfiles)/ {
 default_type application/octet-stream;
 root /var/wwwfiles/;
 }
-location ~ ^/(files|sfiles)/.*\.php(\/.*)*$
-{
+location ~ ^/(files|sfiles)/.*\.php(\/.*)*$ {
 deny all; 
 }
 location / {
@@ -68,14 +67,14 @@ proxy_pass http://127.0.0.1:9091/transmission/upload;
 location /jsonrpc {
 proxy_pass http://127.0.0.1:6800/jsonrpc;
 }
-location ~ .*\.php(\/.*)*$ {
-set $path_info "";
-fastcgi_split_path_info ^(.+\.php)(/.+)$;
-fastcgi_pass unix:/run/php/php7.1-fpm.sock;
-fastcgi_index index.php;
-}
 location ~* ^.+\.(eot|ttf|otf|woff|svg|woff2)$ {
 expires max;
+}
+location ~ .*\.php(\/.*)*$ {
+fastcgi_pass unix:/run/php/php7.1-fpm.sock;
+fastcgi_split_path_info  ^(.+\.php)(/.+)$;
+fastcgi_param PATH_INFO $fastcgi_path_info; 
+include fastcgi.conf;
 }
 error_page  403 /403.php;
 error_page  404 /404.php;
@@ -95,10 +94,10 @@ root /var/www/tieba.simonsmh;
 index index.php index.html index.htm;
 server_name tieba.simonsmh.cc;
 location ~ .*\.php(\/.*)*$ {
-set $path_info "";
-fastcgi_split_path_info ^(.+\.php)(/.+)$;
 fastcgi_pass unix:/run/php/php7.1-fpm.sock;
-fastcgi_index index.php;
+fastcgi_split_path_info  ^(.+\.php)(/.+)$;
+fastcgi_param PATH_INFO $fastcgi_path_info; 
+include fastcgi.conf;
 }
 ssl_certificate /etc/nginx/ssl/simonsmh.cc/fullchain.cer;
 ssl_certificate_key /etc/nginx/ssl/simonsmh.cc/privkey.key;
