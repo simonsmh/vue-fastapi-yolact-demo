@@ -42,4 +42,9 @@
     <a href="https://app.simonsmh.cc/shell/" class="waves-effect black-text">
       Shell
     </a>
-  </li>
+ </li>
+ <li>
+    <a href="https://app.simonsmh.cc/chat/" class="waves-effect black-text">
+      Chat
+    </a>
+  </li> 
