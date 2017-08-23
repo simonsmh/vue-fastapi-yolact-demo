@@ -55,19 +55,19 @@ location ~ /shell/ {
 rewrite ^/shell/(.*) /$1 break;
 proxy_pass http://unix:/var/run/ttyd.sock;
 }
-location /chat/ {
+location ~ /chat/ {
 rewrite ^/chat/(.*) /$1 break;
 proxy_pass http://127.0.0.1:8000;
 }
-location /openqq/ {
+location ~ /openqq/ {
 auth_basic "simonsmh";
 auth_basic_user_file /etc/nginx/passwd;
-proxy_pass http://localhost:5003;
+proxy_pass http://127.0.0.1:5003;
 }
-location /ffm/ {
+location ~ /ffm/ {
 auth_basic "simonsmh";
 auth_basic_user_file /etc/nginx/passwd;
-proxy_pass http://localhost:5004;
+proxy_pass http://127.0.0.1:5004;
 }
 location /bt/ {
 proxy_pass http://127.0.0.1:9091/transmission/web/;
