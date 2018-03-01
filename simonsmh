@@ -79,6 +79,9 @@ proxy_pass http://127.0.0.1:9091/transmission/upload;
 location /jsonrpc {
 proxy_pass http://127.0.0.1:6800/jsonrpc;
 }
+location /shmtu/ {
+proxy_pass http://unix:/var/run/shmtu2RSS.socket:/;
+}
 location ~* ^.+\.(eot|ttf|otf|woff|svg|woff2)$ {
 expires max;
 }
