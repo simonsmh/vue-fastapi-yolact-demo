@@ -1,6 +1,6 @@
 #mkdir -p /etc/nginx/ssl/simonsmh.cc/;export CF_Email="simonsmh@gmail.com";export CF_Key=""
-#acme.sh --issue -d simonsmh.cc -d app.simonsmh.cc -d ip.simonsmh.cc -d url.simonsmh.cc -d tieba.simonsmh.cc --dns dns_cf --installcert --fullchain-file /etc/nginx/ssl/simonsmh.cc/fullchain.cer --key-file /etc/nginx/ssl/simonsmh.cc/privkey.key --reloadcmd "service nginx force-reload"
-
+#acme.sh --issue -d simonsmh.cc -d *.simonsmh.cc --dns dns_cf --installcert --fullchain-file /etc/nginx/ssl/simonsmh.cc/fullchain.cer --key-file /etc/nginx/ssl/simonsmh.cc/privkey.key --reloadcmd "service nginx force-reload"
+#
 #default redirect
 server {
 listen 80;
