@@ -5,21 +5,18 @@
 <div class="navbar-fixed"> 
   <nav class="indigo" role="navigation"> 
    <div class="nav-wrapper container"> 
-    <a id="logo-container" href="https://app.simonsmh.cc/index.php" class="brand-logo"> 404页面 </a> 
-    <ul class="right hide-on-med-and-down"> 
-     <li> <a class="dropdown-button waves-effect waves-light" href="#" data-activates="dropdown1"> 菜单 <i class="material-icons right"> &#xE5C5; </i> </a> </li> 
-    </ul> 
-    <ul id="dropdown1" class="dropdown-content"> 
-     <?php include( "nav.php"); ?>
-    </ul> 
-    <a href="#" data-activates="nav-mobile" class="button-collapse"> <i class="material-icons"> &#xE5D2; </i> </a> 
-   </div> 
-  </nav> 
-</div> 
-<ul id="nav-mobile" class="side-nav"> 
-     <?php include( "nav.php"); ?>
-    </ul> 
-  <div class="section no-pad-bot" id="index-banner"> 
+    <a id="logo-container" href="https://app.simonsmh.cc/index.php" class="brand-logo"> 404页面 </a>
+    <?php include( "bar.php"); ?>
+   </div>
+  </nav>
+</div>
+<ul id="dropdown1" class="dropdown-content">
+ <?php include( "nav.php"); ?>
+</ul>
+<ul id="nav-mobile" class="sidenav">
+ <?php include( "nav.php"); ?>
+</ul>
+ <div class="section no-pad-bot" id="index-banner"> 
    <div class="container"> 
     <br /> 
     <br /> 

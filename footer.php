@@ -109,27 +109,13 @@
   </div>
 </footer>
 <script src="js/jquery.min.js">
-  </script>
-  <script src="js/materialize.min.js">
-  </script>
-  <script src="js/fool.min.js">
-  </script>
+</script>
+<script src="js/materialize.min.js">
+</script>
+<script src="js/fool.min.js">
+</script>
   <script>
-  (function($){
-    $(function(){
-    // Plugin initialization
-    $('.carousel.carousel-slider').carousel({full_width: true});
-    $('.carousel').carousel();
-    $('.slider').slider({full_width: true});
-    $('.parallax').parallax();
-    $('.modal').modal();
-    $('.scrollspy').scrollSpy();
-    $('.button-collapse').sideNav();
-    $('.datepicker').pickadate();
-    $('select').not('.disabled').material_select();
-    $('.chips').material_chip();
-    }); // end of document ready
-  })(jQuery); // end of jQuery name space
+  M.AutoInit();
   </script>
   <script>
   $(document).ready(function(){$(function(){$(window).scroll(function(){$("#gototop").openFAB();});$("#gototop").click(function(){$('body,html').animate({scrollTop: 0},400);return false;});});});

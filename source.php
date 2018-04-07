@@ -49,25 +49,24 @@ echo <<<END
 <div class='navbar-fixed'>
   <nav class='indigo' role='navigation'> 
    <div class='nav-wrapper container'> 
-    <a id='logo-container' href='source.php' class='brand-logo'> 杂货铺 </a> 
-    <ul class='right hide-on-med-and-down'> 
-     <li> <a class='dropdown-button waves-effect waves-light' href='#' data-activates='dropdown1'> 菜单 <i class='material-icons right'> &#xE5C5; </i> </a> </li> 
-    </ul> 
-    <ul id='dropdown1' class='dropdown-content'> 
+   <a id='logo-container' href='source.php' class='brand-logo'> 杂货铺 </a>
 END;
-include( 'nav.php');
+include( "bar.php");
 echo <<<END
-    </ul> 
-    <a href='#' data-activates='nav-mobile' class='button-collapse'> <i class='material-icons'> &#xE5D2; </i> </a> 
-   </div> 
-  </nav> 
+   </div>
+  </nav>
 </div>
- <ul id='nav-mobile' class='side-nav'> 
+<ul id="dropdown1" class="dropdown-content">
 END;
-include( 'nav.php');
+include( "nav.php");
 echo <<<END
-    </ul> 
-  <div class='section no-pad-bot' id='index-banner'> 
+</ul>
+<ul id="nav-mobile" class="sidenav">
+END;
+include( "nav.php");
+echo <<<END
+</ul>
+<div class='section no-pad-bot' id='index-banner'> 
    <div class='container'> 
     <br /> 
     <br /> 

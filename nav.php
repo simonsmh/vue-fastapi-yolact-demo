@@ -19,7 +19,7 @@
     </a>
   </li>
   <li>
-    <a href="bt/" class="waves-effect black-text">
+    <a href="#bt/" class="grey-text">
       离线下载
     </a>
   </li>
@@ -44,7 +44,7 @@
     </a>
  </li>
  <li>
-    <a href="chat/" class="waves-effect black-text">
+    <a href="#chat/" class="grey-text">
       Chat
     </a>
   </li> 

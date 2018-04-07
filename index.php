@@ -6,20 +6,17 @@
   <nav class="indigo"> 
    <div class="nav-wrapper container"> 
     <a id="logo-container" href="index.php" class="brand-logo"> 主页 </a> 
-    <ul class="right hide-on-med-and-down"> 
-     <li> <a class="dropdown-button waves-effect waves-light" href="#" data-activates="dropdown1"> 菜单 <i class="material-icons right"> &#xE5C5; </i> </a> </li> 
-    </ul> 
+     <?php include( "bar.php"); ?>
+  </div> 
+  </nav> 
+</div>
     <ul id="dropdown1" class="dropdown-content"> 
      <?php include( "nav.php"); ?>
     </ul> 
-    <a href="#" data-activates="nav-mobile" class="button-collapse"> <i class="material-icons"> &#xE5D2; </i> </a> 
-   </div> 
-  </nav> 
-</div> 
-    <ul id="nav-mobile" class="side-nav"> 
+    <ul id="nav-mobile" class="sidenav"> 
      <?php include( "nav.php"); ?>
-    </ul>
-  <div class="section no-pad-bot" id="index-banner"> 
+    </ul> 
+<div class="section no-pad-bot" id="index-banner"> 
    <div class="container"> 
     <br /> 
     <br /> 
@@ -40,10 +37,10 @@
     <div class="col s12 m6 center"> 
      <div class="card hoverable waves-effect waves-light orange"> 
       <div class="card-content white-text"> 
-       <span class="card-title white-text"> <i class="tiny material-icons white-text">&#xE0BF;</i>simon的后花园 </span> 
+       <span class="card-title"> <i class="tiny material-icons">&#xE0BF;</i>simon的后花园 </span> 
        <p class="light"> 挂靠在GitHub持续集成的Hexo轻量级个人博客。 </p> 
       </div> 
-      <div class="card-action white-text"> 
+      <div class="card-action"> 
        <a class="orange-text text-lighten-3" href="https://simonsmh.cc/">点这里去我的后花园</a> 
       </div> 
      </div> 
@@ -51,7 +48,7 @@
     <div class="col s12 m6 center"> 
      <div class="card hoverable waves-effect waves-light orange"> 
       <div class="card-content white-text"> 
-       <span class="card-title white-text"> <i class="tiny material-icons white-text">&#xE862;</i>贴吧云签到 </span> 
+       <span class="card-title"> <i class="tiny material-icons">&#xE862;</i>贴吧云签到 </span> 
        <p class="light"> 由StusGame团队制作的贴吧云签到服务器软件。 </p> 
       </div> 
       <div class="card-action"> 
@@ -62,22 +59,22 @@
     <div class="col s12 m6 center"> 
      <div class="card hoverable waves-effect waves-light orange"> 
       <div class="card-content white-text"> 
-       <span class="card-title white-text"> <i class="tiny material-icons white-text">&#xE87A;</i>Glype </span> 
+       <span class="card-title"> <i class="tiny material-icons">&#xE87A;</i>Glype </span> 
        <p class="light"> 基于PHP的在线网页浏览器，轻松实现自由浏览。 </p> 
       </div> 
-      <div class="card-action white-text"> 
+      <div class="card-action"> 
        <a class="orange-text text-lighten-3" href="glype/">点这里去Glype</a> 
       </div> 
      </div> 
     </div>
     <div class="col s12 m6 center"> 
-     <div class="card hoverable waves-effect waves-light orange"> 
-      <div class="card-content white-text"> 
-       <span class="card-title white-text"> <i class="tiny material-icons white-text">&#xE884;</i>离线下载 </span> 
+     <div class="card waves-effect grey lighten-2"> 
+      <div class="card-content grey-text"> 
+       <span class="card-title"> <i class="tiny material-icons">&#xE884;</i>离线下载 </span> 
        <p class="light"> 基于Transmission的开源BT或PT离线下载程序。 </p> 
       </div> 
-      <div class="card-action white-text"> 
-       <a class="orange-text text-lighten-3" href="bt/">点这里去Transmission</a>
+      <div class="card-action"> 
+       <a class="grey-text" href="#bt/">点这里去Transmission</a>
       </div> 
      </div> 
     </div> 
@@ -85,10 +82,10 @@
     <div class="col s12 m4 center"> 
      <div class="card hoverable waves-effect waves-light orange"> 
       <div class="card-content white-text"> 
-       <span class="card-title white-text"> <i class="tiny material-icons white-text">&#xE0B7;</i>留言板 </span> 
+       <span class="card-title"> <i class="tiny material-icons">&#xE0B7;</i>留言板 </span> 
        <p class="light"> 基于HTML和PHP的留言板。 </p> 
       </div> 
-      <div class="card-action white-text"> 
+      <div class="card-action"> 
        <a class="orange-text text-lighten-3" href="review.php">点这里去留言板</a> 
       </div> 
      </div> 
@@ -96,7 +93,7 @@
     <div class="col s12 m4 center"> 
      <div class="card hoverable waves-effect waves-light orange"> 
       <div class="card-content white-text"> 
-       <span class="card-title white-text"> <i class="tiny material-icons white-text">&#xE610;</i>文件储存 </span> 
+       <span class="card-title"> <i class="tiny material-icons">&#xE610;</i>文件储存 </span> 
        <p class="light"> 基于HTML和PHP的文件储存。 </p> 
       </div> 
       <div class="card-action"> 
@@ -107,7 +104,7 @@
     <div class="col s12 m4 center"> 
      <div class="card hoverable waves-effect waves-light orange"> 
       <div class="card-content white-text"> 
-       <span class="card-title white-text"> <i class="tiny material-icons white-text">&#xE86F;</i>杂货铺 </span> 
+       <span class="card-title"> <i class="tiny material-icons">&#xE86F;</i>杂货铺 </span> 
        <p class="light"> 基于HTML和PHP的有趣功能。 </p> 
       </div> 
       <div class="card-action"> 

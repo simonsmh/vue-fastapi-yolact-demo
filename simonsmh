@@ -1,5 +1,5 @@
 #mkdir -p /etc/nginx/ssl/simonsmh.cc/;export CF_Email="simonsmh@gmail.com";export CF_Key=""
-#acme.sh --issue -d simonsmh.cc -d *.simonsmh.cc --dns dns_cf --installcert --fullchain-file /etc/nginx/ssl/simonsmh.cc/fullchain.cer --key-file /etc/nginx/ssl/simonsmh.cc/privkey.key --reloadcmd "service nginx force-reload"
+#acme.sh --issue -d simonsmh.cc -d \*.simonsmh.cc --dns dns_cf --installcert --fullchain-file /etc/nginx/ssl/simonsmh.cc/fullchain.cer --key-file /etc/nginx/ssl/simonsmh.cc/privkey.key --reloadcmd "service nginx force-reload"
 #
 #default redirect
 server {
@@ -7,7 +7,7 @@ listen 80;
 listen [::]:80;
 listen 443 ssl http2;
 listen [::]:443 ssl http2;
-server_name ip.simonsmh.cc ipv4.simonsmh.cc ipv6.simonsmh.cc;
+server_name sh.simonsmh.cc;
 return 301 https://app.simonsmh.cc$request_uri;
 ssl_certificate /etc/nginx/ssl/simonsmh.cc/fullchain.cer;
 ssl_certificate_key /etc/nginx/ssl/simonsmh.cc/privkey.key;
@@ -35,7 +35,7 @@ listen 80;
 listen [::]:80;
 listen 443 ssl http2;
 listen [::]:443 ssl http2;
-server_name sh.simonsmh.cc;
+server_name app.simonsmh.cc;
 root /var/www/simonsmh; 
 index index.php;
 location ~ /(files|sfiles)/ {
@@ -57,28 +57,28 @@ auth_basic_user_file /etc/nginx/passwd;
 rewrite ^/shell/(.*) /$1 break;
 proxy_pass http://127.0.0.1:7681;
 }
-location ~ /chat/ {
-rewrite ^/chat/(.*) /$1 break;
-proxy_pass http://127.0.0.1:8000;
-}
-location /openqq/ {
-proxy_pass http://127.0.0.1:5005/openqq/;
-}
-location /ffm/ {
-proxy_pass http://127.0.0.1:5005/ffm/;
-}
-location /bt/ {
-proxy_pass http://127.0.0.1:9091/transmission/web/;
-}
-location /rpc {
-proxy_pass http://127.0.0.1:9091/transmission/rpc;
-}  
-location /upload {
-proxy_pass http://127.0.0.1:9091/transmission/upload;
-}
-location /jsonrpc {
-proxy_pass http://127.0.0.1:6800/jsonrpc;
-}
+#location ~ /chat/ {
+#rewrite ^/chat/(.*) /$1 break;
+#proxy_pass http://127.0.0.1:8000;
+#}
+#location /openqq/ {
+#proxy_pass http://127.0.0.1:5005/openqq/;
+#}
+#location /ffm/ {
+#proxy_pass http://127.0.0.1:5005/ffm/;
+#}
+#location /bt/ {
+#proxy_pass http://127.0.0.1:9091/transmission/web/;
+#}
+#location /rpc {
+#proxy_pass http://127.0.0.1:9091/transmission/rpc;
+#}  
+#location /upload {
+#proxy_pass http://127.0.0.1:9091/transmission/upload;
+#}
+#location /jsonrpc {
+#proxy_pass http://127.0.0.1:6800/jsonrpc;
+#}
 location /shmtu/ {
 proxy_pass http://unix:/var/run/shmtu2RSS.socket:/;
 }

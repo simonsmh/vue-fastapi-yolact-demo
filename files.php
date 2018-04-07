@@ -32,23 +32,22 @@ echo <<<EOF
   <nav class="indigo" role="navigation"> 
    <div class="nav-wrapper container"> 
     <a id="logo-container" href="files.php" class="brand-logo"> 文件储存 </a> 
-    <ul class="right hide-on-med-and-down"> 
-     <li> <a class="dropdown-button waves-effect waves-light" href="#" data-activates="dropdown1"> 菜单 <i class="material-icons right"> &#xE5C5; </i> </a> </li> 
-    </ul> 
-    <ul id="dropdown1" class="dropdown-content"> 
 EOF;
-include( "nav.php"); 
+include( "bar.php");
 echo <<<EOF
-    </ul>
-    <a href="#" data-activates="nav-mobile" class="button-collapse"> <i class="material-icons"> &#xE5D2; </i> </a> 
-   </div> 
-  </nav> 
-</div> 
-<ul id="nav-mobile" class="side-nav"> 
+   </div>
+  </nav>
+</div>
+<ul id="dropdown1" class="dropdown-content">
 EOF;
-include( "nav.php"); 
+include( "nav.php");
 echo <<<EOF
-  </ul> 
+</ul>
+<ul id="nav-mobile" class="sidenav">
+EOF;
+include( "nav.php");
+echo <<<EOF
+</ul>
   <div class="section no-pad-bot" id="index-banner"> 
    <div class="container"> 
     <br /> 
