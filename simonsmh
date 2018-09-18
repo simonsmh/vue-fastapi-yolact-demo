@@ -86,7 +86,7 @@ location ~* ^.+\.(eot|ttf|otf|woff|svg|woff2)$ {
 expires max;
 }
 location ~ .*\.php(\/.*)*$ {
-fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+fastcgi_pass unix:/run/php/php7.3-fpm.sock;
 fastcgi_split_path_info  ^(.+\.php)(/.+)$;
 fastcgi_param PATH_INFO $fastcgi_path_info; 
 include fastcgi.conf;
@@ -109,7 +109,7 @@ root /var/www/tieba.simonsmh;
 index index.php index.html index.htm;
 server_name tieba.simonsmh.cc;
 location ~ .*\.php(\/.*)*$ {
-fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+fastcgi_pass unix:/run/php/php7.3-fpm.sock;
 fastcgi_split_path_info  ^(.+\.php)(/.+)$;
 fastcgi_param PATH_INFO $fastcgi_path_info; 
 include fastcgi.conf;
