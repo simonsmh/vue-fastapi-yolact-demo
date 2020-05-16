@@ -1,33 +1,29 @@
 import logging
-import uuid
-
-# from io import BytesIO
+from io import BytesIO
 
 import uvicorn
 from fastapi import Body, Depends, FastAPI, File, Request, UploadFile
-from fastapi.middleware.cors import CORSMiddleware
+
+# from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 
+from .database import SessionLocal, UserIn, add_user, delete_user, get_user, get_users
 from .yolo_minimal.detect import detect, parse_name
 
-from .database import SessionLocal, UserIn, add_user, delete_user, get_user, get_users
-
-app = FastAPI()
+app = FastAPI(openapi_prefix="/api")
 logger = logging.getLogger()
 
-origins = [
-    "http://localhost",
-    "https://localhost",
-    "http://localhost:8080",
-]
+# origins = [
+#     "http://localhost:8080",
+# ]
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=origins,
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
 
 
 @app.get("/")
@@ -50,10 +46,11 @@ async def get_model_info():
 
 @app.post("/yolo")
 async def detect_image(image: UploadFile = File(...)):
+    data = BytesIO(image.file.read())
     return {
         "return": 200,
         "result": detect(
-            image.file.read(),
+            data.read(),
             cfg="yolov3-spp-buoy.cfg",
             weights="best_buoy.pt",
             img_size=512,
@@ -68,6 +65,7 @@ def get_db():
         yield db
     finally:
         db.close()
+
 
 # SQL Process
 @app.get("/chatboard/all")

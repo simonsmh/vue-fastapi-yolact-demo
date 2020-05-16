@@ -148,7 +148,7 @@ export default {
         let formData = new FormData();
         formData.set("image", this.image);
         axios
-          .post("/yolo", formData, {
+          .post("/api/yolo", formData, {
             headers: {
               "Content-Type": "multipart/form-data"
             }
@@ -181,7 +181,7 @@ export default {
   created() {
     this.isActive = false;
     axios
-      .get("/yolo")
+      .get("/api/yolo")
       .then(response => {
         this.labels = response.data.labels;
         this.name = response.data.name;

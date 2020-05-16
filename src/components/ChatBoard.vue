@@ -139,7 +139,7 @@ export default {
       this.$refs.form.validate();
       this.newdialog = false;
       axios
-        .put("/chatboard", {
+        .put("/api/chatboard", {
           name: this.name,
           email: this.email,
           text: this.text
@@ -164,7 +164,7 @@ export default {
     del(uid) {
       console.log(uid);
       axios
-        .delete("/chatboard/" + uid)
+        .delete("/api/chatboard/" + uid)
         .then(response => {
           this.chats = response.data.user;
           this.snackbar.text = "Your words has been deleted.";
@@ -181,16 +181,16 @@ export default {
   },
   created() {
     this.isActive = false;
-    axios.get("/chatboard/all").then(response => {
+    axios.get("/api/chatboard/all").then(response => {
       this.chats = response.data.user;
     });
   },
   mounted() {
-    axios.get("/ip").then(response => {
+    axios.get("/api/ip").then(response => {
       this.ip = response.data.client_host;
     });
     this.timer = setInterval(function() {
-      axios.get("/chatboard/all").then(response => {
+      axios.get("/api/chatboard/all").then(response => {
         this.chats = response.data.user;
       });
     }, 10000);
