@@ -1,0 +1,24 @@
+[[source]]
+name = "pypi"
+url = "https://mirrors.cloud.tencent.com/pypi/simple"
+verify_ssl = true
+
+[dev-packages]
+black = "*"
+pylama = "*"
+torch = "*"
+opencv-python = "*"
+torchvision = "*"
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+python-multipart = "*"
+sqlalchemy = "*"
+pydantic = "*"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true

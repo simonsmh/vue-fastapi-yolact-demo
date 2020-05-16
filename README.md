@@ -1,24 +1,20 @@
-# simonsmh
+# Simon Shi's Server Page
+Vue 2.x practice
 
-## Project setup
+## Architecture
 ```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
+Vue <---> Fastapi
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## Details
+### Home
+Personal infomation.
 
-### Lints and fixes files
-```
-yarn lint
-```
+## Yolo App
+Provide a user-friendly interface for using PyTorch model.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Todo App
+Simple todolist using local web storage.
+
+## Chatboard App
+Simple chatboard using sqlite, with interface provided by sqlalchemy.
