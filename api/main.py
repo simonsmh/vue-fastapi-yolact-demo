@@ -4,26 +4,14 @@ from io import BytesIO
 import uvicorn
 from fastapi import Body, Depends, FastAPI, File, Request, UploadFile
 
-# from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 
 from .database import SessionLocal, UserIn, add_user, delete_user, get_user, get_users
-from .yolo_minimal.detect import detect, parse_name
+from .yolo_minimal.detect import detect_init, detect, parse_name
 
 app = FastAPI(openapi_prefix="/api")
 logger = logging.getLogger()
-
-# origins = [
-#     "http://localhost:8080",
-# ]
-
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=origins,
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
+model = detect_init(cfg="yolov3-spp-buoy.cfg", weights="best_buoy.pt", img_size=512)
 
 
 @app.get("/")
@@ -49,12 +37,7 @@ async def detect_image(image: UploadFile = File(...)):
     data = BytesIO(image.file.read())
     return {
         "return": 200,
-        "result": detect(
-            data.read(),
-            cfg="yolov3-spp-buoy.cfg",
-            weights="best_buoy.pt",
-            img_size=512,
-        ),
+        "result": detect(data.read(), model, img_size=512,),
     }
 
 

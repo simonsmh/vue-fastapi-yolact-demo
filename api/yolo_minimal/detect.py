@@ -11,13 +11,18 @@ from .utils import (
 )
 
 
-def detect(byte, cfg="yolov3-spp-buoy.cfg", weights="best_buoy.pt", img_size=512):
+def detect_init(cfg="yolov3-spp-buoy.cfg", weights="best_buoy.pt", img_size=512):
     cfg, weights = get_file_location(cfg), get_file_location(weights)
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # Initialize model
     model = Darknet(cfg, img_size)
     model.load_state_dict(torch.load(weights, map_location=device)["model"])
     model.to(device).eval()
+    return model
+
+
+def detect(byte, model, img_size=512):
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # Read and preprocess image from ram
     img0 = cv2.imdecode(np.frombuffer(byte, np.uint8), 1)
     img = letterbox(img0, new_shape=img_size)[0]
