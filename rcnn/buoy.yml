@@ -1,0 +1,19 @@
+_BASE_: detectron2_src/configs/COCO-InstanceSegmentation/mask_rcnn_R_101_FPN_3x.yaml
+DATASETS:
+  TRAIN: ("buoy_dataset_train",)
+  TEST: ("buoy_dataset_valid",)
+SOLVER:
+  IMS_PER_BATCH: 3
+  BASE_LR: 0.0033
+TEST:
+  EVAL_PERIOD: 100
+MODEL:
+  ROI_HEADS:
+    NUM_CLASSES: 1
+MODEL:
+  RETINANET:
+    NUM_CLASSES: 1
+MODEL:
+  SEM_SEG_HEAD:
+    NUM_CLASSES: 1
+  WEIGHTS: /home/simonsmh/is-app/rcnn/model_0059999_101.pth
